@@ -1,0 +1,6 @@
+module Pods_SVGToSwift {
+  umbrella header "Pods-SVGToSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

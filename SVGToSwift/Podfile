@@ -1,0 +1,12 @@
+
+def baseframework
+    
+    pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
+    pod 'SwiftSoup'
+    
+end
+
+
+target 'SVGToSwift' do
+    baseframework
+end
