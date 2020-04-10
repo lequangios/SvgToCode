@@ -45,38 +45,6 @@ class SVGConvertController: NSViewController {
     }
     
     //MARK:--
-    //MARK: Method
-    private func convertPath(){
-        let name = self.nameTF.stringValue
-        let input = self.inputTF.string
-        
-        let text = String.getCode(svgPath: input, name: name)
-        self.outputTextView.string = text
-    
-        self.outputTextView.sizeToFit()
-    }
-    
-    private func convertGraph(){
-        let name = self.nameTF.stringValue
-        let input = self.inputTF.string
-        
-        let manager = SVGXMLManager.init(input, name: name)
-        self.outputTextView.string = manager.code
-        self.outputTextView.sizeToFit()
-    }
-    
-    private func convertFile(){
-        let name = self.nameTF.stringValue
-        let input = self.inputTF.string
-        let manager = SVGXMLManager.init(input, name: name)
-        let model = manager.parseXMLFile()
-        
-        if manager.cssText != nil {
-            //self.cssTF.string = manager.cssText
-        }
-    }
-    
-    //MARK:--
     //MARK: Action
     @IBAction func selectLanguage(_ sender: NSPopUpButton) {
         if let title = sender.selectedItem?.title {

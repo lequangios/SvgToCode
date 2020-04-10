@@ -31,6 +31,7 @@ enum LanguageName : String {
 }
 
 enum SVGElementName:String {
+    case svg            = "svg"
     case circle         = "circle"
     case clipPath       = "clipPath"
     case defs           = "defs"
@@ -43,7 +44,6 @@ enum SVGElementName:String {
     case polyline       = "polyline"
     case radialGradient = "radialGradient"
     case rect           = "rect"
-    case svg            = "svg"
     case style          = "style"
     
     func alls()->[SVGElementName] {

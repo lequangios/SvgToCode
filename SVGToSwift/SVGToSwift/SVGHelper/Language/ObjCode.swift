@@ -48,4 +48,8 @@ final class ObjCode : CodeMaker {
         let code = "CAShapeLayer* \(name) = [CAShapeLayer new];\n"
         return code
     }
+    
+    func parseModel(_ name: String, _ model: SVGDataModel) -> String {
+        return ""
+    }
 }

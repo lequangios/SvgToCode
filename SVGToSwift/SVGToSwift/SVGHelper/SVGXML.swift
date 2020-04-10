@@ -45,62 +45,61 @@ class SVGXMLManager {
     }
     
     func parseNodes(_ element:SVGDataModel, _ deep:Int = 0) -> SVGDataModel{
-        let str = String(repeating: "✦✦", count: deep)
+//        let str = String(repeating: "✦✦", count: deep)
         var model = element
         if element.element.name == SVGElementName.circle.rawValue {
-            print("\(str) \(SVGElementName.circle.rawValue) : deep \(deep)")
             model = self.makeCircle(element, deep)
+            model.type = .circle
         }
         else if element.element.name == SVGElementName.clipPath.rawValue {
-            print("\(str) \(SVGElementName.clipPath.rawValue) : deep \(deep)")
             model = self.makeClipPath(element, deep)
+            model.type = .clipPath
         }
         else if element.element.name == SVGElementName.defs.rawValue {
-            print("\(str) \(SVGElementName.defs.rawValue) : deep \(deep)")
             model = self.makeDefs(element, deep)
+            model.type = .defs
         }
         else if element.element.name == SVGElementName.ellipse.rawValue {
-            print("\(str) \(SVGElementName.ellipse.rawValue) : deep \(deep)")
             model = self.makeEllipse(element, deep)
+            model.type = .ellipse
         }
         else if element.element.name == SVGElementName.g.rawValue {
             model = self.makeGraph(element, deep)
-            print("\(str) \(SVGElementName.g.rawValue) : deep \(deep)\n\(model.code)")
+            model.type = .g
         }
         else if element.element.name == SVGElementName.glyph.rawValue {
             model = self.makeGlyph(element, deep)
-            print("\(str) \(SVGElementName.glyph.rawValue) : deep \(deep)")
+            model.type = .glyph
         }
         else if element.element.name == SVGElementName.line.rawValue {
             model = self.makeLine(element, deep)
-            print("\(str) \(SVGElementName.line.rawValue) : deep \(deep)")
+            model.type = .line
         }
         else if element.element.name == SVGElementName.path.rawValue {
             model = self.makePath(element, deep)
-            print("\(str) \(SVGElementName.path.rawValue) : deep \(deep)\n \(model.code)")
+            model.type = .path
         }
         else if element.element.name == SVGElementName.polygon.rawValue {
             model = self.makePolygon(element, deep)
-            print("\(str) \(SVGElementName.polygon.rawValue) : deep \(deep)")
+            model.type = .polygon
         }
         else if element.element.name == SVGElementName.polyline.rawValue {
             model = self.makePolyline(element, deep)
-            print("\(str) \(SVGElementName.polyline.rawValue) : deep \(deep)")
+            model.type = .polyline
         }
         else if element.element.name == SVGElementName.radialGradient.rawValue {
             model = self.makeRadialGradient(element, deep)
-            print("\(str) \(SVGElementName.radialGradient.rawValue) : deep \(deep)")
+            model.type = .radialGradient
         }
         else if element.element.name == SVGElementName.rect.rawValue {
             model = self.makeRect(element, deep)
-            print("\(str) \(SVGElementName.rect.rawValue) : deep \(deep)\n\(model.code)")
+            model.type = .rect
         }
         else if element.element.name == SVGElementName.svg.rawValue {
             model = self.makeSvg(element, deep)
-            print("\(str) \(SVGElementName.svg.rawValue) : deep \(deep)")
+            model.type = .svg
         }
         else if element.element.name == SVGElementName.style.rawValue {
-            print("\(str) \(SVGElementName.style.rawValue) : deep \(deep)")
             if let text = element.element.text {
                 self.cssText = text
             }
@@ -119,33 +118,6 @@ class SVGXMLManager {
             return self.parseElements(model)
         }
         return SVGDataModel()
-    }
-    
-    func parseXML2Code(){
-        xml = try! XML.parse(self.xmlString)
-        
-        var index:Int = 0
-        let name_layer = self.nameLayer ?? "layer"
-        
-        for path in xml["g", "path"] {
-            if let svgPath = path.attributes["d"] {
-                let shape_name = "shape\(index)"
-                let path_name = "path\(index)"
-                
-                let svg = SVGPath.init(svgPath)
-                let codeStr = shape_name.applyCommandsCode(from: svg, name: path_name)
-                self.code = self.code.addNewlineCode(codeStr)
-                self.code = self.code.addNewlineCode("fullPath.addPath(path\(index).cgPath)")
-                self.code = self.code.addNewlineCode("let shape\(index) = CAShapeLayer()")
-                self.code = self.code.addNewlineCode("shape\(index).path = path\(index).cgPath")
-                
-                if let style = path.attributes["class"] {
-                   self.code = self.code.addNewlineCode("shape\(index).fill(\"\(style)\")")
-                }
-                self.code = self.code.addNewlineCode("\(name_layer).addSublayer(shape\(index))\n")
-                index = index + 1
-            }
-        }
     }
     
     private func makeCircle(_ element:SVGDataModel, _ deep:Int = 0) -> SVGDataModel {

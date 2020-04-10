@@ -23,4 +23,8 @@ final class JSCode : CodeMaker{
     func makeGrapth(_ name: String, _ model: SVGDataModel) -> String {
         return "12"
     }
+    
+    func parseModel(_ name: String, _ model: SVGDataModel) -> String {
+        return ""
+    }
 }

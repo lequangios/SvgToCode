@@ -19,4 +19,11 @@ struct SVGDataModel {
     var frame:CGRect = .zero
     var parentName:String = ""
     var name:String = ""
+    var type:SVGElementName = .g
+}
+
+extension Array where Element == SVGDataModel {
+    func findPaths()->[SVGDataModel] {
+        return self.filter{$0.type != .g && $0.type != .style && $0.type != .svg}
+    }
 }

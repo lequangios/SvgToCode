@@ -53,4 +53,11 @@ final class SwiftCode : CodeMaker {
         let code = "let \(name) = CAShapeLayer()\n"
         return code
     }
+    
+    func parseModel(_ name: String, _ model: SVGDataModel) -> String {
+        for item in model.childs {
+            
+        }
+        return ""
+    }
 }

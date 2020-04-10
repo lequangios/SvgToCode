@@ -63,4 +63,8 @@ class SVGConvertViewModel {
         self.rootModel = manager.parseXMLFile()
         return ""
     }
+    
+    private func parseModelTocode(_ model:SVGDataModel)->String {
+        return ""
+    }
 }
