@@ -49,7 +49,7 @@ final class ObjCode : CodeMaker {
         return code
     }
     
-    func parseModel(_ name: String, _ model: SVGDataModel) -> String {
+    func parseModel(_ model: SVGDataModel) -> String {
         return ""
     }
 }

@@ -9,6 +9,8 @@
 import Foundation
 import SwiftyXMLParser
 
+let rootValue = -100
+
 enum LanguageName : String {
     case Swift = "Swift"
     case Obj = "Objective-C"

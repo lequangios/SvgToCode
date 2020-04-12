@@ -12,7 +12,7 @@ protocol CodeMaker {
     func makeRect(_ rect:CGRect, _ name:String, _ model:SVGDataModel)->String
     func makePath(_ svgPath: SVGPath, _ name:String, _ model:SVGDataModel) -> String
     func makeGrapth(_ name:String, _ model:SVGDataModel) -> String
-    func parseModel(_ name:String, _ model:SVGDataModel) -> String
+    func parseModel(_ model: SVGDataModel) -> String
 }
 
 class CodeSVG {
@@ -26,69 +26,68 @@ class CodeSVG {
         self.model = model
     }
     
-    func makePath(_ element:SVGDataModel, _ deep:Int)->String{
+    func makePath(_ element:SVGDataModel)->String{
         if let text = element.element.attributes["d"] {
-            let name = "path\(element.index)\(deep)"
-            return langName.type().makePath(SVGPath(text), name, model)
+            //let name = "path\(element.index)\(element.deep)"
+            return langName.type().makePath(SVGPath(text), element.name, element)
         }
         return ""
     }
     
-    func makeGrapth(_ element:SVGDataModel, _ deep:Int)->String{
-        let name = "shape\(element.index)\(deep)"
-        return langName.type().makeGrapth(name, model)
+    func makeGrapth(_ element:SVGDataModel)->String{
+        //let name = "shape\(element.index)\(element.deep)"
+        return langName.type().makeGrapth(element.name, element)
     }
     
-    func makeRect(_ element:SVGDataModel, _ deep:Int)->String{
+    func makeRect(_ element:SVGDataModel)->String{
         if let x = element.element.attributes["x"], let y = element.element.attributes["y"], let width = element.element.attributes["width"], let height = element.element.attributes["height"]{
             let rect = CGRect(x: x.doubleValue, y: y.doubleValue, width: width.doubleValue, height: height.doubleValue)
-            let name = "rect\(element.index)\(deep)"
-            return langName.type().makeRect(rect, name, model)
+            return langName.type().makeRect(rect, element.name, element)
         }
         return ""
     }
     
-    func makePolygon(_ element:SVGDataModel, _ deep:Int)->String {
+    func makePolygon(_ element:SVGDataModel)->String {
         return ""
     }
     
-    func makeCircle(_ element:SVGDataModel, _ deep:Int)->String {
+    func makeCircle(_ element:SVGDataModel)->String {
         return ""
     }
     
-    func makeClipPath(_ element:SVGDataModel, _ deep:Int)->String {
+    func makeClipPath(_ element:SVGDataModel)->String {
         return ""
     }
     
-    func makeDefs(_ element:SVGDataModel, _ deep:Int)->String {
+    func makeDefs(_ element:SVGDataModel)->String {
         return ""
     }
     
-    func makeEllipse(_ element:SVGDataModel, _ deep:Int)->String {
+    func makeEllipse(_ element:SVGDataModel)->String {
         return ""
     }
     
-    func makeGlyph(_ element:SVGDataModel, _ deep:Int)->String {
+    func makeGlyph(_ element:SVGDataModel)->String {
         return ""
     }
     
-    func makeLine(_ element:SVGDataModel, _ deep:Int)->String {
+    func makeLine(_ element:SVGDataModel)->String {
         return ""
     }
     
-    func makePolyline(_ element:SVGDataModel, _ deep:Int)->String {
+    func makePolyline(_ element:SVGDataModel)->String {
         return ""
     }
     
-    func makeRadialGradient(_ element:SVGDataModel, _ deep:Int)->String {
+    func makeRadialGradient(_ element:SVGDataModel)->String {
         return ""
     }
     
-    func makeSvg(_ element:SVGDataModel, _ deep:Int)->String {
-        return langName.type().makeGrapth(element.name, model)
+    func makeSvg(_ element:SVGDataModel)->String {
+        return langName.type().makeGrapth(element.name, element)
     }
     
-    func parseModel(_ name:String, _ model:SVGDataModel) -> String {
-        return langName.type().parseModel(name, model)
+    func parseModel(_ name:String, _ element:SVGDataModel) -> String {
+        return langName.type().parseModel(element)
     }
 }

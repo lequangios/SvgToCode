@@ -15,11 +15,12 @@ class SVGConvertViewModel {
     var shapeName:String = ""
     var cssTxt:String = ""
     var codeTool = CodeSVG()
-    var rootModel = SVGDataModel()
+    var rootModel:SVGDataModel!
     
     func updateSVGData(_ svgTxt:String, name:String){
         self.svgTxt = svgTxt
         self.shapeName = name
+        rootModel = SVGDataModel.init(name)
     }
     
     func convertSVG(_ model:SVGDataModel, _ deep:Int, _ complete:@escaping(Result<String,NSError>)->Void){
@@ -49,19 +50,19 @@ class SVGConvertViewModel {
     private func convertPath(_ element:SVGDataModel, _ deep:Int)->String{
         let code = CodeSVG.shared
         code.update(self.langType, element)
-        return code.makePath(element, deep)
+        return code.makePath(element)
     }
     
     private func convertGraph(_ element:SVGDataModel, _ deep:Int)->String{
         let code = CodeSVG.shared
         code.update(self.langType, element)
-        return code.makeGrapth(element, deep)
+        return code.makeGrapth(element)
     }
     
     private func convertFileSVG() -> String{
-        let manager = SVGXMLManager.init(self.svgTxt, name: self.shapeName, rootModel: self.rootModel, lang: self.langType)
-        self.rootModel = manager.parseXMLFile()
-        return ""
+        let manager = SVGXMLManager.init(self.svgTxt, name: self.shapeName,lang: self.langType)
+        self.rootModel = manager.parseXMLFile(self.shapeName)
+        return CodeSVG.shared.langName.type().parseModel(self.rootModel)
     }
     
     private func parseModelTocode(_ model:SVGDataModel)->String {

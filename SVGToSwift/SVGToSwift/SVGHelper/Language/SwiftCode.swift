@@ -10,9 +10,6 @@ import Foundation
 import SwiftSoup
 
 final class SwiftCode : CodeMaker {
-    
-    var model = SVGDataModel()
-    
     static let shared = SwiftCode()
     
     // <rect x="193.984" y="86.443" transform="matrix(0.999 -0.0448 0.0448 0.999 -3.6844 8.7999)" fill="#69C8C3" width="0.893" height="0.267"/>
@@ -50,14 +47,41 @@ final class SwiftCode : CodeMaker {
     }
     
     func makeGrapth(_ name: String, _ model: SVGDataModel) -> String {
-        let code = "let \(name) = CAShapeLayer()\n"
+        var code = "let \(model.name) = CAShapeLayer()\n"
+        code += "\(model.name).frame = CGRect(x: \(model.frame.origin.x), y: \(model.frame.origin.y), width: \(model.frame.size.width), height: \(model.frame.size.height))\n"
+        code += "\(model.name).name = \(model.name)\n"
         return code
     }
     
-    func parseModel(_ name: String, _ model: SVGDataModel) -> String {
-        for item in model.childs {
-            
+    func parseModel(_ model: SVGDataModel) -> String {
+        model.printModel()
+        var code = model.code
+        let childPaths = model.childs.findPaths()
+        if(childPaths.count > 0) {
+            if childPaths.count >= 2 {
+                code += "let \(model.name)_path = CGMutablePath()\n"
+                code += "\n\n"
+                for item in childPaths {
+                    if(item.code != ""){
+                        code += item.code
+                        code += "\(model.name)_path.addPath(\(item.name).cgPath)\n"
+                    }
+                }
+                code += "\(model.name).path = \(model.name)_path\n\n"
+            }
+            else {
+                code += "\(model.name).path = \(childPaths.first!.name).cgPath\n\n"
+            }
         }
-        return ""
+        
+        let childShapes = model.childs.findShape()
+        if(childShapes.count > 0){
+            for item in childShapes {
+                code += self.parseModel(item)
+                code += "\(model.name).addSublayer(\(item.name))\n"
+            }
+        }
+        
+        return code
     }
 }

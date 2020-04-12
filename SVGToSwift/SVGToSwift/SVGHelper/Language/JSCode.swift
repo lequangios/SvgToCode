@@ -24,7 +24,7 @@ final class JSCode : CodeMaker{
         return "12"
     }
     
-    func parseModel(_ name: String, _ model: SVGDataModel) -> String {
+    func parseModel(_ model: SVGDataModel) -> String {
         return ""
     }
 }
