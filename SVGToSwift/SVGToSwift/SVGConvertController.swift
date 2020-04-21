@@ -121,7 +121,9 @@ class SVGConvertController: NSViewController {
     
     func updateSelectType(_ popup:NSPopUpButton, ele:SVGElementName = SVGElementName.circle) {
         for name in ele.alls() {
-            popup.addItem(withTitle: name.rawValue)
+            if name != .unsuported && name != .parselater {
+                popup.addItem(withTitle: name.rawValue)
+            }
         }
     }
     

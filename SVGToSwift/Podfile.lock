@@ -1,14 +1,8 @@
 PODS:
-  - SwiftSoup (2.3.1)
   - SwiftyXMLParser (5.1.0)
 
 DEPENDENCIES:
-  - SwiftSoup
   - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - SwiftSoup
 
 EXTERNAL SOURCES:
   SwiftyXMLParser:
@@ -20,9 +14,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/yahoojapan/SwiftyXMLParser.git
 
 SPEC CHECKSUMS:
-  SwiftSoup: e5af192bc99be8398d5f93e15ff6a3c80ba81de1
   SwiftyXMLParser: 8271497e0a37b5c04b0b167c77b4896e36175a21
 
-PODFILE CHECKSUM: 11b914d097396b5f4089ca749ca144f5874a54be
+PODFILE CHECKSUM: 4a7508180d9734f7a883c36b570b654b78dd8de6
 
 COCOAPODS: 1.5.2

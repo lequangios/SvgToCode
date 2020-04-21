@@ -11,6 +11,8 @@
 		5A0FA50D243EB9C5005DFFC7 /* ObjCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FA50C243EB9C5005DFFC7 /* ObjCode.swift */; };
 		5A0FA50F243EB9D0005DFFC7 /* JSCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FA50E243EB9D0005DFFC7 /* JSCode.swift */; };
 		5A0FA512243EBCDA005DFFC7 /* SVGCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FA511243EBCDA005DFFC7 /* SVGCodeModel.swift */; };
+		5A203B1F2449536700E1014F /* ShapeAttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A203B1E2449536700E1014F /* ShapeAttributeModel.swift */; };
+		5A203B21244954AE00E1014F /* PathAttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A203B20244954AE00E1014F /* PathAttributeModel.swift */; };
 		5A47E945243DF5E40083AFB7 /* CodeSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A47E944243DF5E40083AFB7 /* CodeSVG.swift */; };
 		5ACA659A243DC17800EB36B1 /* SVGConvertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA6599243DC17800EB36B1 /* SVGConvertViewModel.swift */; };
 		5ACA659C243DCD6600EB36B1 /* NSError+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA659B243DCD6600EB36B1 /* NSError+SVG.swift */; };
@@ -18,6 +20,17 @@
 		5ADDE4A3216B536900442550 /* SVGXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDE4A2216B536900442550 /* SVGXML.swift */; };
 		5ADDE4B5216DC10E00442550 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDE4B4216DC10E00442550 /* Extension.swift */; };
 		5ADDE5082170B29900442550 /* SVGConvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDE5072170B29900442550 /* SVGConvertController.swift */; };
+		5ADF7596244825D8004DA5EF /* StyleElementEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF7595244825D8004DA5EF /* StyleElementEx.swift */; };
+		5ADF759824483439004DA5EF /* SVGStyleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF759724483439004DA5EF /* SVGStyleElement.swift */; };
+		5ADF759A24486CBE004DA5EF /* StyleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF759924486CBE004DA5EF /* StyleExtension.swift */; };
+		5AFB528D24480A630033E2A6 /* katana.lex.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528724480A630033E2A6 /* katana.lex.c */; };
+		5AFB528E24480A630033E2A6 /* selector.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528824480A630033E2A6 /* selector.c */; };
+		5AFB528F24480A630033E2A6 /* katana.tab.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528924480A630033E2A6 /* katana.tab.c */; };
+		5AFB529024480A630033E2A6 /* foundation.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528A24480A630033E2A6 /* foundation.c */; };
+		5AFB529124480A630033E2A6 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528B24480A630033E2A6 /* parser.c */; };
+		5AFB529224480A630033E2A6 /* tokenizer.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528C24480A630033E2A6 /* tokenizer.c */; };
+		5AFB529624480A720033E2A6 /* StyleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB529424480A720033E2A6 /* StyleElement.swift */; };
+		5AFB529724480A720033E2A6 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB529524480A720033E2A6 /* StyleSheet.swift */; };
 		65418D17214E3AC800733EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65418D16214E3AC800733EBE /* AppDelegate.swift */; };
 		65418D19214E3AC800733EBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65418D18214E3AC800733EBE /* ViewController.swift */; };
 		65418D1B214E3ACA00733EBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65418D1A214E3ACA00733EBE /* Assets.xcassets */; };
@@ -32,6 +45,8 @@
 		5A0FA50C243EB9C5005DFFC7 /* ObjCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjCode.swift; sourceTree = "<group>"; };
 		5A0FA50E243EB9D0005DFFC7 /* JSCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSCode.swift; sourceTree = "<group>"; };
 		5A0FA511243EBCDA005DFFC7 /* SVGCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGCodeModel.swift; sourceTree = "<group>"; };
+		5A203B1E2449536700E1014F /* ShapeAttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeAttributeModel.swift; sourceTree = "<group>"; };
+		5A203B20244954AE00E1014F /* PathAttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathAttributeModel.swift; sourceTree = "<group>"; };
 		5A47E944243DF5E40083AFB7 /* CodeSVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSVG.swift; sourceTree = "<group>"; };
 		5ACA6599243DC17800EB36B1 /* SVGConvertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGConvertViewModel.swift; sourceTree = "<group>"; };
 		5ACA659B243DCD6600EB36B1 /* NSError+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+SVG.swift"; sourceTree = "<group>"; };
@@ -39,6 +54,26 @@
 		5ADDE4A2216B536900442550 /* SVGXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGXML.swift; sourceTree = "<group>"; };
 		5ADDE4B4216DC10E00442550 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5ADDE5072170B29900442550 /* SVGConvertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGConvertController.swift; sourceTree = "<group>"; };
+		5ADF7595244825D8004DA5EF /* StyleElementEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleElementEx.swift; sourceTree = "<group>"; };
+		5ADF759724483439004DA5EF /* SVGStyleElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGStyleElement.swift; sourceTree = "<group>"; };
+		5ADF759924486CBE004DA5EF /* StyleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleExtension.swift; sourceTree = "<group>"; };
+		5AFB528024480A630033E2A6 /* katana.lex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.lex.h; sourceTree = "<group>"; };
+		5AFB528124480A630033E2A6 /* selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selector.h; sourceTree = "<group>"; };
+		5AFB528224480A630033E2A6 /* katana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.h; sourceTree = "<group>"; };
+		5AFB528324480A630033E2A6 /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
+		5AFB528424480A630033E2A6 /* foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foundation.h; sourceTree = "<group>"; };
+		5AFB528524480A630033E2A6 /* katana.tab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.tab.h; sourceTree = "<group>"; };
+		5AFB528624480A630033E2A6 /* tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tokenizer.h; sourceTree = "<group>"; };
+		5AFB528724480A630033E2A6 /* katana.lex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = katana.lex.c; sourceTree = "<group>"; };
+		5AFB528824480A630033E2A6 /* selector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = selector.c; sourceTree = "<group>"; };
+		5AFB528924480A630033E2A6 /* katana.tab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = katana.tab.c; sourceTree = "<group>"; };
+		5AFB528A24480A630033E2A6 /* foundation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = foundation.c; sourceTree = "<group>"; };
+		5AFB528B24480A630033E2A6 /* parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parser.c; sourceTree = "<group>"; };
+		5AFB528C24480A630033E2A6 /* tokenizer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tokenizer.c; sourceTree = "<group>"; };
+		5AFB529324480A720033E2A6 /* CSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSParser.h; sourceTree = "<group>"; };
+		5AFB529424480A720033E2A6 /* StyleElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleElement.swift; sourceTree = "<group>"; };
+		5AFB529524480A720033E2A6 /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
+		5AFB529B24480ADF0033E2A6 /* svg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = svg.h; sourceTree = "<group>"; };
 		65418D13214E3AC700733EBE /* SVGToSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVGToSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65418D16214E3AC800733EBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65418D18214E3AC800733EBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,8 +114,23 @@
 			isa = PBXGroup;
 			children = (
 				5A0FA511243EBCDA005DFFC7 /* SVGCodeModel.swift */,
+				5A203B1E2449536700E1014F /* ShapeAttributeModel.swift */,
+				5A203B20244954AE00E1014F /* PathAttributeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5A16243E24470C3C00F4A5E6 /* SwiftCssParser */ = {
+			isa = PBXGroup;
+			children = (
+				5AFB529324480A720033E2A6 /* CSSParser.h */,
+				5AFB529424480A720033E2A6 /* StyleElement.swift */,
+				5AFB529524480A720033E2A6 /* StyleSheet.swift */,
+				5AFB527F24480A630033E2A6 /* katana */,
+				5ADF759724483439004DA5EF /* SVGStyleElement.swift */,
+				5ADF759924486CBE004DA5EF /* StyleExtension.swift */,
+			);
+			path = SwiftCssParser;
 			sourceTree = "<group>";
 		};
 		5ACA659D243DD25900EB36B1 /* SVGHelper */ = {
@@ -102,8 +152,29 @@
 			children = (
 				5AD5D387243C87E20048AAA9 /* NSView+SVG.swift */,
 				5ACA659B243DCD6600EB36B1 /* NSError+SVG.swift */,
+				5ADF7595244825D8004DA5EF /* StyleElementEx.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5AFB527F24480A630033E2A6 /* katana */ = {
+			isa = PBXGroup;
+			children = (
+				5AFB528024480A630033E2A6 /* katana.lex.h */,
+				5AFB528124480A630033E2A6 /* selector.h */,
+				5AFB528224480A630033E2A6 /* katana.h */,
+				5AFB528324480A630033E2A6 /* parser.h */,
+				5AFB528424480A630033E2A6 /* foundation.h */,
+				5AFB528524480A630033E2A6 /* katana.tab.h */,
+				5AFB528624480A630033E2A6 /* tokenizer.h */,
+				5AFB528724480A630033E2A6 /* katana.lex.c */,
+				5AFB528824480A630033E2A6 /* selector.c */,
+				5AFB528924480A630033E2A6 /* katana.tab.c */,
+				5AFB528A24480A630033E2A6 /* foundation.c */,
+				5AFB528B24480A630033E2A6 /* parser.c */,
+				5AFB528C24480A630033E2A6 /* tokenizer.c */,
+			);
+			path = katana;
 			sourceTree = "<group>";
 		};
 		5DAEAB6090BD2CC657C27264 /* Pods */ = {
@@ -136,6 +207,7 @@
 		65418D15214E3AC700733EBE /* SVGToSwift */ = {
 			isa = PBXGroup;
 			children = (
+				5A16243E24470C3C00F4A5E6 /* SwiftCssParser */,
 				5A0FA510243EBCC1005DFFC7 /* Model */,
 				5ACA659D243DD25900EB36B1 /* SVGHelper */,
 				5AD5D386243C87980048AAA9 /* Extension */,
@@ -146,6 +218,7 @@
 				65418D1F214E3ACA00733EBE /* Info.plist */,
 				65418D20214E3ACA00733EBE /* SVGToSwift.entitlements */,
 				5ADDE5072170B29900442550 /* SVGConvertController.swift */,
+				5AFB529B24480ADF0033E2A6 /* svg.h */,
 			);
 			path = SVGToSwift;
 			sourceTree = "<group>";
@@ -251,20 +324,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A0FA50D243EB9C5005DFFC7 /* ObjCode.swift in Sources */,
+				5AFB529024480A630033E2A6 /* foundation.c in Sources */,
 				5A0FA50F243EB9D0005DFFC7 /* JSCode.swift in Sources */,
+				5AFB529224480A630033E2A6 /* tokenizer.c in Sources */,
+				5ADF759824483439004DA5EF /* SVGStyleElement.swift in Sources */,
 				5ADDE5082170B29900442550 /* SVGConvertController.swift in Sources */,
 				5A0FA512243EBCDA005DFFC7 /* SVGCodeModel.swift in Sources */,
+				5AFB529724480A720033E2A6 /* StyleSheet.swift in Sources */,
+				5AFB528D24480A630033E2A6 /* katana.lex.c in Sources */,
 				5ADDE4B5216DC10E00442550 /* Extension.swift in Sources */,
+				5AFB529624480A720033E2A6 /* StyleElement.swift in Sources */,
+				5A203B1F2449536700E1014F /* ShapeAttributeModel.swift in Sources */,
 				5ACA659C243DCD6600EB36B1 /* NSError+SVG.swift in Sources */,
+				5A203B21244954AE00E1014F /* PathAttributeModel.swift in Sources */,
 				5AD5D388243C87E20048AAA9 /* NSView+SVG.swift in Sources */,
 				5ADDE4A3216B536900442550 /* SVGXML.swift in Sources */,
 				5ACA659A243DC17800EB36B1 /* SVGConvertViewModel.swift in Sources */,
+				5ADF759A24486CBE004DA5EF /* StyleExtension.swift in Sources */,
 				5A47E945243DF5E40083AFB7 /* CodeSVG.swift in Sources */,
 				65418D27214E3D8C00733EBE /* SVG2Swift.swift in Sources */,
 				65418D19214E3AC800733EBE /* ViewController.swift in Sources */,
 				65F8D5D121720B3D00C80E85 /* SVGAttribute.swift in Sources */,
 				5A0FA50B243EB9AB005DFFC7 /* SwiftCode.swift in Sources */,
+				5AFB528E24480A630033E2A6 /* selector.c in Sources */,
+				5AFB528F24480A630033E2A6 /* katana.tab.c in Sources */,
+				5AFB529124480A630033E2A6 /* parser.c in Sources */,
 				65418D17214E3AC800733EBE /* AppDelegate.swift in Sources */,
+				5ADF7596244825D8004DA5EF /* StyleElementEx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +498,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.izvisual.gtoken.SVGToSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SVGToSwift/svg.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -433,6 +520,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.izvisual.gtoken.SVGToSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SVGToSwift/svg.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

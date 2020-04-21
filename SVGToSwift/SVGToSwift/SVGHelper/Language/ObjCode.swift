@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftSoup
 
 final class ObjCode : CodeMaker {
 
@@ -44,12 +43,52 @@ final class ObjCode : CodeMaker {
         return code
     }
     
+    func makeCircle(_ model: SVGDataModel, _ center:CGPoint, _ radius:Double) -> String {
+        return ""
+    }
+    
+    func makeClipPath(_ model:SVGDataModel, childs:[CodeGroup]) -> String {
+        return ""
+    }
+    
+    func makeDefs(_ model: SVGDataModel) -> String {
+        return ""
+    }
+    
+    func makeEllipse(_ model: SVGDataModel, _ center:CGPoint, _ radius1:Double, _ radius2:Double) -> String {
+        return ""
+    }
+    
+    func makeGlyph(_ model: SVGDataModel) -> String {
+        return ""
+    }
+    
+    func makeLine(_ model: SVGDataModel, _ point1:CGPoint, _ point2:CGPoint) -> String {
+        return ""
+    }
+    
+    func makePolyline(_ model:SVGDataModel, _ points:[CGPoint]) -> String {
+        return ""
+    }
+    
+    func makeRadialGradient(_ model:SVGDataModel, _ colors:[String], _ locations:[NSNumber], _ point:CGPoint, _ radius:Double) -> String {
+        return ""
+    }
+    
+    func makePolygon(_ model:SVGDataModel, _ points:[CGPoint])->String {
+        return ""
+    }
+    
     func makeGrapth(_ name: String, _ model: SVGDataModel) -> String {
         let code = "CAShapeLayer* \(name) = [CAShapeLayer new];\n"
         return code
     }
     
-    func parseModel(_ model: SVGDataModel) -> String {
+    func parseModel(_ model:SVGDataModel, _ style:StyleSheet, _ deep:Int = 0) -> String {
+        return ""
+    }
+    
+    func makeSVG(_ model:SVGDataModel)->String {
         return ""
     }
 }

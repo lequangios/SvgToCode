@@ -60,9 +60,16 @@ class SVGConvertViewModel {
     }
     
     private func convertFileSVG() -> String{
-        let manager = SVGXMLManager.init(self.svgTxt, name: self.shapeName,lang: self.langType)
+        let manager = SVGXMLManager.shared
+        manager.nameLayer = self.shapeName
+        manager.xmlString = self.svgTxt
+        manager.lang = self.langType
+        
+        let code = CodeSVG.shared
+        code.langName = self.langType
+        
         self.rootModel = manager.parseXMLFile(self.shapeName)
-        return CodeSVG.shared.langName.type().parseModel(self.rootModel)
+        return CodeSVG.shared.langName.type().parseModel(self.rootModel, SVGXMLManager.shared.rootStyle, 0)
     }
     
     private func parseModelTocode(_ model:SVGDataModel)->String {

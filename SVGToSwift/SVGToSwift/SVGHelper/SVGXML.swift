@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyXMLParser
 
+
 class SVGXMLManager {
     var xmlString:String!
     var code:String!
@@ -17,6 +18,17 @@ class SVGXMLManager {
     var xml:SwiftyXMLParser.XML.Accessor!
     var rootModel:SVGDataModel!
     var lang:LanguageName = .Swift
+    var rootStyle:StyleSheet!
+    
+    static let shared = SVGXMLManager()
+    
+    init() {
+        self.xmlString = ""
+        self.nameLayer = "layer"
+        self.code = "let \(String(describing: self.nameLayer)) = CALayer()"
+        self.code = ""
+        self.lang = .Swift
+    }
     
     init(_ xml:String, name:String = "layer", lang:LanguageName = .Swift) {
         self.xmlString = xml
@@ -29,30 +41,45 @@ class SVGXMLManager {
     //MARK:--
     //MARK: Parse XML
     func parseElements(_ elements:SVGDataModel)->SVGDataModel{
-        var mutableModel = self.parseNodes(elements)
+        let mutableModel = self.parseNodes(elements)
         if(mutableModel.deep > 0){
             var log = String.init(repeating: "✦✦", count: mutableModel.deep)
             log += "parsing -- index : \(mutableModel.index) + deep : \(mutableModel.deep) + name : \(mutableModel.name)"
+            print(log)
+        }
+        else {
+            var log = String.init(repeating: "❤️", count: 0)
+            log += "parsing root with name : \(mutableModel.name)"
             print(log)
         }
         
         
         if mutableModel.element.childElements.count > 0  {
             for (index, ele) in mutableModel.element.childElements.enumerated() {
-                var model = SVGDataModel.init(element: ele, index: index, code: "")
+                let model = SVGDataModel.init(element: ele, index: index, code: "")
                 model.parentName = mutableModel.name
                 model.index = index
                 model.frame = mutableModel.frame
+                model.parentNode = mutableModel
                 if(mutableModel.deep < 0){
-                    model.deep = 1
-                    model.name = mutableModel.name
+                    model.deep = 0
+                    model.name = mutableModel.name.swiftStr()
                 }
                 else {
                     model.deep = mutableModel.deep + 1
+                    model.name = "mainLayer\(index)\(model.deep)"
                 }
                 
                 let newModel = self.parseElements(model)
-                mutableModel.childs.append(newModel)
+                if(newModel.type != .unsuported && newModel.type != .parselater && newModel.type != .style) {
+                    if newModel.type == .defs {
+                        mutableModel.addDefine(newModel)
+                    }
+                    else if newModel.type == .clipPath {
+                        mutableModel.addClipPath(newModel)
+                    }
+                    else { mutableModel.childs.append(newModel) }
+                }
             }
         }
         return mutableModel
@@ -60,6 +87,13 @@ class SVGXMLManager {
     
     func parseNodes(_ element:SVGDataModel) -> SVGDataModel{
         var model = element.clone()
+        if let style = model.element.attributes["class"] {
+            print("class = \(style)")
+            model.style = style
+        }
+        if let id = model.element.attributes["id"] {
+            model.id = id
+        }
         
         if model.element.name == SVGElementName.circle.rawValue {
             model = self.makeCircle(model)
@@ -70,7 +104,6 @@ class SVGXMLManager {
             model.type = .clipPath
         }
         else if model.element.name == SVGElementName.defs.rawValue {
-            
             model = self.makeDefs(model)
             model.type = .defs
         }
@@ -122,12 +155,26 @@ class SVGXMLManager {
             model.type = .svg
         }
         else if model.element.name == SVGElementName.style.rawValue {
-            if let text = model.element.text {
-                self.cssText = text
-            }
+            model = self.makeStyle(model)
+            model.type = .style
         }
         else {
-            print("\(model.element.name) is not supported")
+            if let pName = model.element.parentElement?.name {
+                if pName == SVGElementName.defs.rawValue ||
+                    pName == SVGElementName.radialGradient.rawValue ||
+                    pName == SVGElementName.clipPath.rawValue {
+                    model.type = .parselater
+                    print("\(model.element.name) will parse later")
+                }
+                else {
+                    model.type = .unsuported
+                    print("\(model.element.name) is not supported")
+                }
+            }
+            else {
+                model.type = .unsuported
+                print("\(model.element.name) is not supported")
+            }
         }
         
         return model
@@ -145,92 +192,126 @@ class SVGXMLManager {
         return SVGDataModel()
     }
     
+    //MARK:--
+    //MARK: Parse XML Element
+    
     private func makeCircle(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "path\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "path\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeCircle(model)
         return model
     }
     
     private func makeClipPath(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "path\(model.index)\(model.deep)"
-        model.code = CodeSVG.shared.makeClipPath(model)
+        let model = element.clone()
+        model.name = "mask\(model.parentId)\(model.index)\(model.deep)"
+        var pathData = [CodeGroup]()
+        if model.element.childElements.count > 0 {
+            
+            for (index, ele) in model.element.childElements.enumerated(){
+                let maskmodel = SVGDataModel.init("pMask\(model.index)\(model.deep)\(index)")
+                maskmodel.element = ele
+                maskmodel.deep = model.deep + 1
+                maskmodel.parentNode = model
+                if ele.name == SVGElementName.path.rawValue {
+                    maskmodel.type = SVGElementName.init(rawValue: ele.name)!
+                    let code = CodeSVG.shared.makePath(maskmodel)
+                    pathData.append((maskmodel.name,code))
+                }
+                else if ele.name == SVGElementName.circle.rawValue {
+                    maskmodel.type = SVGElementName.init(rawValue: ele.name)!
+                    let code = CodeSVG.shared.makeCircle(maskmodel)
+                    pathData.append((maskmodel.name,code))
+                }
+                else if ele.name == SVGElementName.ellipse.rawValue {
+                    maskmodel.type = SVGElementName.init(rawValue: ele.name)!
+                    let code = CodeSVG.shared.makeEllipse(maskmodel)
+                    pathData.append((maskmodel.name,code))
+                }
+                else if ele.name == SVGElementName.polygon.rawValue {
+                    maskmodel.type = SVGElementName.init(rawValue: ele.name)!
+                    let code = CodeSVG.shared.makePolygon(maskmodel)
+                    pathData.append((maskmodel.name,code))
+                }
+            }
+        }
+        
+        model.code = CodeSVG.shared.makeClipPath(model, childs: pathData)
         return model
     }
     
     private func makeDefs(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "path\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "path\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeDefs(model)
         return model
     }
     
     private func makeEllipse(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "path\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "path\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeEllipse(model)
         return model
     }
     
     private func makeGraph(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "shape\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "shape\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeGrapth(model)
         return model
     }
     
     private func makeGlyph(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "path\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "path\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeGlyph(model)
         return model
     }
     
     private func makeLine(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "line\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "line\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeLine(model)
         return model
     }
     
     private func makePath(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "path\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "path\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makePath(model)
         return model
     }
     
     private func makePolygon(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "polygon\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "polygon\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makePolygon(model)
         return model
     }
     
     private func makePolyline(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "padialgradient\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "pradialgradient\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makePolyline(model)
         return model
     }
     
     private func makeRadialGradient(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "polyline\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "polyline\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeRadialGradient(model)
         return model
     }
     
     private func makeRect(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
-        model.name = "rect\(model.index)\(model.deep)"
+        let model = element.clone()
+        model.name = "rect\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeRect(model)
         return model
     }
     
     private func makeSvg(_ element:SVGDataModel) -> SVGDataModel {
-        var model = element.clone()
+        let model = element.clone()
         if model.deep > 0{
             model.name = "svg\(model.index)\(model.deep)"
         }
@@ -255,6 +336,9 @@ class SVGXMLManager {
     
     private func makeStyle(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
+        model.name = "style\(model.index)\(model.deep)"
+        model.code = model.element.text ?? ""
+        self.rootStyle = StyleSheet(string: model.code)!
         return model
     }
     

@@ -47,6 +47,8 @@ enum SVGElementName:String {
     case radialGradient = "radialGradient"
     case rect           = "rect"
     case style          = "style"
+    case unsuported     = "unsuported"
+    case parselater     = "parselater"
     
     func alls()->[SVGElementName] {
         return [SVGElementName.circle, SVGElementName.clipPath, SVGElementName.defs, SVGElementName.ellipse, SVGElementName.g, SVGElementName.glyph, SVGElementName.line, SVGElementName.path, SVGElementName.polygon, SVGElementName.polyline, SVGElementName.radialGradient, SVGElementName.rect, SVGElementName.svg, SVGElementName.style];
