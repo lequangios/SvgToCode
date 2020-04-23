@@ -91,72 +91,70 @@ class SVGXMLManager {
             print("class = \(style)")
             model.style = style
         }
+        
         if let id = model.element.attributes["id"] {
             model.id = id
         }
         
+        if let namelayer = model.element.attributes["name"]{
+            model.layerName = namelayer
+        }
+        
         if model.element.name == SVGElementName.circle.rawValue {
-            model = self.makeCircle(model)
             model.type = .circle
+            model = self.makeCircle(model)
         }
         else if model.element.name == SVGElementName.clipPath.rawValue {
-            model = self.makeClipPath(model)
             model.type = .clipPath
+            model = self.makeClipPath(model)
         }
         else if model.element.name == SVGElementName.defs.rawValue {
-            model = self.makeDefs(model)
             model.type = .defs
+            model = self.makeDefs(model)
         }
         else if model.element.name == SVGElementName.ellipse.rawValue {
-            
-            model = self.makeEllipse(model)
             model.type = .ellipse
+            model = self.makeEllipse(model)
         }
         else if model.element.name == SVGElementName.g.rawValue {
-            
-            model = self.makeGraph(model)
             model.type = .g
+            model = self.makeGraph(model)
         }
         else if model.element.name == SVGElementName.glyph.rawValue {
-            
-            model = self.makeGlyph(model)
             model.type = .glyph
+            model = self.makeGlyph(model)
         }
         else if model.element.name == SVGElementName.line.rawValue {
-            
-            model = self.makeLine(model)
             model.type = .line
+            model = self.makeLine(model)
         }
         else if model.element.name == SVGElementName.path.rawValue {
-            
-            model = self.makePath(model)
             model.type = .path
+            model = self.makePath(model)
         }
         else if model.element.name == SVGElementName.polygon.rawValue {
-            
-            model = self.makePolygon(model)
             model.type = .polygon
+            model = self.makePolygon(model)
         }
         else if model.element.name == SVGElementName.polyline.rawValue {
-            
-            model = self.makePolyline(model)
             model.type = .polyline
+            model = self.makePolyline(model)
         }
         else if model.element.name == SVGElementName.radialGradient.rawValue {
-            model = self.makeRadialGradient(model)
             model.type = .radialGradient
+            model = self.makeRadialGradient(model)
         }
         else if model.element.name == SVGElementName.rect.rawValue {
-            model = self.makeRect(model)
             model.type = .rect
+            model = self.makeRect(model)
         }
         else if model.element.name == SVGElementName.svg.rawValue {
-            model = self.makeSvg(model)
             model.type = .svg
+            model = self.makeSvg(model)
         }
         else if model.element.name == SVGElementName.style.rawValue {
-            model = self.makeStyle(model)
             model.type = .style
+            model = self.makeStyle(model)
         }
         else {
             if let pName = model.element.parentElement?.name {
@@ -197,14 +195,14 @@ class SVGXMLManager {
     
     private func makeCircle(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "path\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(element.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeCircle(model)
         return model
     }
     
     private func makeClipPath(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "mask\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(model.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         var pathData = [CodeGroup]()
         if model.element.childElements.count > 0 {
             
@@ -249,63 +247,63 @@ class SVGXMLManager {
     
     private func makeEllipse(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "path\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(element.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeEllipse(model)
         return model
     }
     
     private func makeGraph(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "shape\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(element.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeGrapth(model)
         return model
     }
     
     private func makeGlyph(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "path\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(element.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeGlyph(model)
         return model
     }
     
     private func makeLine(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "line\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(element.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeLine(model)
         return model
     }
     
     private func makePath(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "path\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(element.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makePath(model)
         return model
     }
     
     private func makePolygon(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "polygon\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(element.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makePolygon(model)
         return model
     }
     
     private func makePolyline(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "pradialgradient\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(element.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makePolyline(model)
         return model
     }
     
     private func makeRadialGradient(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "polyline\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(element.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeRadialGradient(model)
         return model
     }
     
     private func makeRect(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
-        model.name = "rect\(model.parentId)\(model.index)\(model.deep)"
+        model.name = "\(element.type.rawValue)\(model.parentId)\(model.index)\(model.deep)"
         model.code = CodeSVG.shared.makeRect(model)
         return model
     }
@@ -313,10 +311,10 @@ class SVGXMLManager {
     private func makeSvg(_ element:SVGDataModel) -> SVGDataModel {
         let model = element.clone()
         if model.deep > 0{
-            model.name = "svg\(model.index)\(model.deep)"
+            model.name = "\(element.type.rawValue)\(model.index)\(model.deep)"
         }
         else {
-            model.name = "beginLayer"
+            model.name = "\(element.type.rawValue)"
         }
         
         if let viewBox = element.element.attributes["viewBox"] {

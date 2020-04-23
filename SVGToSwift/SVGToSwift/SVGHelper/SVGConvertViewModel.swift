@@ -69,6 +69,7 @@ class SVGConvertViewModel {
         code.langName = self.langType
         
         self.rootModel = manager.parseXMLFile(self.shapeName)
+        if SVGXMLManager.shared.rootStyle == nil { SVGXMLManager.shared.rootStyle = StyleSheet.init() }
         return CodeSVG.shared.langName.type().parseModel(self.rootModel, SVGXMLManager.shared.rootStyle, 0)
     }
     

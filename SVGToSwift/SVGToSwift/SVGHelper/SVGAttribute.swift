@@ -49,9 +49,10 @@ enum SVGElementName:String {
     case style          = "style"
     case unsuported     = "unsuported"
     case parselater     = "parselater"
+    case mask           = "mask"
     
     func alls()->[SVGElementName] {
-        return [SVGElementName.circle, SVGElementName.clipPath, SVGElementName.defs, SVGElementName.ellipse, SVGElementName.g, SVGElementName.glyph, SVGElementName.line, SVGElementName.path, SVGElementName.polygon, SVGElementName.polyline, SVGElementName.radialGradient, SVGElementName.rect, SVGElementName.svg, SVGElementName.style];
+        return [SVGElementName.svg, SVGElementName.circle, SVGElementName.clipPath, SVGElementName.defs, SVGElementName.ellipse, SVGElementName.g, SVGElementName.glyph, SVGElementName.line, SVGElementName.path, SVGElementName.polygon, SVGElementName.polyline, SVGElementName.radialGradient, SVGElementName.rect,  SVGElementName.style];
     }
 }
 
