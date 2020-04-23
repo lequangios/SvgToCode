@@ -45,17 +45,25 @@ final class SwiftCode : CodeMaker {
     }
     
     func makeGrapth(_ name: String, _ model: SVGDataModel) -> String {
-        var code = "// 👉 Make shape \n"
-        code += "let \(model.name) = CAShapeLayer()\n"
+        var code = "\nlet \(model.name) = CAShapeLayer()\n"
         code += "\(model.name).frame = CGRect(x: \(model.frame.origin.x), y: \(model.frame.origin.y), width: \(model.frame.size.width), height: \(model.frame.size.height))\n"
-        code += "\(model.name).name = \(model.name.swiftStr())\n"
+        if let namelayer = model.layerName {
+            code += "\(model.name).name = \(namelayer.swiftStr())\n"
+        }
+        else {
+            code += "\(model.name).name = \(model.name.swiftStr())\n"
+        }
+        
         return code
     }
     
     func makeSVG(_ model:SVGDataModel)->String {
-        var code = "let \(model.name) = CAShapeLayer()\n"
+        var code = "\nlet \(model.name) = CAShapeLayer()\n"
         code += "\(model.name).frame = CGRect(x: \(model.frame.origin.x), y: \(model.frame.origin.y), width: \(model.frame.size.width), height: \(model.frame.size.height))\n"
         code += "\(model.name).name = \(model.name.swiftStr())\n"
+        code += "let viewSize = \(model.name).frame.size\n"
+        code += "let affine = CGAffineTransform.init(translationX: (UIScreen.main.bounds.size.width-viewSize.width)/2, y: (UIScreen.main.bounds.size.height-viewSize.height)/2)\n"
+        code += "\(model.name).setAffineTransform(affine)\n"
         return code
     }
     
@@ -65,12 +73,12 @@ final class SwiftCode : CodeMaker {
     }
     
     func makeClipPath(_ model:SVGDataModel, childs:[CodeGroup]) -> String {
-        var code = "let \(model.name) = CAShapeLayer()\n"
+        var code = "\nlet \(model.name) = CAShapeLayer()\n"
         if childs.count > 0 {
             if childs.count == 1 {
                 let ele = childs[0] as CodeGroup
                 code += ele.code
-                code += "\(model.name).path = \(ele.name).cgPath\n\n"
+                code += "\(model.name).path = \(ele.name).cgPath\n"
             }
             else {
                 code += "let \(model.name)_path = CGMutablePath()\n"
@@ -78,7 +86,7 @@ final class SwiftCode : CodeMaker {
                     code += ele.code
                     code += "\(model.name)_path.addPath(\(ele.name).cgPath)\n"
                 }
-                code += "\(model.name).path = \(model.name).cgPath\n\n"
+                code += "\(model.name).path = \(model.name).cgPath\n"
             }
         }
         return code
@@ -114,7 +122,25 @@ final class SwiftCode : CodeMaker {
     }
     
     func makeRadialGradient(_ model:SVGDataModel, _ colors:[String], _ locations:[NSNumber], _ point:CGPoint, _ radius:Double) -> String {
-        return ""
+        let newcolor = colors.map { (ele) -> String in
+            return "\(ele.swiftStr()).colorValue.cgColor"
+        }
+        
+        let newlocation = locations.map { (ele) -> String in
+            return "\(ele.doubleValue)"
+        }
+        
+        var code = "let \(model.name)Mask = CAShapeLayer()\n"
+        code += "\(model.name)Mask.path = UIBezierPath(circle: CGPoint(x: \(point.x), y: \(point.y)), radius: \(radius)).cgPath\n"
+        code += "\(model.name)Mask.strokeColor = UIColor.clear.cgColor\n"
+        code += "\(model.name)Mask.fillColor = UIColor.clear.cgColor\n"
+        code += "let \(model.name) = CAGradientLayer()\n"
+        code += "\(model.name).startPoint = CGPoint(x: 0.0, y: 0.0)\n"
+        code += "\(model.name).endPoint = CGPoint(x: 1.0, y: 1.0)\n"
+        code += "\(model.name).mask = \(model.name)Mask\n"
+        code += "\(model.name).colors = [\(newcolor.joined(separator: ","))]\n"
+        code += "\(model.name).locations = [\(newlocation.joined(separator: ","))]\n"
+        return code
     }
     
     func makePolygon(_ model:SVGDataModel, _ points:[CGPoint])->String {
@@ -133,8 +159,37 @@ final class SwiftCode : CodeMaker {
     func parseModel(_ model:SVGDataModel, _ style:StyleSheet, _ deep:Int) -> String {
         model.printModel("\(deep)")
         var code = model.code
+        for child in model.childs {
+            if child.isPath {
+                code += child.code
+                let name = "\(model.type.rawValue)\(child.name.trim(child.type.rawValue))"
+                code += "let \(name) = CAShapeLayer()\n"
+                code += "\(name).path = \(child.name).cgPath\n"
+                child.name = name
+                code += applyShapeStyle(child, style)
+                code += "\(model.name).addSublayer(\(child.name))\n\n"
+            }
+            else if child.isShape {
+                code += self.parseModel(child, style, deep+1)
+                code += applyShapeStyle(child, style)
+                code += "\(model.name).addSublayer(\(child.name))\n\n"
+            }
+        }
+        
+        /*
         let childPaths = model.childs.findPaths()
         if(childPaths.count > 0) {
+            for path in childPaths {
+                code += path.code
+                let name = "\(model.type.rawValue)\(path.name.trim(path.type.rawValue))"
+                code += "let \(name) = CAShapeLayer()\n"
+                code += "\(name).path = \(path.name).cgPath\n\n"
+                path.name = name
+                code += applyShapeStyle(path, style)
+                code += "\(model.name).addSublayer(\(path.name))\n"
+            }
+            
+        
             if childPaths.count >= 2 {
                 code += "let \(model.name)_path = CGMutablePath()\n"
                 code += "\n\n"
@@ -152,6 +207,7 @@ final class SwiftCode : CodeMaker {
                 code += applyPathStyle(childPaths.first!, style)
                 code += "\(model.name).path = \(childPaths.first!.name).cgPath\n\n"
             }
+        
         }
         
         let childShapes = model.childs.findShape()
@@ -162,7 +218,7 @@ final class SwiftCode : CodeMaker {
                 code += "\(model.name).addSublayer(\(item.name))\n"
             }
         }
-        
+        */
         return code
     }
     
@@ -170,7 +226,7 @@ final class SwiftCode : CodeMaker {
     //MARK: Apply Style to Draw
     private func applyStyle(_ model:SVGDataModel, _ style:StyleSheet) -> String {
         var code = ""
-        if model.isShape() {
+        if model.isShape {
             code += applyShapeStyle(model, style)
         }
         else {
@@ -236,6 +292,10 @@ final class SwiftCode : CodeMaker {
             code += "\(model.name).fill(\"#\(fillColor)\")\n"
         }
         
+        if let name = shapeAttribute.name {
+            code += "\(model.name).name = \(name.swiftStr())\n"
+        }
+        
         if shapeAttribute.fillRule != .nonZero {
             code += "\(model.name).fillRule = CAShapeLayerFillRule.evenOdd\n"
         }
@@ -271,7 +331,7 @@ final class SwiftCode : CodeMaker {
         }
         
         if let strokeColor = shapeAttribute.strokeColor {
-            code += "\(model.name).strokeColor = \"#\(strokeColor)\".colorValue.CGColor\n"
+            code += "\(model.name).strokeColor = \"#\(strokeColor)\".colorValue.cgColor\n"
         }
         
         if shapeAttribute.opacity != 1 {

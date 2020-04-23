@@ -15,6 +15,7 @@ class SVGDataModel {
     var id:String = ""
     var styles:[String] = []
     var style = ""
+    var layerName:String?
     var element:XML.Element!
     var parentElement:XML.Element!
     var parentNode:SVGDataModel?
@@ -30,6 +31,7 @@ class SVGDataModel {
     var clipPaths:[SVGDataModel] = []
     var definePaths:[SVGDataModel] = []
     var isRootNode = true
+    var isMask = false
     
     init(){
         name = "no-name"
@@ -61,17 +63,27 @@ class SVGDataModel {
         name = "copy_of_\(model.name)"
         deep = model.deep
         type = model.type
+        layerName = model.layerName
         isRootNode = false
     }
     
     var parentId:String {
         if let parent = self.parentNode {
-            if parent.isShape() {
-                return parent.name.trim("shape")
+            if parent.isShape {
+                return parent.name.trim(parent.type.rawValue)
             }
         }
         return ""
     }
+    
+    var isPath:Bool {
+        return type != .g && type != .style && type != .svg && type != .radialGradient
+    }
+    
+    var isShape:Bool {
+        return type == .g || type == .svg || type == .glyph || type == .radialGradient
+    }
+    
     deinit {
         print("💀 deinit \(self.name) \n")
         element = nil
@@ -85,11 +97,6 @@ extension SVGDataModel {
         model.childs = []
         model.code = ""
         return model
-    }
-    
-    func isShape()->Bool {
-        if type == .g || type == .svg || type == .glyph { return true }
-        else { return false }
     }
     
     func printModel(_ position:String = ""){
@@ -139,7 +146,6 @@ extension SVGDataModel {
         else {
             shapeAttribute = ShapeAttributeModel(self)
         }
-        
         return shapeAttribute
     }
     

@@ -11,6 +11,14 @@ import Cocoa
 
 
 extension String {
+    var colorPrefix: String { return "#" }
+    
+    func isHexColorString()->Bool{
+        let check = "#[0-9A-Fa-f]{3}|#[0-9A-Fa-f]{6}"
+        let check_value = NSPredicate(format:"SELF MATCHES %@", check)
+        return check_value.evaluate(with: self)
+    }
+    
     func arraySubString(_ char:Character) -> [String] {
         let sliptStr = self.split(separator: char)
         var arr = sliptStr.map { return String($0) }
@@ -20,6 +28,10 @@ extension String {
     
     func trim(_ prefix: String) -> String {
         return hasPrefix(prefix) ? String(self.dropFirst(prefix.count)) : self
+    }
+    
+    func trimlast(_ suffix: String) -> String {
+        return hasSuffix(suffix) ? String(self.dropLast(suffix.count)) : self
     }
     
     func swiftHex()->String { return "\"#\(self)\"" }

@@ -11,6 +11,7 @@ import CoreGraphics
 import QuartzCore
 
 struct ShapeAttributeModel {
+    var name:String?
     var fillColor:String?
     var fillRule:CAShapeLayerFillRule = .nonZero
     var lineCap:CAShapeLayerLineCap = .butt
@@ -38,6 +39,7 @@ struct ShapeAttributeModel {
         self.strokeStart = attribute.strokeStart
         self.strokeEnd = attribute.strokeEnd
         self.opacity = attribute.opacity
+        self.name = attribute.name
         
         self.isFillByShape = attribute.isFillByShape
         self.shapeFillId = attribute.shapeFillId
@@ -60,7 +62,7 @@ struct ShapeAttributeModel {
                 self.shapeFillId = String(shapes[1]).replacingOccurrences(of: ")", with: "")
             }
             else {
-                self.fillColor = fill
+                self.fillColor = fill.trim("#")
             }
         }
         
@@ -100,7 +102,7 @@ struct ShapeAttributeModel {
         }
         
         if let stroke_color = model.element.attributes["stroke"] {
-            self.strokeColor = stroke_color
+            self.strokeColor = stroke_color.trim("#")
         }
     }
     
@@ -108,6 +110,10 @@ struct ShapeAttributeModel {
         self.init(attribute)
         if let opacity = model.element.attributes["opacity"] {
             self.opacity = CGFloat(opacity.doubleValue)
+        }
+        
+        if let name = model.element.attributes["name"]{
+            self.name = name
         }
         
         if let fill = model.element.attributes["fill"] {
@@ -118,7 +124,7 @@ struct ShapeAttributeModel {
                 self.shapeFillId = String(shapes[1]).replacingOccurrences(of: ")", with: "")
             }
             else {
-                self.fillColor = fill
+                self.fillColor = fill.trim("#")
             }
         }
         
@@ -158,7 +164,7 @@ struct ShapeAttributeModel {
         }
         
         if let stroke_color = model.element.attributes["stroke"] {
-            self.strokeColor = stroke_color
+            self.strokeColor = stroke_color.trim("#")
         }
     }
 }
