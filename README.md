@@ -16,8 +16,14 @@ SVG is similar to Adobe's proprietary Flash technology, but it is a text-based o
 
 ### What is SVGToCode ?
 
-**SVGToCode** is an OS X software. It will help you generate the readable source code then you can modify base on purpose of your project.
+`-` **SVGToCode** is an OS X software. It will help you generate the readable source code then you can modify base on purpose of your project.
 
 ![SVGToCode logo](Document/p.png)
 
 
+`-` **SVGToCode** is compatible with SVG file export from **Adobe Illustrator** :
+
+
+![SVGToCode logo](Document/p1.png)
+
+![SVGToCode logo](Document/p2.png)
