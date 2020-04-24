@@ -46,7 +46,7 @@ final class SwiftCode : CodeMaker {
     
     func makeGrapth(_ name: String, _ model: SVGDataModel) -> String {
         var code = "\nlet \(model.name) = CAShapeLayer()\n"
-        code += "\(model.name).frame = CGRect(x: \(model.frame.origin.x), y: \(model.frame.origin.y), width: \(model.frame.size.width), height: \(model.frame.size.height))\n"
+        //code += "\(model.name).frame = CGRect(x: \(model.frame.origin.x), y: \(model.frame.origin.y), width: \(model.frame.size.width), height: \(model.frame.size.height))\n"
         if let namelayer = model.layerName {
             code += "\(model.name).name = \(namelayer.swiftStr())\n"
         }
@@ -159,15 +159,28 @@ final class SwiftCode : CodeMaker {
     func parseModel(_ model:SVGDataModel, _ style:StyleSheet, _ deep:Int) -> String {
         model.printModel("\(deep)")
         var code = model.code
+        let childPaths = model.childs.findPaths()
+        var isOnePath = false
+        if childPaths.count == 1 {
+            isOnePath = true
+        }
+        
         for child in model.childs {
             if child.isPath {
                 code += child.code
-                let name = "\(model.type.rawValue)\(child.name.trim(child.type.rawValue))"
-                code += "let \(name) = CAShapeLayer()\n"
-                code += "\(name).path = \(child.name).cgPath\n"
-                child.name = name
-                code += applyShapeStyle(child, style)
-                code += "\(model.name).addSublayer(\(child.name))\n\n"
+                if isOnePath == false {
+                    let name = "\(model.type.rawValue)\(child.name.trim(child.type.rawValue))"
+                    code += "let \(name) = CAShapeLayer()\n"
+                    code += "\(name).path = \(child.name).cgPath\n"
+                    child.name = name
+                    code += applyShapeStyle(child, style)
+                    code += "\(model.name).addSublayer(\(child.name))\n\n"
+                }
+                else {
+                    code += "\(model.name).path = \(child.name).cgPath\n"
+                    code += applyShapeStyle(model, style)
+                }
+                
             }
             else if child.isShape {
                 code += self.parseModel(child, style, deep+1)
@@ -287,7 +300,13 @@ final class SwiftCode : CodeMaker {
     
     private func applyShapeStyle(_ model:SVGDataModel, _ style:StyleSheet) -> String {
         var code = ""
-        let shapeAttribute = model.getShapeAttributeModel(style)
+        var shapeAttribute = model.getShapeAttributeModel(style)
+        if shapeAttribute.isDefault == true {
+            if let parent = model.parentNode {
+                shapeAttribute = parent.getShapeAttributeModel(style)
+            }
+        }
+        
         if let fillColor = shapeAttribute.fillColor {
             code += "\(model.name).fill(\"#\(fillColor)\")\n"
         }

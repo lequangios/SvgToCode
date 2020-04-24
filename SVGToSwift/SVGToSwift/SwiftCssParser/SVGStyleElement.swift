@@ -78,6 +78,7 @@ class SVGStyleElement: StyleElement, Equatable {
         
         if let opacity = properties?["opacity"]?.value {
             attribute.opacity = CGFloat(opacity.doubleValue)
+            attribute.isDefault = false
         }
         
         if let fill = properties?["fill"]?.value {
@@ -90,6 +91,7 @@ class SVGStyleElement: StyleElement, Equatable {
             else {
                 attribute.fillColor = fill
             }
+            attribute.isDefault = false
         }
         
         if let fill_rule = properties?["fill-rule"]?.value  {
@@ -99,6 +101,7 @@ class SVGStyleElement: StyleElement, Equatable {
             else if fill_rule == "evenodd" {
                 attribute.fillRule = .evenOdd
             }
+            attribute.isDefault = false
         }
         
         if let line_cap = properties?["stroke-linecap"]?.value {
@@ -108,6 +111,7 @@ class SVGStyleElement: StyleElement, Equatable {
             else if line_cap == "square" {
                 attribute.lineCap = .square
             }
+            attribute.isDefault = false
         }
         
         if let line_join = properties?["stroke-linejoin"]?.value {
@@ -117,18 +121,22 @@ class SVGStyleElement: StyleElement, Equatable {
             else if line_join == "round" {
                 attribute.lineJoin = .round
             }
+            attribute.isDefault = false
         }
         
         if let line_width = properties?["stroke-width"]?.value {
             attribute.lineWidth = CGFloat(line_width.doubleValue)
+            attribute.isDefault = false
         }
         
         if let miter_limit = properties?["stroke-miterlimit"]?.value {
             attribute.miterLimit = CGFloat(miter_limit.doubleValue)
+            attribute.isDefault = false
         }
         
         if let stroke_color = properties?["stroke"]?.value {
             attribute.strokeColor = stroke_color
+            attribute.isDefault = false
         }
         
         return attribute

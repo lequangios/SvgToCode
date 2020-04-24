@@ -1,3 +1,8 @@
+<p align="center">
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-Swift%205-f48041.svg?style=flat"></a>
+<a href="https://github.com/wxxsw/Refresh/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
+</p>
+
 # SvgToCode
 
 ![SVGToCode logo](Document/icon.png)
@@ -27,3 +32,13 @@ SVG is similar to Adobe's proprietary Flash technology, but it is a text-based o
 ![SVGToCode logo](Document/p1.png)
 
 ![SVGToCode logo](Document/p2.png)
+
+# License
+
+`-` **SvgToCode** is released under the MIT license. [See LICENSE](https://github.com/wxxsw/Refresh/blob/master/LICENSE) for details.
+
+`-` Love **SvgToCode** ? Please consider donating to sustain our activities ? Please consider [donating](https://www.paypal.me/lequang1988) to sustain my activities.
+<p align="center">
+<a href="https://www.paypal.me/lequang1988"><img width="100px" src="Document/donate.png"></a>
+</p>
+

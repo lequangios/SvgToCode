@@ -26,6 +26,7 @@ struct ShapeAttributeModel {
     
     var isFillByShape:Bool = false
     var shapeFillId:String = ""
+    var isDefault:Bool = true
     
     init(_ attribute:ShapeAttributeModel) {
         self.fillColor = attribute.fillColor
@@ -64,6 +65,7 @@ struct ShapeAttributeModel {
             else {
                 self.fillColor = fill.trim("#")
             }
+            self.isDefault = false
         }
         
         if let fill_rule = model.element.attributes["fill-rule"] {
@@ -73,6 +75,7 @@ struct ShapeAttributeModel {
             else if fill_rule == "evenodd" {
                 self.fillRule = .evenOdd
             }
+            self.isDefault = false
         }
         
         if let line_cap = model.element.attributes["stroke-linecap"] {
@@ -82,6 +85,7 @@ struct ShapeAttributeModel {
             else if line_cap == "square" {
                 self.lineCap = .square
             }
+            self.isDefault = false
         }
         
         if let line_join = model.element.attributes["stroke-linejoin"] {
@@ -91,18 +95,22 @@ struct ShapeAttributeModel {
             else if line_join == "round" {
                 self.lineJoin = .round
             }
+            self.isDefault = false
         }
         
         if let line_width = model.element.attributes["stroke-width"] {
             self.lineWidth = CGFloat(line_width.doubleValue)
+            self.isDefault = false
         }
         
         if let miter_limit = model.element.attributes["stroke-miterlimit"] {
             self.miterLimit = CGFloat(miter_limit.doubleValue)
+            self.isDefault = false
         }
         
         if let stroke_color = model.element.attributes["stroke"] {
             self.strokeColor = stroke_color.trim("#")
+            self.isDefault = false
         }
     }
     
@@ -110,10 +118,12 @@ struct ShapeAttributeModel {
         self.init(attribute)
         if let opacity = model.element.attributes["opacity"] {
             self.opacity = CGFloat(opacity.doubleValue)
+            self.isDefault = false
         }
         
         if let name = model.element.attributes["name"]{
             self.name = name
+            self.isDefault = false
         }
         
         if let fill = model.element.attributes["fill"] {
@@ -126,6 +136,7 @@ struct ShapeAttributeModel {
             else {
                 self.fillColor = fill.trim("#")
             }
+            self.isDefault = false
         }
         
         if let fill_rule = model.element.attributes["fill-rule"] {
@@ -135,6 +146,7 @@ struct ShapeAttributeModel {
             else if fill_rule == "evenodd" {
                 self.fillRule = .evenOdd
             }
+            self.isDefault = false
         }
         
         if let line_cap = model.element.attributes["stroke-linecap"] {
@@ -144,6 +156,7 @@ struct ShapeAttributeModel {
             else if line_cap == "square" {
                 self.lineCap = .square
             }
+            self.isDefault = false
         }
         
         if let line_join = model.element.attributes["stroke-linejoin"] {
@@ -153,18 +166,22 @@ struct ShapeAttributeModel {
             else if line_join == "round" {
                 self.lineJoin = .round
             }
+            self.isDefault = false
         }
         
         if let line_width = model.element.attributes["stroke-width"] {
             self.lineWidth = CGFloat(line_width.doubleValue)
+            self.isDefault = false
         }
         
         if let miter_limit = model.element.attributes["stroke-miterlimit"] {
             self.miterLimit = CGFloat(miter_limit.doubleValue)
+            self.isDefault = false
         }
         
         if let stroke_color = model.element.attributes["stroke"] {
             self.strokeColor = stroke_color.trim("#")
+            self.isDefault = false
         }
     }
 }
