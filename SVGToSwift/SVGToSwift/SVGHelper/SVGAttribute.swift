@@ -17,7 +17,7 @@ enum LanguageName : String {
     case Js = "Javascript Canvas"
     
     func all() -> [LanguageName] {
-        return [LanguageName.Swift, LanguageName.Obj, LanguageName.Js];
+        return [LanguageName.Swift];
     }
     
     func type()->CodeMaker{
@@ -53,6 +53,9 @@ enum SVGElementName:String {
     
     func alls()->[SVGElementName] {
         return [SVGElementName.svg, SVGElementName.circle, SVGElementName.clipPath, SVGElementName.defs, SVGElementName.ellipse, SVGElementName.g, SVGElementName.glyph, SVGElementName.line, SVGElementName.path, SVGElementName.polygon, SVGElementName.polyline, SVGElementName.radialGradient, SVGElementName.rect,  SVGElementName.style];
+    }
+    func support()->[SVGElementName] {
+        return [SVGElementName.svg]
     }
 }
 

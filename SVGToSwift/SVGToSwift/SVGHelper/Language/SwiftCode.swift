@@ -13,6 +13,7 @@ final class SwiftCode : CodeMaker {
     
     static let shared = SwiftCode()
     
+    
     internal func makeRect(_ rect:CGRect, _ name:String, _ model:SVGDataModel = SVGDataModel())->String{
         let code = "let \(name) = UIBezierPath(rect: CGRect(x: \(rect.origin.x), y: \(rect.origin.y), width: \(rect.size.width), height: \(rect.size.height)))\n"
         return code
@@ -235,6 +236,16 @@ final class SwiftCode : CodeMaker {
         return code
     }
     
+    func getCode(_ model:SVGDataModel, _ style:StyleSheet) -> String {
+        let code = parseModel(model, style, 0)
+        return """
+\(swiftExtensionTemplate)
+\(swiftHeaderTemplate(model.name))
+    \(code)
+\(swiftFooterTemplate(model.name))
+"""
+    }
+    
     //MARK:--
     //MARK: Apply Style to Draw
     private func applyStyle(_ model:SVGDataModel, _ style:StyleSheet) -> String {
@@ -308,7 +319,7 @@ final class SwiftCode : CodeMaker {
         }
         
         if let fillColor = shapeAttribute.fillColor {
-            code += "\(model.name).fill(\"#\(fillColor)\")\n"
+            code += "\(model.name).fill(\(fillColor.swiftHex()))\n"
         }
         
         if let name = shapeAttribute.name {
@@ -350,7 +361,7 @@ final class SwiftCode : CodeMaker {
         }
         
         if let strokeColor = shapeAttribute.strokeColor {
-            code += "\(model.name).strokeColor = \"#\(strokeColor)\".colorValue.cgColor\n"
+            code += "\(model.name).strokeColor = \(strokeColor.swiftHex()).colorValue.cgColor\n"
         }
         
         if shapeAttribute.opacity != 1 {

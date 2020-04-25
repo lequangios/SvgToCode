@@ -19,6 +19,18 @@ extension String {
         return check_value.evaluate(with: self)
     }
     
+    func mapToSixColorHex()-> String {
+        if self.isHexColorString() && self.count == 4 {
+            var colorhex = ""
+            let str = self.trim(self.colorPrefix)
+            for c in  str {
+                colorhex += "\(c)\(c)"
+            }
+            return colorhex
+        }
+        return self.trim(colorPrefix)
+    }
+    
     func arraySubString(_ char:Character) -> [String] {
         let sliptStr = self.split(separator: char)
         var arr = sliptStr.map { return String($0) }
@@ -34,7 +46,10 @@ extension String {
         return hasSuffix(suffix) ? String(self.dropLast(suffix.count)) : self
     }
     
-    func swiftHex()->String { return "\"#\(self)\"" }
+    func swiftHex()->String {
+        let hex = "#\(self)".mapToSixColorHex()
+        return "\"#\(hex)\""
+    }
     func swiftStr()->String { return "\"\(self)\"" }
     func objStr()->String {return "@\"\(self)\""}
 }

@@ -14,6 +14,7 @@
 		5A203B1F2449536700E1014F /* ShapeAttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A203B1E2449536700E1014F /* ShapeAttributeModel.swift */; };
 		5A203B21244954AE00E1014F /* PathAttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A203B20244954AE00E1014F /* PathAttributeModel.swift */; };
 		5A47E945243DF5E40083AFB7 /* CodeSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A47E944243DF5E40083AFB7 /* CodeSVG.swift */; };
+		5AB87ED32452EE4B007ACC08 /* SwiftTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB87ED22452EE4B007ACC08 /* SwiftTemplate.swift */; };
 		5ACA659A243DC17800EB36B1 /* SVGConvertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA6599243DC17800EB36B1 /* SVGConvertViewModel.swift */; };
 		5ACA659C243DCD6600EB36B1 /* NSError+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA659B243DCD6600EB36B1 /* NSError+SVG.swift */; };
 		5AD5D388243C87E20048AAA9 /* NSView+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5D387243C87E20048AAA9 /* NSView+SVG.swift */; };
@@ -48,6 +49,7 @@
 		5A203B1E2449536700E1014F /* ShapeAttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeAttributeModel.swift; sourceTree = "<group>"; };
 		5A203B20244954AE00E1014F /* PathAttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathAttributeModel.swift; sourceTree = "<group>"; };
 		5A47E944243DF5E40083AFB7 /* CodeSVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSVG.swift; sourceTree = "<group>"; };
+		5AB87ED22452EE4B007ACC08 /* SwiftTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTemplate.swift; sourceTree = "<group>"; };
 		5ACA6599243DC17800EB36B1 /* SVGConvertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGConvertViewModel.swift; sourceTree = "<group>"; };
 		5ACA659B243DCD6600EB36B1 /* NSError+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+SVG.swift"; sourceTree = "<group>"; };
 		5AD5D387243C87E20048AAA9 /* NSView+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+SVG.swift"; sourceTree = "<group>"; };
@@ -133,9 +135,18 @@
 			path = SwiftCssParser;
 			sourceTree = "<group>";
 		};
+		5AB87ED12452EE2A007ACC08 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				5AB87ED22452EE4B007ACC08 /* SwiftTemplate.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
 		5ACA659D243DD25900EB36B1 /* SVGHelper */ = {
 			isa = PBXGroup;
 			children = (
+				5AB87ED12452EE2A007ACC08 /* Template */,
 				5A0FA509243EB991005DFFC7 /* Language */,
 				65F8D5D021720B3D00C80E85 /* SVGAttribute.swift */,
 				65418D26214E3D8C00733EBE /* SVG2Swift.swift */,
@@ -340,6 +351,7 @@
 				5AD5D388243C87E20048AAA9 /* NSView+SVG.swift in Sources */,
 				5ADDE4A3216B536900442550 /* SVGXML.swift in Sources */,
 				5ACA659A243DC17800EB36B1 /* SVGConvertViewModel.swift in Sources */,
+				5AB87ED32452EE4B007ACC08 /* SwiftTemplate.swift in Sources */,
 				5ADF759A24486CBE004DA5EF /* StyleExtension.swift in Sources */,
 				5A47E945243DF5E40083AFB7 /* CodeSVG.swift in Sources */,
 				65418D27214E3D8C00733EBE /* SVG2Swift.swift in Sources */,

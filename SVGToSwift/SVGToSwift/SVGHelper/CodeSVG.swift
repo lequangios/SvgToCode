@@ -23,6 +23,7 @@ protocol CodeMaker {
     func makeSVG(_ model:SVGDataModel)->String
     func makeGrapth(_ name:String, _ model:SVGDataModel) -> String
     func parseModel(_ model:SVGDataModel, _ style:StyleSheet, _ deep:Int) -> String
+    func getCode(_ model:SVGDataModel, _ style:StyleSheet) -> String
 }
 
 class CodeSVG {
@@ -161,5 +162,9 @@ class CodeSVG {
     
     func parseModel(_ name:String, _ element:SVGDataModel, _ style:StyleSheet) -> String {
         return langName.type().parseModel(element, style, 0)
+    }
+    
+    func getCode(_ model:SVGDataModel, _ style:StyleSheet) -> String {
+        return langName.type().getCode(model, style)
     }
 }

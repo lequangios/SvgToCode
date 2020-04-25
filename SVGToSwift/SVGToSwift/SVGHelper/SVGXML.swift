@@ -87,6 +87,7 @@ class SVGXMLManager {
     
     func parseNodes(_ element:SVGDataModel) -> SVGDataModel{
         var model = element.clone()
+        
         if let style = model.element.attributes["class"] {
             print("class = \(style)")
             model.style = style

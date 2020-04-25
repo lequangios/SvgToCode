@@ -91,4 +91,8 @@ final class ObjCode : CodeMaker {
     func makeSVG(_ model:SVGDataModel)->String {
         return ""
     }
+    
+    func getCode(_ model:SVGDataModel, _ style:StyleSheet) -> String {
+        return ""
+    }
 }

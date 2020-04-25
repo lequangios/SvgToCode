@@ -119,8 +119,8 @@ class SVGConvertController: NSViewController {
         self.updateLangSelect(self.langSelect)
     }
     
-    func updateSelectType(_ popup:NSPopUpButton, ele:SVGElementName = SVGElementName.circle) {
-        for name in ele.alls() {
+    func updateSelectType(_ popup:NSPopUpButton, ele:SVGElementName = SVGElementName.svg) {
+        for name in ele.support() {
             if name != .unsuported && name != .parselater {
                 popup.addItem(withTitle: name.rawValue)
             }

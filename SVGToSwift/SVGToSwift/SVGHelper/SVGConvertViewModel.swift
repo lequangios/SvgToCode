@@ -9,7 +9,7 @@
 import Foundation
 
 class SVGConvertViewModel {
-    var svgType:SVGElementName = SVGElementName.path
+    var svgType:SVGElementName = SVGElementName.svg
     var langType:LanguageName = LanguageName.Swift
     var svgTxt:String = ""
     var shapeName:String = ""
@@ -70,7 +70,7 @@ class SVGConvertViewModel {
         
         self.rootModel = manager.parseXMLFile(self.shapeName)
         if SVGXMLManager.shared.rootStyle == nil { SVGXMLManager.shared.rootStyle = StyleSheet.init() }
-        return CodeSVG.shared.langName.type().parseModel(self.rootModel, SVGXMLManager.shared.rootStyle, 0)
+        return CodeSVG.shared.langName.type().getCode(self.rootModel, SVGXMLManager.shared.rootStyle)
     }
     
     private func parseModelTocode(_ model:SVGDataModel)->String {

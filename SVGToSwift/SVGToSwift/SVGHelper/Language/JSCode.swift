@@ -67,4 +67,8 @@ final class JSCode : CodeMaker{
     func makePolygon(_ model:SVGDataModel, _ points:[CGPoint])->String {
         return ""
     }
+    
+    func getCode(_ model:SVGDataModel, _ style:StyleSheet) -> String {
+        return ""
+    }
 }
