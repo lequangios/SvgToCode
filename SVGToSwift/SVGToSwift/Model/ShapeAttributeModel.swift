@@ -27,6 +27,7 @@ struct ShapeAttributeModel {
     var isFillByShape:Bool = false
     var shapeFillId:String = ""
     var isDefault:Bool = true
+    var priority:Int = 0
     
     init(_ attribute:ShapeAttributeModel) {
         self.fillColor = attribute.fillColor

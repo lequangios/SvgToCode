@@ -169,6 +169,13 @@ final class SwiftCode : CodeMaker {
         for child in model.childs {
             if child.isPath {
                 code += child.code
+                let name = "\(model.type.rawValue)\(child.name.trim(child.type.rawValue))"
+                code += "let \(name) = CAShapeLayer()\n"
+                code += "\(name).path = \(child.name).cgPath\n"
+                child.name = name
+                code += applyShapeStyle(child, style)
+                code += "\(model.name).addSublayer(\(child.name))\n\n"
+                /*
                 if isOnePath == false {
                     let name = "\(model.type.rawValue)\(child.name.trim(child.type.rawValue))"
                     code += "let \(name) = CAShapeLayer()\n"
@@ -181,7 +188,7 @@ final class SwiftCode : CodeMaker {
                     code += "\(model.name).path = \(child.name).cgPath\n"
                     code += applyShapeStyle(model, style)
                 }
-                
+                */
             }
             else if child.isShape {
                 code += self.parseModel(child, style, deep+1)
@@ -312,11 +319,11 @@ final class SwiftCode : CodeMaker {
     private func applyShapeStyle(_ model:SVGDataModel, _ style:StyleSheet) -> String {
         var code = ""
         var shapeAttribute = model.getShapeAttributeModel(style)
-        if shapeAttribute.isDefault == true {
-            if let parent = model.parentNode {
-                shapeAttribute = parent.getShapeAttributeModel(style)
-            }
-        }
+//        if shapeAttribute.isDefault == true {
+//            if let parent = model.parentNode {
+//                shapeAttribute = parent.getShapeAttributeModel(style)
+//            }
+//        }
         
         if let fillColor = shapeAttribute.fillColor {
             code += "\(model.name).fill(\(fillColor.swiftHex()))\n"
