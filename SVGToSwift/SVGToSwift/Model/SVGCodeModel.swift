@@ -163,6 +163,43 @@ extension SVGDataModel {
         
         return pathAttribute
     }
+    
+    func getShapeStyle(_ style:StyleSheet, _ priority:Int) -> ShapeStyleModel? {
+        let styles = self.style.arraySubString(" ")
+        if styles.count > 0 {
+            let selector = SVGStyleElement(styles, style)
+            let shape = ShapeStyleModel(selector, priority)
+            return shape
+        }
+        else {
+           return nil
+        }
+    }
+    
+    func getStyleList(_ style:StyleSheet) -> [ShapeStyleModel] {
+        var styles:[ShapeStyleModel] = []
+        
+        // Get style in attributte element
+        styles.append(ShapeStyleModel(self.element, 0))
+        
+        // Get style in css
+        if let css = self.getShapeStyle(style, 1) {
+            styles.append(css)
+        }
+        
+        // Get style in parent
+        if let parent = self.element.parentElement {
+            // Get style in attributte element
+            styles.append(ShapeStyleModel(parent, 3))
+            
+            // Get style in css
+            if let parentnode = self.parentNode, let css = parentnode.getShapeStyle(style, 4) {
+                styles.append(css)
+            }
+        }
+        
+        return styles
+    }
 }
 
 extension Array where Element == SVGDataModel {

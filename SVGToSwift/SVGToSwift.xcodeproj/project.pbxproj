@@ -24,6 +24,7 @@
 		5ADF7596244825D8004DA5EF /* StyleElementEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF7595244825D8004DA5EF /* StyleElementEx.swift */; };
 		5ADF759824483439004DA5EF /* SVGStyleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF759724483439004DA5EF /* SVGStyleElement.swift */; };
 		5ADF759A24486CBE004DA5EF /* StyleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF759924486CBE004DA5EF /* StyleExtension.swift */; };
+		5AE28E7624557F2100BC09C4 /* ShapeStyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE28E7524557F2100BC09C4 /* ShapeStyleModel.swift */; };
 		5AFB528D24480A630033E2A6 /* katana.lex.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528724480A630033E2A6 /* katana.lex.c */; };
 		5AFB528E24480A630033E2A6 /* selector.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528824480A630033E2A6 /* selector.c */; };
 		5AFB528F24480A630033E2A6 /* katana.tab.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528924480A630033E2A6 /* katana.tab.c */; };
@@ -59,6 +60,7 @@
 		5ADF7595244825D8004DA5EF /* StyleElementEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleElementEx.swift; sourceTree = "<group>"; };
 		5ADF759724483439004DA5EF /* SVGStyleElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGStyleElement.swift; sourceTree = "<group>"; };
 		5ADF759924486CBE004DA5EF /* StyleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleExtension.swift; sourceTree = "<group>"; };
+		5AE28E7524557F2100BC09C4 /* ShapeStyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeStyleModel.swift; sourceTree = "<group>"; };
 		5AFB528024480A630033E2A6 /* katana.lex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.lex.h; sourceTree = "<group>"; };
 		5AFB528124480A630033E2A6 /* selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selector.h; sourceTree = "<group>"; };
 		5AFB528224480A630033E2A6 /* katana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.h; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				5A0FA511243EBCDA005DFFC7 /* SVGCodeModel.swift */,
 				5A203B1E2449536700E1014F /* ShapeAttributeModel.swift */,
 				5A203B20244954AE00E1014F /* PathAttributeModel.swift */,
+				5AE28E7524557F2100BC09C4 /* ShapeStyleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,11 +227,11 @@
 				5AD5D386243C87980048AAA9 /* Extension */,
 				65418D16214E3AC800733EBE /* AppDelegate.swift */,
 				65418D18214E3AC800733EBE /* ViewController.swift */,
+				5ADDE5072170B29900442550 /* SVGConvertController.swift */,
 				65418D1A214E3ACA00733EBE /* Assets.xcassets */,
 				65418D1C214E3ACA00733EBE /* Main.storyboard */,
 				65418D1F214E3ACA00733EBE /* Info.plist */,
 				65418D20214E3ACA00733EBE /* SVGToSwift.entitlements */,
-				5ADDE5072170B29900442550 /* SVGConvertController.swift */,
 				5AFB529B24480ADF0033E2A6 /* svg.h */,
 			);
 			path = SVGToSwift;
@@ -351,6 +354,7 @@
 				5AD5D388243C87E20048AAA9 /* NSView+SVG.swift in Sources */,
 				5ADDE4A3216B536900442550 /* SVGXML.swift in Sources */,
 				5ACA659A243DC17800EB36B1 /* SVGConvertViewModel.swift in Sources */,
+				5AE28E7624557F2100BC09C4 /* ShapeStyleModel.swift in Sources */,
 				5AB87ED32452EE4B007ACC08 /* SwiftTemplate.swift in Sources */,
 				5ADF759A24486CBE004DA5EF /* StyleExtension.swift in Sources */,
 				5A47E945243DF5E40083AFB7 /* CodeSVG.swift in Sources */,

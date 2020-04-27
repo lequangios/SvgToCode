@@ -185,4 +185,18 @@ struct ShapeAttributeModel {
             self.isDefault = false
         }
     }
+    
+    init(withModel model:SVGDataModel, _ priority:Int){
+        self.init(model)
+        self.priority = priority
+    }
+    
+    init(withStyle style:SVGStyleElement, _ priority:Int) {
+        self = style.getShapeAttributeModel()
+        self.priority = priority
+    }
+}
+
+extension Array where Element == ShapeAttributeModel {
+    
 }

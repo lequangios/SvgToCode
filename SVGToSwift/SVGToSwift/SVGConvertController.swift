@@ -112,6 +112,31 @@ class SVGConvertController: NSViewController {
         }
     }
     
+    
+    @IBAction func saveToFile(_ sender: Any) {
+        let data = self.outputTextView.string
+        if data != "" {
+            let mySave = NSSavePanel()
+            mySave.allowedFileTypes = ["swift"]
+            
+            mySave.begin { (result) -> Void in
+                
+                if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
+                    let filename = mySave.url
+                    
+                    do {
+                        try data.write(to: filename!, atomically: true, encoding: String.Encoding.utf8)
+                    } catch {
+                        // failed to write file (bad permissions, bad filename etc.)
+                    }
+                    
+                } else {
+                    __NSBeep()
+                }
+            }
+        }
+    }
+    
     func setupView(){
        self.outputTextView = NSTextView.init(frame: CGRect.init(origin: CGPoint.zero, size: self.outputScrollView.frame.size))
         self.outputScrollView.documentView = self.outputTextView

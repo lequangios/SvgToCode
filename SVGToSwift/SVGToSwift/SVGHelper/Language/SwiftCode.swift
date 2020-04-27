@@ -169,30 +169,30 @@ final class SwiftCode : CodeMaker {
         for child in model.childs {
             if child.isPath {
                 code += child.code
-                let name = "\(model.type.rawValue)\(child.name.trim(child.type.rawValue))"
+                /*let name = "\(model.type.rawValue)\(child.name.trim(child.type.rawValue))"
                 code += "let \(name) = CAShapeLayer()\n"
                 code += "\(name).path = \(child.name).cgPath\n"
                 child.name = name
                 code += applyShapeStyle(child, style)
-                code += "\(model.name).addSublayer(\(child.name))\n\n"
-                /*
+                code += "\(model.name).addSublayer(\(child.name))\n\n"*/
+            
                 if isOnePath == false {
                     let name = "\(model.type.rawValue)\(child.name.trim(child.type.rawValue))"
                     code += "let \(name) = CAShapeLayer()\n"
                     code += "\(name).path = \(child.name).cgPath\n"
                     child.name = name
-                    code += applyShapeStyle(child, style)
+                    code += applyShapeStyle(child, style, child.name)
                     code += "\(model.name).addSublayer(\(child.name))\n\n"
                 }
                 else {
                     code += "\(model.name).path = \(child.name).cgPath\n"
-                    code += applyShapeStyle(model, style)
+                    code += applyShapeStyle(child, style, model.name)
                 }
-                */
+                
             }
             else if child.isShape {
                 code += self.parseModel(child, style, deep+1)
-                code += applyShapeStyle(child, style)
+                code += applyShapeStyle(child, style, child.name)
                 code += "\(model.name).addSublayer(\(child.name))\n\n"
             }
         }
@@ -258,7 +258,7 @@ final class SwiftCode : CodeMaker {
     private func applyStyle(_ model:SVGDataModel, _ style:StyleSheet) -> String {
         var code = ""
         if model.isShape {
-            code += applyShapeStyle(model, style)
+            code += applyShapeStyle(model, style, model.name)
         }
         else {
             code += applyPathStyle(model, style)
@@ -316,9 +316,13 @@ final class SwiftCode : CodeMaker {
         return code
     }
     
-    private func applyShapeStyle(_ model:SVGDataModel, _ style:StyleSheet) -> String {
+    private func applyShapeStyle(_ model:SVGDataModel, _ style:StyleSheet, _ name:String) -> String {
+        let shapeStyle = model.getStyleList(style).getLastStyle()
+        return applyStyle(Shape: shapeStyle, model, name)
+        
+        /*
+         var shapeAttribute = model.getShapeAttributeModel(style)
         var code = ""
-        var shapeAttribute = model.getShapeAttributeModel(style)
 //        if shapeAttribute.isDefault == true {
 //            if let parent = model.parentNode {
 //                shapeAttribute = parent.getShapeAttributeModel(style)
@@ -373,6 +377,62 @@ final class SwiftCode : CodeMaker {
         
         if shapeAttribute.opacity != 1 {
             code += "\(model.name).opacity = Float(\(shapeAttribute.opacity))\n"
+        }
+        
+        return code
+        */
+    }
+    
+    private func applyStyle(Shape shapeStyle:ShapeStyleModel, _ model:SVGDataModel, _ name:String) -> String {
+        var code = ""
+        if let fillColor = shapeStyle.fillColor {
+            code += "\(name).fill(\(fillColor.swiftHex()))\n"
+        }
+        
+        if let nameStr = shapeStyle.name {
+            code += "\(name).name = \(nameStr.swiftStr())\n"
+        }
+        
+        if shapeStyle.fillRule.0 != .nonZero {
+            code += "\(name).fillRule = CAShapeLayerFillRule.evenOdd\n"
+        }
+        
+        if shapeStyle.lineCap.0 != .butt {
+            if shapeStyle.lineCap.0 == .round {
+                code += "\(name).lineCap = .round\n"
+            }
+            else if shapeStyle.lineCap.0 == .square {
+                code += "\(name).lineCap = .square\n"
+            }
+        }
+        
+        if shapeStyle.lineDashPhase.0 != 0 {
+            code += "\(name).lineDashPhase = \(shapeStyle.lineDashPhase.0)\n"
+        }
+        
+        if shapeStyle.lineJoin.0 != .miter {
+            if shapeStyle.lineJoin.0 == .bevel {
+                code += "\(name).lineJoin = .bevel\n"
+            }
+            else  if shapeStyle.lineJoin.0 == .round {
+                code += "\(name).lineJoin = .round\n"
+            }
+        }
+        
+        if shapeStyle.lineWidth.0 != 1 {
+            code += "\(name).lineWidth = \(shapeStyle.lineWidth.0)\n"
+        }
+        
+        if shapeStyle.miterLimit.0 != 10 {
+            code += "\(name).miterLimit = \(shapeStyle.miterLimit.0)\n"
+        }
+        
+        if let strokeColor = shapeStyle.strokeColor {
+            code += "\(name).strokeColor = \(strokeColor.swiftHex()).colorValue.cgColor\n"
+        }
+        
+        if shapeStyle.opacity.0 != 1 {
+            code += "\(name).opacity = Float(\(shapeStyle.opacity.0))\n"
         }
         
         return code
