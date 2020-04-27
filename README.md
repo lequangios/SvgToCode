@@ -35,7 +35,7 @@ SVG is similar to Adobe's proprietary Flash technology, but it is a text-based o
 
 # License
 
-`-` **SvgToCode** is released under the MIT license. [See LICENSE](https://github.com/wxxsw/Refresh/blob/master/LICENSE) for details.
+`-` **SvgToCode** is released under the MIT license. [See LICENSE](LICENSE) for details.
 
 `-` Love **SvgToCode** ? Please consider donating to sustain our activities ? Please consider [donating](https://www.paypal.me/lequang1988) to sustain my activities.
 <p align="center">
