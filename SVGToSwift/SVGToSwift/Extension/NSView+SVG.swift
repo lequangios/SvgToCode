@@ -15,4 +15,8 @@ extension NSView {
         self.layer?.backgroundColor = color.cgColor
     }
     
+    func addSubLayer(_ layer:CAShapeLayer) {
+        self.wantsLayer = true
+        self.layer?.addSublayer(layer)
+    }
 }

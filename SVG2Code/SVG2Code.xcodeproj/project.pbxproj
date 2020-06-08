@@ -1,0 +1,1029 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A01C03D24650CCE00056430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C03C24650CCE00056430 /* AppDelegate.swift */; };
+		5A01C03F24650CCE00056430 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C03E24650CCE00056430 /* MainViewController.swift */; };
+		5A01C04224650CCE00056430 /* SVG2Code.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C04024650CCE00056430 /* SVG2Code.xcdatamodeld */; };
+		5A01C04424650CCF00056430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A01C04324650CCF00056430 /* Assets.xcassets */; };
+		5A01C04724650CCF00056430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A01C04524650CCF00056430 /* Main.storyboard */; };
+		5A01C05324650CCF00056430 /* SVG2CodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C05224650CCF00056430 /* SVG2CodeTests.swift */; };
+		5A01C05E24650CCF00056430 /* SVG2CodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C05D24650CCF00056430 /* SVG2CodeUITests.swift */; };
+		5A01C0892465303100056430 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0762465303100056430 /* StyleSheet.swift */; };
+		5A01C08A2465303100056430 /* StyleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0772465303100056430 /* StyleExtension.swift */; };
+		5A01C08C2465303100056430 /* katana.lex.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0822465303100056430 /* katana.lex.c */; };
+		5A01C08D2465303100056430 /* selector.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0832465303100056430 /* selector.c */; };
+		5A01C08E2465303100056430 /* katana.tab.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0842465303100056430 /* katana.tab.c */; };
+		5A01C08F2465303100056430 /* foundation.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0852465303100056430 /* foundation.c */; };
+		5A01C0902465303100056430 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0862465303100056430 /* parser.c */; };
+		5A01C0912465303100056430 /* tokenizer.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0872465303100056430 /* tokenizer.c */; };
+		5A01C0922465303100056430 /* StyleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0882465303100056430 /* StyleElement.swift */; };
+		5A01C0942465307200056430 /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0932465307200056430 /* DataStructure.swift */; };
+		5A01C0972465612800056430 /* SVGElementAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0962465612800056430 /* SVGElementAttribute.swift */; };
+		5A01C09A2465641400056430 /* NSView+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0992465641400056430 /* NSView+SVG.swift */; };
+		5A01C09D2465644900056430 /* NSError+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C09C2465644900056430 /* NSError+SVG.swift */; };
+		5A01C09F2465647200056430 /* NSObject+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C09E2465647200056430 /* NSObject+SVG.swift */; };
+		5A01C0A1246564C500056430 /* NSBezierPath+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0A0246564C500056430 /* NSBezierPath+SVG.swift */; };
+		5A01C0A32465651D00056430 /* CAShapeLayer+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0A22465651D00056430 /* CAShapeLayer+SVG.swift */; };
+		5A01C0A52465659300056430 /* NSColor+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0A42465659300056430 /* NSColor+SVG.swift */; };
+		5A01C0A7246565B400056430 /* String+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0A6246565B400056430 /* String+SVG.swift */; };
+		5A01C0A9246566B900056430 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0A8246566B900056430 /* SVGPath.swift */; };
+		5A01C0AB2465676B00056430 /* SVGPathProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0AA2465676B00056430 /* SVGPathProtocol.swift */; };
+		5A01C0AD24656C5900056430 /* SVGTreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0AC24656C5900056430 /* SVGTreeModel.swift */; };
+		5A01C0AF24656C6F00056430 /* SVGNodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0AE24656C6F00056430 /* SVGNodeModel.swift */; };
+		5A01C0B124656D1400056430 /* SVGEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0B024656D1400056430 /* SVGEnum.swift */; };
+		5A01C0B424656DEE00056430 /* winter.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5A01C0B324656DEE00056430 /* winter.svg */; };
+		5A01C0B624656F5400056430 /* NSString+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C0B524656F5400056430 /* NSString+SVG.swift */; };
+		5A05C7B624668B1A0067D469 /* SVGElementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05C7B524668B1A0067D469 /* SVGElementProtocol.swift */; };
+		5A05C7B82466B9BD0067D469 /* SVGStyleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A05C7B72466B9BD0067D469 /* SVGStyleElement.swift */; };
+		5A31975C2487A88C0006694B /* CALayer+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A31975B2487A88C0006694B /* CALayer+App.swift */; };
+		5A3445FC246A5E1A00927CC2 /* SVGPreviewGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3445FB246A5E1A00927CC2 /* SVGPreviewGeneration.swift */; };
+		5A3445FE246A708600927CC2 /* CAShapeLayer+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3445FD246A708600927CC2 /* CAShapeLayer+Preview.swift */; };
+		5A5B7FB224683B5D005D73F1 /* CodeGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B7FB124683B5D005D73F1 /* CodeGeneration.swift */; };
+		5A5B7FB424683BB9005D73F1 /* LanguageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B7FB324683BB9005D73F1 /* LanguageEnum.swift */; };
+		5A5B7FB624683C23005D73F1 /* CodeGenerationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B7FB524683C23005D73F1 /* CodeGenerationProtocol.swift */; };
+		5A5B7FB924683D36005D73F1 /* SwiftCodeGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B7FB824683D36005D73F1 /* SwiftCodeGeneration.swift */; };
+		5A67A10E247CCF1200A93AA1 /* SVGPreviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A67A10D247CCF1200A93AA1 /* SVGPreviewModel.swift */; };
+		5A67A110247CD19600A93AA1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A67A10F247CD19600A93AA1 /* ViewModel.swift */; };
+		5A963048247643CE003987B4 /* SVGDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A963047247643CE003987B4 /* SVGDataBuilder.swift */; };
+		5A999CFB24867C1E000B4BB6 /* ACEView+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A999CFA24867C1E000B4BB6 /* ACEView+App.swift */; };
+		5AA29E44246914CF00DF2117 /* String+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA29E43246914CF00DF2117 /* String+Swift.swift */; };
+		5AA29E4824698F2900DF2117 /* SwiftCALayer.tml in Resources */ = {isa = PBXBuildFile; fileRef = 5AA29E4724698F2900DF2117 /* SwiftCALayer.tml */; };
+		5AA940CB247694C900C1C2D0 /* NSViewController+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA940CA247694C900C1C2D0 /* NSViewController+App.swift */; };
+		5ABF6915248540C600D13D95 /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF6914248540C600D13D95 /* HTML */; };
+		5AC4C0682471395B00D39127 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4C0672471395B00D39127 /* MainWindowController.swift */; };
+		5AC4C06A24713D1C00D39127 /* NSTouchBarItem+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4C06924713D1C00D39127 /* NSTouchBarItem+App.swift */; };
+		5AC4C06C24713DB600D39127 /* NSToolbarItem+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4C06B24713DB600D39127 /* NSToolbarItem+App.swift */; };
+		5AC4C06E24714E6A00D39127 /* SVGInspectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4C06D24714E6A00D39127 /* SVGInspectorController.swift */; };
+		5AC4C072247153B200D39127 /* SVGCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4C071247153B200D39127 /* SVGCodeViewController.swift */; };
+		5ACA7A3C2483C6BD00FF4AC0 /* SVGPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA7A3B2483C6BD00FF4AC0 /* SVGPreviewView.swift */; };
+		5AD87908247BF8380014B8A6 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD87907247BF8380014B8A6 /* AppTheme.swift */; };
+		5AE3E117247A80F8005C512E /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE3E116247A80F8005C512E /* MainSplitViewController.swift */; };
+		5AEAB815248A5F76001A68D6 /* WKWebView+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEAB814248A5F76001A68D6 /* WKWebView+App.swift */; };
+		5AF38B90247780A400C2F7CD /* NSNotification+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF38B8F247780A400C2F7CD /* NSNotification+App.swift */; };
+		5AF38B922477D4FA00C2F7CD /* NSProgressIndicator+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF38B912477D4FA00C2F7CD /* NSProgressIndicator+App.swift */; };
+		5AF38B942477D7D500C2F7CD /* NSWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF38B932477D7D500C2F7CD /* NSWindowController.swift */; };
+		5AFB725924729177004DB703 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB725824729177004DB703 /* MainViewModel.swift */; };
+		5AFFFE2824751FF1007AECE7 /* MBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFFE2724751FF1007AECE7 /* MBObserver.swift */; };
+		9C10155E58DDFADF1B66FBA8 /* libPods-SVG2Code.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE943610BD4BF5199B3C52D /* libPods-SVG2Code.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A01C04F24650CCF00056430 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A01C03124650CCE00056430 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A01C03824650CCE00056430;
+			remoteInfo = SVG2Code;
+		};
+		5A01C05A24650CCF00056430 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A01C03124650CCE00056430 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A01C03824650CCE00056430;
+			remoteInfo = SVG2Code;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		148AEDEA688F01B555A161E2 /* Pods-SVG2Code.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SVG2Code.release.xcconfig"; path = "Pods/Target Support Files/Pods-SVG2Code/Pods-SVG2Code.release.xcconfig"; sourceTree = "<group>"; };
+		5A01C03924650CCE00056430 /* SVG2Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVG2Code.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A01C03C24650CCE00056430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5A01C03E24650CCE00056430 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5A01C04124650CCE00056430 /* SVG2Code.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SVG2Code.xcdatamodel; sourceTree = "<group>"; };
+		5A01C04324650CCF00056430 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A01C04624650CCF00056430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A01C04824650CCF00056430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A01C04924650CCF00056430 /* SVG2Code.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SVG2Code.entitlements; sourceTree = "<group>"; };
+		5A01C04E24650CCF00056430 /* SVG2CodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVG2CodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A01C05224650CCF00056430 /* SVG2CodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVG2CodeTests.swift; sourceTree = "<group>"; };
+		5A01C05424650CCF00056430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A01C05924650CCF00056430 /* SVG2CodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVG2CodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A01C05D24650CCF00056430 /* SVG2CodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVG2CodeUITests.swift; sourceTree = "<group>"; };
+		5A01C05F24650CCF00056430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A01C0762465303100056430 /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
+		5A01C0772465303100056430 /* StyleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleExtension.swift; sourceTree = "<group>"; };
+		5A01C0782465303100056430 /* CSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSParser.h; sourceTree = "<group>"; };
+		5A01C07B2465303100056430 /* katana.lex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.lex.h; sourceTree = "<group>"; };
+		5A01C07C2465303100056430 /* selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selector.h; sourceTree = "<group>"; };
+		5A01C07D2465303100056430 /* katana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.h; sourceTree = "<group>"; };
+		5A01C07E2465303100056430 /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
+		5A01C07F2465303100056430 /* foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foundation.h; sourceTree = "<group>"; };
+		5A01C0802465303100056430 /* katana.tab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.tab.h; sourceTree = "<group>"; };
+		5A01C0812465303100056430 /* tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tokenizer.h; sourceTree = "<group>"; };
+		5A01C0822465303100056430 /* katana.lex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = katana.lex.c; sourceTree = "<group>"; };
+		5A01C0832465303100056430 /* selector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = selector.c; sourceTree = "<group>"; };
+		5A01C0842465303100056430 /* katana.tab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = katana.tab.c; sourceTree = "<group>"; };
+		5A01C0852465303100056430 /* foundation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = foundation.c; sourceTree = "<group>"; };
+		5A01C0862465303100056430 /* parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parser.c; sourceTree = "<group>"; };
+		5A01C0872465303100056430 /* tokenizer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tokenizer.c; sourceTree = "<group>"; };
+		5A01C0882465303100056430 /* StyleElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleElement.swift; sourceTree = "<group>"; };
+		5A01C0932465307200056430 /* DataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
+		5A01C0952465609B00056430 /* svg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = svg.h; sourceTree = "<group>"; };
+		5A01C0962465612800056430 /* SVGElementAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGElementAttribute.swift; sourceTree = "<group>"; };
+		5A01C0992465641400056430 /* NSView+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+SVG.swift"; sourceTree = "<group>"; };
+		5A01C09C2465644900056430 /* NSError+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+SVG.swift"; sourceTree = "<group>"; };
+		5A01C09E2465647200056430 /* NSObject+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+SVG.swift"; sourceTree = "<group>"; };
+		5A01C0A0246564C500056430 /* NSBezierPath+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+SVG.swift"; sourceTree = "<group>"; };
+		5A01C0A22465651D00056430 /* CAShapeLayer+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+SVG.swift"; sourceTree = "<group>"; };
+		5A01C0A42465659300056430 /* NSColor+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+SVG.swift"; sourceTree = "<group>"; };
+		5A01C0A6246565B400056430 /* String+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SVG.swift"; sourceTree = "<group>"; };
+		5A01C0A8246566B900056430 /* SVGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPath.swift; sourceTree = "<group>"; };
+		5A01C0AA2465676B00056430 /* SVGPathProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPathProtocol.swift; sourceTree = "<group>"; };
+		5A01C0AC24656C5900056430 /* SVGTreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGTreeModel.swift; sourceTree = "<group>"; };
+		5A01C0AE24656C6F00056430 /* SVGNodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGNodeModel.swift; sourceTree = "<group>"; };
+		5A01C0B024656D1400056430 /* SVGEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGEnum.swift; sourceTree = "<group>"; };
+		5A01C0B324656DEE00056430 /* winter.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = winter.svg; sourceTree = "<group>"; };
+		5A01C0B524656F5400056430 /* NSString+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+SVG.swift"; sourceTree = "<group>"; };
+		5A05C7B524668B1A0067D469 /* SVGElementProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGElementProtocol.swift; sourceTree = "<group>"; };
+		5A05C7B72466B9BD0067D469 /* SVGStyleElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGStyleElement.swift; sourceTree = "<group>"; };
+		5A31975B2487A88C0006694B /* CALayer+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+App.swift"; sourceTree = "<group>"; };
+		5A3445FB246A5E1A00927CC2 /* SVGPreviewGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPreviewGeneration.swift; sourceTree = "<group>"; };
+		5A3445FD246A708600927CC2 /* CAShapeLayer+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+Preview.swift"; sourceTree = "<group>"; };
+		5A5B7FB124683B5D005D73F1 /* CodeGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneration.swift; sourceTree = "<group>"; };
+		5A5B7FB324683BB9005D73F1 /* LanguageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageEnum.swift; sourceTree = "<group>"; };
+		5A5B7FB524683C23005D73F1 /* CodeGenerationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationProtocol.swift; sourceTree = "<group>"; };
+		5A5B7FB824683D36005D73F1 /* SwiftCodeGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCodeGeneration.swift; sourceTree = "<group>"; };
+		5A67A10D247CCF1200A93AA1 /* SVGPreviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPreviewModel.swift; sourceTree = "<group>"; };
+		5A67A10F247CD19600A93AA1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5A963047247643CE003987B4 /* SVGDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGDataBuilder.swift; sourceTree = "<group>"; };
+		5A999CFA24867C1E000B4BB6 /* ACEView+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ACEView+App.swift"; sourceTree = "<group>"; };
+		5AA29E43246914CF00DF2117 /* String+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Swift.swift"; sourceTree = "<group>"; };
+		5AA29E4724698F2900DF2117 /* SwiftCALayer.tml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftCALayer.tml; sourceTree = "<group>"; };
+		5AA940CA247694C900C1C2D0 /* NSViewController+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+App.swift"; sourceTree = "<group>"; };
+		5ABF6914248540C600D13D95 /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
+		5AC4C0672471395B00D39127 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		5AC4C06924713D1C00D39127 /* NSTouchBarItem+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTouchBarItem+App.swift"; sourceTree = "<group>"; };
+		5AC4C06B24713DB600D39127 /* NSToolbarItem+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSToolbarItem+App.swift"; sourceTree = "<group>"; };
+		5AC4C06D24714E6A00D39127 /* SVGInspectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGInspectorController.swift; sourceTree = "<group>"; };
+		5AC4C071247153B200D39127 /* SVGCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGCodeViewController.swift; sourceTree = "<group>"; };
+		5ACA7A3B2483C6BD00FF4AC0 /* SVGPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPreviewView.swift; sourceTree = "<group>"; };
+		5AD87907247BF8380014B8A6 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		5AE3E116247A80F8005C512E /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
+		5AEAB814248A5F76001A68D6 /* WKWebView+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+App.swift"; sourceTree = "<group>"; };
+		5AF38B8F247780A400C2F7CD /* NSNotification+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+App.swift"; sourceTree = "<group>"; };
+		5AF38B912477D4FA00C2F7CD /* NSProgressIndicator+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSProgressIndicator+App.swift"; sourceTree = "<group>"; };
+		5AF38B932477D7D500C2F7CD /* NSWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWindowController.swift; sourceTree = "<group>"; };
+		5AFB725824729177004DB703 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		5AFFFE2724751FF1007AECE7 /* MBObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBObserver.swift; sourceTree = "<group>"; };
+		ADE943610BD4BF5199B3C52D /* libPods-SVG2Code.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SVG2Code.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C26E90E866BB8F891200815F /* Pods-SVG2Code.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SVG2Code.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SVG2Code/Pods-SVG2Code.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A01C03624650CCE00056430 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C10155E58DDFADF1B66FBA8 /* libPods-SVG2Code.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A01C04B24650CCF00056430 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A01C05624650CCF00056430 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A01C03024650CCE00056430 = {
+			isa = PBXGroup;
+			children = (
+				5A01C03B24650CCE00056430 /* SVG2Code */,
+				5A01C05124650CCF00056430 /* SVG2CodeTests */,
+				5A01C05C24650CCF00056430 /* SVG2CodeUITests */,
+				5A01C03A24650CCE00056430 /* Products */,
+				D8E1C3630AAA66570E0D87DB /* Pods */,
+				F3B8095D7ED037355A331A0C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5A01C03A24650CCE00056430 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C03924650CCE00056430 /* SVG2Code.app */,
+				5A01C04E24650CCF00056430 /* SVG2CodeTests.xctest */,
+				5A01C05924650CCF00056430 /* SVG2CodeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A01C03B24650CCE00056430 /* SVG2Code */ = {
+			isa = PBXGroup;
+			children = (
+				5ABF6914248540C600D13D95 /* HTML */,
+				5A5B7FB024683B4F005D73F1 /* Service */,
+				5A01C0B224656DB400056430 /* Template */,
+				5A01C0952465609B00056430 /* svg.h */,
+				5A01C07324652EDF00056430 /* Protocol */,
+				5A01C07224652ED100056430 /* Extension */,
+				5A01C07124652EB400056430 /* Helper */,
+				5A01C07024652EAC00056430 /* Controller */,
+				5A01C06F24652EA100056430 /* Window */,
+				5A01C06E24652E9A00056430 /* View */,
+				5A01C06D24652E8F00056430 /* ViewModel */,
+				5A01C06C24652E8700056430 /* Model */,
+				5A01C06B24652E5100056430 /* Thirdparty */,
+				5A01C03C24650CCE00056430 /* AppDelegate.swift */,
+				5A01C04324650CCF00056430 /* Assets.xcassets */,
+				5A01C04524650CCF00056430 /* Main.storyboard */,
+				5A01C04824650CCF00056430 /* Info.plist */,
+				5A01C04924650CCF00056430 /* SVG2Code.entitlements */,
+				5A01C04024650CCE00056430 /* SVG2Code.xcdatamodeld */,
+			);
+			path = SVG2Code;
+			sourceTree = "<group>";
+		};
+		5A01C05124650CCF00056430 /* SVG2CodeTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C05224650CCF00056430 /* SVG2CodeTests.swift */,
+				5A01C05424650CCF00056430 /* Info.plist */,
+			);
+			path = SVG2CodeTests;
+			sourceTree = "<group>";
+		};
+		5A01C05C24650CCF00056430 /* SVG2CodeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C05D24650CCF00056430 /* SVG2CodeUITests.swift */,
+				5A01C05F24650CCF00056430 /* Info.plist */,
+			);
+			path = SVG2CodeUITests;
+			sourceTree = "<group>";
+		};
+		5A01C06B24652E5100056430 /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C0752465303100056430 /* SwiftCssParser */,
+				5A01C0A8246566B900056430 /* SVGPath.swift */,
+			);
+			path = Thirdparty;
+			sourceTree = "<group>";
+		};
+		5A01C06C24652E8700056430 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C07424652F0E00056430 /* SVG */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A01C06D24652E8F00056430 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5AFB725824729177004DB703 /* MainViewModel.swift */,
+				5A67A10F247CD19600A93AA1 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5A01C06E24652E9A00056430 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5ACA7A3B2483C6BD00FF4AC0 /* SVGPreviewView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A01C06F24652EA100056430 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				5AC4C0672471395B00D39127 /* MainWindowController.swift */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		5A01C07024652EAC00056430 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5AC4C071247153B200D39127 /* SVGCodeViewController.swift */,
+				5A01C03E24650CCE00056430 /* MainViewController.swift */,
+				5AC4C06D24714E6A00D39127 /* SVGInspectorController.swift */,
+				5AE3E116247A80F8005C512E /* MainSplitViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5A01C07124652EB400056430 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C0932465307200056430 /* DataStructure.swift */,
+				5A01C0B024656D1400056430 /* SVGEnum.swift */,
+				5A5B7FB324683BB9005D73F1 /* LanguageEnum.swift */,
+				5AFFFE2724751FF1007AECE7 /* MBObserver.swift */,
+				5AD87907247BF8380014B8A6 /* AppTheme.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		5A01C07224652ED100056430 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C09B2465642700056430 /* Foundation */,
+				5A01C098246563FA00056430 /* Cocoa */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5A01C07324652EDF00056430 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C0AA2465676B00056430 /* SVGPathProtocol.swift */,
+				5A05C7B524668B1A0067D469 /* SVGElementProtocol.swift */,
+				5A5B7FB524683C23005D73F1 /* CodeGenerationProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5A01C07424652F0E00056430 /* SVG */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C0962465612800056430 /* SVGElementAttribute.swift */,
+				5A01C0AC24656C5900056430 /* SVGTreeModel.swift */,
+				5A01C0AE24656C6F00056430 /* SVGNodeModel.swift */,
+				5A05C7B72466B9BD0067D469 /* SVGStyleElement.swift */,
+				5A67A10D247CCF1200A93AA1 /* SVGPreviewModel.swift */,
+			);
+			path = SVG;
+			sourceTree = "<group>";
+		};
+		5A01C0752465303100056430 /* SwiftCssParser */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C0762465303100056430 /* StyleSheet.swift */,
+				5A01C0772465303100056430 /* StyleExtension.swift */,
+				5A01C0782465303100056430 /* CSSParser.h */,
+				5A01C07A2465303100056430 /* katana */,
+				5A01C0882465303100056430 /* StyleElement.swift */,
+			);
+			path = SwiftCssParser;
+			sourceTree = "<group>";
+		};
+		5A01C07A2465303100056430 /* katana */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C07B2465303100056430 /* katana.lex.h */,
+				5A01C07C2465303100056430 /* selector.h */,
+				5A01C07D2465303100056430 /* katana.h */,
+				5A01C07E2465303100056430 /* parser.h */,
+				5A01C07F2465303100056430 /* foundation.h */,
+				5A01C0802465303100056430 /* katana.tab.h */,
+				5A01C0812465303100056430 /* tokenizer.h */,
+				5A01C0822465303100056430 /* katana.lex.c */,
+				5A01C0832465303100056430 /* selector.c */,
+				5A01C0842465303100056430 /* katana.tab.c */,
+				5A01C0852465303100056430 /* foundation.c */,
+				5A01C0862465303100056430 /* parser.c */,
+				5A01C0872465303100056430 /* tokenizer.c */,
+			);
+			path = katana;
+			sourceTree = "<group>";
+		};
+		5A01C098246563FA00056430 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C0992465641400056430 /* NSView+SVG.swift */,
+				5A01C0A0246564C500056430 /* NSBezierPath+SVG.swift */,
+				5A01C0A22465651D00056430 /* CAShapeLayer+SVG.swift */,
+				5A01C0A42465659300056430 /* NSColor+SVG.swift */,
+				5A01C0B524656F5400056430 /* NSString+SVG.swift */,
+				5A3445FD246A708600927CC2 /* CAShapeLayer+Preview.swift */,
+				5AC4C06924713D1C00D39127 /* NSTouchBarItem+App.swift */,
+				5AC4C06B24713DB600D39127 /* NSToolbarItem+App.swift */,
+				5AA940CA247694C900C1C2D0 /* NSViewController+App.swift */,
+				5AF38B912477D4FA00C2F7CD /* NSProgressIndicator+App.swift */,
+				5AF38B932477D7D500C2F7CD /* NSWindowController.swift */,
+				5A999CFA24867C1E000B4BB6 /* ACEView+App.swift */,
+				5A31975B2487A88C0006694B /* CALayer+App.swift */,
+				5AEAB814248A5F76001A68D6 /* WKWebView+App.swift */,
+			);
+			path = Cocoa;
+			sourceTree = "<group>";
+		};
+		5A01C09B2465642700056430 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				5A01C09C2465644900056430 /* NSError+SVG.swift */,
+				5A01C09E2465647200056430 /* NSObject+SVG.swift */,
+				5A01C0A6246565B400056430 /* String+SVG.swift */,
+				5AA29E43246914CF00DF2117 /* String+Swift.swift */,
+				5AF38B8F247780A400C2F7CD /* NSNotification+App.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		5A01C0B224656DB400056430 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				5AA29E4724698F2900DF2117 /* SwiftCALayer.tml */,
+				5A01C0B324656DEE00056430 /* winter.svg */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		5A5B7FB024683B4F005D73F1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5A5B7FB724683D1B005D73F1 /* Language */,
+				5A5B7FB124683B5D005D73F1 /* CodeGeneration.swift */,
+				5A963047247643CE003987B4 /* SVGDataBuilder.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5A5B7FB724683D1B005D73F1 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				5A5B7FB824683D36005D73F1 /* SwiftCodeGeneration.swift */,
+				5A3445FB246A5E1A00927CC2 /* SVGPreviewGeneration.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		D8E1C3630AAA66570E0D87DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C26E90E866BB8F891200815F /* Pods-SVG2Code.debug.xcconfig */,
+				148AEDEA688F01B555A161E2 /* Pods-SVG2Code.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3B8095D7ED037355A331A0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADE943610BD4BF5199B3C52D /* libPods-SVG2Code.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A01C03824650CCE00056430 /* SVG2Code */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A01C06224650CCF00056430 /* Build configuration list for PBXNativeTarget "SVG2Code" */;
+			buildPhases = (
+				65B4C429509C84659109A18B /* [CP] Check Pods Manifest.lock */,
+				5A01C03524650CCE00056430 /* Sources */,
+				5A01C03624650CCE00056430 /* Frameworks */,
+				5A01C03724650CCE00056430 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SVG2Code;
+			productName = SVG2Code;
+			productReference = 5A01C03924650CCE00056430 /* SVG2Code.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A01C04D24650CCF00056430 /* SVG2CodeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A01C06524650CCF00056430 /* Build configuration list for PBXNativeTarget "SVG2CodeTests" */;
+			buildPhases = (
+				5A01C04A24650CCF00056430 /* Sources */,
+				5A01C04B24650CCF00056430 /* Frameworks */,
+				5A01C04C24650CCF00056430 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A01C05024650CCF00056430 /* PBXTargetDependency */,
+			);
+			name = SVG2CodeTests;
+			productName = SVG2CodeTests;
+			productReference = 5A01C04E24650CCF00056430 /* SVG2CodeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5A01C05824650CCF00056430 /* SVG2CodeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A01C06824650CCF00056430 /* Build configuration list for PBXNativeTarget "SVG2CodeUITests" */;
+			buildPhases = (
+				5A01C05524650CCF00056430 /* Sources */,
+				5A01C05624650CCF00056430 /* Frameworks */,
+				5A01C05724650CCF00056430 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A01C05B24650CCF00056430 /* PBXTargetDependency */,
+			);
+			name = SVG2CodeUITests;
+			productName = SVG2CodeUITests;
+			productReference = 5A01C05924650CCF00056430 /* SVG2CodeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A01C03124650CCE00056430 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Le Quang";
+				TargetAttributes = {
+					5A01C03824650CCE00056430 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					5A01C04D24650CCF00056430 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 5A01C03824650CCE00056430;
+					};
+					5A01C05824650CCF00056430 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 5A01C03824650CCE00056430;
+					};
+				};
+			};
+			buildConfigurationList = 5A01C03424650CCE00056430 /* Build configuration list for PBXProject "SVG2Code" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A01C03024650CCE00056430;
+			productRefGroup = 5A01C03A24650CCE00056430 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A01C03824650CCE00056430 /* SVG2Code */,
+				5A01C04D24650CCF00056430 /* SVG2CodeTests */,
+				5A01C05824650CCF00056430 /* SVG2CodeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A01C03724650CCE00056430 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A01C0B424656DEE00056430 /* winter.svg in Resources */,
+				5AA29E4824698F2900DF2117 /* SwiftCALayer.tml in Resources */,
+				5A01C04424650CCF00056430 /* Assets.xcassets in Resources */,
+				5A01C04724650CCF00056430 /* Main.storyboard in Resources */,
+				5ABF6915248540C600D13D95 /* HTML in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A01C04C24650CCF00056430 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A01C05724650CCF00056430 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65B4C429509C84659109A18B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SVG2Code-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A01C03524650CCE00056430 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A5B7FB424683BB9005D73F1 /* LanguageEnum.swift in Sources */,
+				5A01C08F2465303100056430 /* foundation.c in Sources */,
+				5A01C03F24650CCE00056430 /* MainViewController.swift in Sources */,
+				5A01C0A32465651D00056430 /* CAShapeLayer+SVG.swift in Sources */,
+				5A31975C2487A88C0006694B /* CALayer+App.swift in Sources */,
+				5AC4C06C24713DB600D39127 /* NSToolbarItem+App.swift in Sources */,
+				5A01C0A7246565B400056430 /* String+SVG.swift in Sources */,
+				5A67A110247CD19600A93AA1 /* ViewModel.swift in Sources */,
+				5A01C0A52465659300056430 /* NSColor+SVG.swift in Sources */,
+				5A01C0B624656F5400056430 /* NSString+SVG.swift in Sources */,
+				5A01C09D2465644900056430 /* NSError+SVG.swift in Sources */,
+				5A01C0AF24656C6F00056430 /* SVGNodeModel.swift in Sources */,
+				5AE3E117247A80F8005C512E /* MainSplitViewController.swift in Sources */,
+				5A3445FC246A5E1A00927CC2 /* SVGPreviewGeneration.swift in Sources */,
+				5A01C0AD24656C5900056430 /* SVGTreeModel.swift in Sources */,
+				5AA29E44246914CF00DF2117 /* String+Swift.swift in Sources */,
+				5AF38B90247780A400C2F7CD /* NSNotification+App.swift in Sources */,
+				5A01C0902465303100056430 /* parser.c in Sources */,
+				5AC4C06A24713D1C00D39127 /* NSTouchBarItem+App.swift in Sources */,
+				5AF38B942477D7D500C2F7CD /* NSWindowController.swift in Sources */,
+				5ACA7A3C2483C6BD00FF4AC0 /* SVGPreviewView.swift in Sources */,
+				5A5B7FB924683D36005D73F1 /* SwiftCodeGeneration.swift in Sources */,
+				5AD87908247BF8380014B8A6 /* AppTheme.swift in Sources */,
+				5AFFFE2824751FF1007AECE7 /* MBObserver.swift in Sources */,
+				5A01C0912465303100056430 /* tokenizer.c in Sources */,
+				5A01C0972465612800056430 /* SVGElementAttribute.swift in Sources */,
+				5A3445FE246A708600927CC2 /* CAShapeLayer+Preview.swift in Sources */,
+				5A01C0942465307200056430 /* DataStructure.swift in Sources */,
+				5A01C09F2465647200056430 /* NSObject+SVG.swift in Sources */,
+				5A01C08C2465303100056430 /* katana.lex.c in Sources */,
+				5A5B7FB624683C23005D73F1 /* CodeGenerationProtocol.swift in Sources */,
+				5A963048247643CE003987B4 /* SVGDataBuilder.swift in Sources */,
+				5AC4C0682471395B00D39127 /* MainWindowController.swift in Sources */,
+				5A5B7FB224683B5D005D73F1 /* CodeGeneration.swift in Sources */,
+				5A01C0892465303100056430 /* StyleSheet.swift in Sources */,
+				5A01C0A9246566B900056430 /* SVGPath.swift in Sources */,
+				5A67A10E247CCF1200A93AA1 /* SVGPreviewModel.swift in Sources */,
+				5AA940CB247694C900C1C2D0 /* NSViewController+App.swift in Sources */,
+				5AC4C072247153B200D39127 /* SVGCodeViewController.swift in Sources */,
+				5A01C0AB2465676B00056430 /* SVGPathProtocol.swift in Sources */,
+				5A01C03D24650CCE00056430 /* AppDelegate.swift in Sources */,
+				5A01C09A2465641400056430 /* NSView+SVG.swift in Sources */,
+				5A01C08D2465303100056430 /* selector.c in Sources */,
+				5A01C08A2465303100056430 /* StyleExtension.swift in Sources */,
+				5A05C7B82466B9BD0067D469 /* SVGStyleElement.swift in Sources */,
+				5AEAB815248A5F76001A68D6 /* WKWebView+App.swift in Sources */,
+				5A01C04224650CCE00056430 /* SVG2Code.xcdatamodeld in Sources */,
+				5AFB725924729177004DB703 /* MainViewModel.swift in Sources */,
+				5AC4C06E24714E6A00D39127 /* SVGInspectorController.swift in Sources */,
+				5A01C0A1246564C500056430 /* NSBezierPath+SVG.swift in Sources */,
+				5AF38B922477D4FA00C2F7CD /* NSProgressIndicator+App.swift in Sources */,
+				5A01C0922465303100056430 /* StyleElement.swift in Sources */,
+				5A01C08E2465303100056430 /* katana.tab.c in Sources */,
+				5A01C0B124656D1400056430 /* SVGEnum.swift in Sources */,
+				5A999CFB24867C1E000B4BB6 /* ACEView+App.swift in Sources */,
+				5A05C7B624668B1A0067D469 /* SVGElementProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A01C04A24650CCF00056430 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A01C05324650CCF00056430 /* SVG2CodeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A01C05524650CCF00056430 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A01C05E24650CCF00056430 /* SVG2CodeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A01C05024650CCF00056430 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A01C03824650CCE00056430 /* SVG2Code */;
+			targetProxy = 5A01C04F24650CCF00056430 /* PBXContainerItemProxy */;
+		};
+		5A01C05B24650CCF00056430 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A01C03824650CCE00056430 /* SVG2Code */;
+			targetProxy = 5A01C05A24650CCF00056430 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5A01C04524650CCF00056430 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A01C04624650CCF00056430 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A01C06024650CCF00056430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5A01C06124650CCF00056430 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5A01C06324650CCF00056430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C26E90E866BB8F891200815F /* Pods-SVG2Code.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SVG2Code/SVG2Code.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = SVG2Code/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVG2Code;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SVG2code/svg.h;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5A01C06424650CCF00056430 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 148AEDEA688F01B555A161E2 /* Pods-SVG2Code.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SVG2Code/SVG2Code.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = SVG2Code/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVG2Code;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SVG2code/svg.h;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5A01C06624650CCF00056430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				INFOPLIST_FILE = SVG2CodeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVG2CodeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SVG2Code.app/Contents/MacOS/SVG2Code";
+			};
+			name = Debug;
+		};
+		5A01C06724650CCF00056430 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				INFOPLIST_FILE = SVG2CodeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVG2CodeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SVG2Code.app/Contents/MacOS/SVG2Code";
+			};
+			name = Release;
+		};
+		5A01C06924650CCF00056430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				INFOPLIST_FILE = SVG2CodeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVG2CodeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SVG2Code;
+			};
+			name = Debug;
+		};
+		5A01C06A24650CCF00056430 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				INFOPLIST_FILE = SVG2CodeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVG2CodeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SVG2Code;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A01C03424650CCE00056430 /* Build configuration list for PBXProject "SVG2Code" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A01C06024650CCF00056430 /* Debug */,
+				5A01C06124650CCF00056430 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A01C06224650CCF00056430 /* Build configuration list for PBXNativeTarget "SVG2Code" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A01C06324650CCF00056430 /* Debug */,
+				5A01C06424650CCF00056430 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A01C06524650CCF00056430 /* Build configuration list for PBXNativeTarget "SVG2CodeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A01C06624650CCF00056430 /* Debug */,
+				5A01C06724650CCF00056430 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A01C06824650CCF00056430 /* Build configuration list for PBXNativeTarget "SVG2CodeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A01C06924650CCF00056430 /* Debug */,
+				5A01C06A24650CCF00056430 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5A01C04024650CCE00056430 /* SVG2Code.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5A01C04124650CCE00056430 /* SVG2Code.xcdatamodel */,
+			);
+			currentVersion = 5A01C04124650CCE00056430 /* SVG2Code.xcdatamodel */;
+			path = SVG2Code.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5A01C03124650CCE00056430 /* Project object */;
+}

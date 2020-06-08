@@ -699,7 +699,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="164" y="227"/>
         </scene>
         <!--Convert Controller-->
         <scene sceneID="qPh-7L-PPL">
@@ -781,7 +781,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="278" height="555"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="zla-RS-5Ve">
+                                                <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" usesFontPanel="YES" usesRuler="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="zla-RS-5Ve">
                                                     <rect key="frame" x="0.0" y="0.0" width="278" height="555"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -1150,6 +1150,60 @@
                 <customObject id="Q6X-4D-3DU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="58" y="1165"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="lma-HF-7Sw">
+            <objects>
+                <windowController storyboardIdentifier="PreviewWindowID" id="zRi-Pj-Wld" sceneMemberID="viewController">
+                    <window key="window" title="PreviewSVG" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="90h-Vn-aHF">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="900" height="600"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <connections>
+                            <outlet property="delegate" destination="zRi-Pj-Wld" id="rck-h9-OsQ"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="dMg-R5-K2I" kind="relationship" relationship="window.shadowedContentViewController" id="ikD-Qu-sYQ"/>
+                    </connections>
+                </windowController>
+                <customObject id="ylg-KX-jef" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-698" y="2141"/>
+        </scene>
+        <!--Preview Controller-->
+        <scene sceneID="k4T-QU-IoE">
+            <objects>
+                <viewController id="dMg-R5-K2I" customClass="PreviewController" customModule="SVGToSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="5f5-GD-rYy">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="BC4-R5-5C2" userLabel="ShapeInfoView">
+                                <rect key="frame" x="380" y="0.0" width="100" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="o4C-cw-v7f"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Vck-SN-rqe" userLabel="SVGView">
+                                <rect key="frame" x="0.0" y="0.0" width="370" height="270"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BC4-R5-5C2" secondAttribute="trailing" id="1UD-BF-me8"/>
+                            <constraint firstItem="Vck-SN-rqe" firstAttribute="trailing" secondItem="BC4-R5-5C2" secondAttribute="leading" constant="-10" id="9VV-cJ-18H"/>
+                            <constraint firstItem="Vck-SN-rqe" firstAttribute="top" secondItem="5f5-GD-rYy" secondAttribute="top" id="HwY-7A-nMp"/>
+                            <constraint firstItem="Vck-SN-rqe" firstAttribute="leading" secondItem="5f5-GD-rYy" secondAttribute="leading" id="elX-sw-Idz"/>
+                            <constraint firstAttribute="bottom" secondItem="Vck-SN-rqe" secondAttribute="bottom" id="eqa-Md-lg1"/>
+                            <constraint firstItem="BC4-R5-5C2" firstAttribute="top" secondItem="5f5-GD-rYy" secondAttribute="top" id="f7N-Hu-Lws"/>
+                            <constraint firstAttribute="bottom" secondItem="BC4-R5-5C2" secondAttribute="bottom" id="fup-OI-OFX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="YXr-cJ-nPJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="312" y="1964"/>
         </scene>
     </scenes>
 </document>

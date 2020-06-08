@@ -44,6 +44,17 @@ class SVGConvertController: NSViewController {
         }
     }
     
+    
+    override func viewWillTransition(to newSize: NSSize) {
+        print("new size = \(newSize.width), \(newSize.height)")
+    }
+    
+    override func viewWillLayout() {
+        super.viewWillLayout()
+
+        print("viewWillLayout")
+    }
+    
     //MARK:--
     //MARK: Action
     @IBAction func selectLanguage(_ sender: NSPopUpButton) {
@@ -140,6 +151,7 @@ class SVGConvertController: NSViewController {
     func setupView(){
        self.outputTextView = NSTextView.init(frame: CGRect.init(origin: CGPoint.zero, size: self.outputScrollView.frame.size))
         self.outputScrollView.documentView = self.outputTextView
+        self.outputTextView.textStorage?.delegate = self
         self.updateSelectType(self.typeSelectPopup)
         self.updateLangSelect(self.langSelect)
     }
@@ -157,4 +169,15 @@ class SVGConvertController: NSViewController {
             popup.addItem(withTitle: name.rawValue)
         }
     }
+}
+
+extension SVGConvertController:NSWindowDelegate {
+    func windowWillResize(_ sender: NSWindow, to frameSize: NSSize) -> NSSize {
+        print("new size = \(frameSize.width), \(frameSize.height)")
+        return frameSize
+    }
+}
+
+extension SVGConvertController:NSTextStorageDelegate {
+    
 }

@@ -1,0 +1,10 @@
+
+def baseframework  
+    pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
+    pod "Sourceful", :git => 'https://github.com/twostraws/Sourceful.git'
+end
+
+
+target 'SVG2Code' do
+    baseframework
+end

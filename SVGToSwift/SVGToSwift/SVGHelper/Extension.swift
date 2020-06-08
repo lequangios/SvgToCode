@@ -9,6 +9,7 @@
 import Foundation
 import Cocoa
 
+public typealias rgba = (r:Int, g:Int, b:Int, a:Double)
 
 extension String {
     var colorPrefix: String { return "#" }
@@ -17,6 +18,16 @@ extension String {
         let check = "#[0-9A-Fa-f]{3}|#[0-9A-Fa-f]{6}"
         let check_value = NSPredicate(format:"SELF MATCHES %@", check)
         return check_value.evaluate(with: self)
+    }
+    
+    public var colorValue:NSColor {
+        if let color = NSColor.init(hexString: self) {
+            return color
+        }
+        else {
+            print("\(self) is nil color")
+            return NSColor.clear
+        }
     }
     
     func mapToSixColorHex()-> String {
@@ -52,4 +63,52 @@ extension String {
     }
     func swiftStr()->String { return "\"\(self)\"" }
     func objStr()->String {return "@\"\(self)\""}
+    
+    public func extractRGBA() ->rgba{
+        let value = strtoul(trim(colorPrefix), nil, 16)
+        let b = value & 0xFF;
+        let g = (value >> 8) & 0xFF;
+        let r = (value >> 16) & 0xFF;
+        
+        return (r:Int(r), g:Int(g), b:Int(b), a:1.0)
+    }
+}
+
+extension NSColor {
+    convenience init(red: Int, green: Int, blue: Int, alpha:CGFloat) {
+        let divisor: CGFloat = 255
+        self.init(
+            red: CGFloat(red) / divisor,
+            green: CGFloat(green) / divisor,
+            blue: CGFloat(blue) / divisor,
+            alpha: alpha
+        )
+    }
+    
+    public convenience init?(hexString: String){
+        if hexString.isHexColorString() == true {
+            let rgb = hexString.extractRGBA()
+            if rgb.g == 15 && rgb.b == 255 { print(hexString) }
+            self.init(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)
+        }
+        else { return nil }
+    }
+}
+
+extension CAShapeLayer {
+    func fill(_ hexColor:String){
+        self.fillColor = hexColor.colorValue.cgColor
+    }
+}
+
+extension NSBezierPath {
+    func fillWithHex(_ hexColor:String){
+        hexColor.colorValue.setFill()
+        self.fill()
+    }
+    
+    func strokeWithHex(_ hexColor:String){
+        hexColor.colorValue.setStroke()
+        self.stroke()
+    }
 }

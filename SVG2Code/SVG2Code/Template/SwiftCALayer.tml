@@ -1,0 +1,194 @@
+//
+//  Code.swift
+//  SVGTest
+//
+//  Created by Le Quang on 5/11/20.
+//  Copyright © 2020 Le Quang. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+//MARK:--
+//MARK: Useful extension
+
+public typealias rgba = (r:Int, g:Int, b:Int, a:Double)
+
+extension UIColor{
+    convenience init(red: Int, green: Int, blue: Int, alpha:CGFloat) {
+        let divisor: CGFloat = 255
+        self.init(
+            red: CGFloat(red) / divisor,
+            green: CGFloat(green) / divisor,
+            blue: CGFloat(blue) / divisor,
+            alpha: alpha
+        )
+    }
+    
+    public convenience init?(hexString: String){
+        if hexString.isHexColorString() == true {
+            let rgb = hexString.extractRGBA()
+            self.init(red: rgb.r, green: rgb.g, blue: rgb.b, alpha: 1)
+        }
+        else { return nil }
+    }
+}
+
+extension String {
+    public var colorPrefix: String { return "#" }
+    
+    public var colorValue:UIColor {
+        if let color = UIColor.init(hexString: self) {
+            return color
+        }
+        else {
+            return UIColor.red
+        }
+    }
+    
+    public func isHexColorString()->Bool{
+        let check = "#[0-9A-Fa-f]{3}|#[0-9A-Fa-f]{6}"
+        let check_value = NSPredicate(format:"SELF MATCHES %@", check)
+        return check_value.evaluate(with: self)
+    }
+    
+    public func trim(_ prefix: String) -> String {
+        return hasPrefix(prefix) ? String(self.dropFirst(prefix.count)) : self
+    }
+    
+    public func extractRGBA() ->rgba{
+        let value = strtoul(trim(colorPrefix), nil, 16)
+        let b = value & 0xFF;
+        let g = (value >> 8) & 0xFF;
+        let r = (value >> 16) & 0xFF;
+        
+        return (r:Int(r), g:Int(g), b:Int(b), a:1.0)
+    }
+}
+
+extension CGAffineTransform {
+    func makeCATransform3D()->CATransform3D {
+        return CATransform3DMakeAffineTransform(self)
+    }
+    
+    static func skew(_ x:CGFloat, _ y:CGFloat)-> CGAffineTransform{
+        var matrix = CGAffineTransform.identity
+        matrix.a = 1
+        matrix.b = tan(x)
+        matrix.c = tan(y)
+        matrix.d = 1
+        matrix.tx = 0
+        matrix.ty = 0
+        return matrix
+    }
+    
+    static func skewX(_ x:CGFloat)->CGAffineTransform{
+        var matrix = CGAffineTransform.identity
+        matrix.a = 1
+        matrix.b = 0
+        matrix.c = tan(x)
+        matrix.d = 1
+        matrix.tx = 0
+        matrix.ty = 0
+        return matrix
+    }
+    
+    static func skewY(_ y:CGFloat)->CGAffineTransform{
+        var matrix = CGAffineTransform.identity
+        matrix.a = 1
+        matrix.b = tan(y)
+        matrix.c = 0
+        matrix.d = 1
+        matrix.tx = 0
+        matrix.ty = 0
+        return matrix
+    }
+}
+
+private var kNSObjectIsFocus: UInt8 = 0
+extension CAShapeLayer {
+    
+    var isfocus:Int {
+        get {
+            if let num = objc_getAssociatedObject(self, &kNSObjectIsFocus) as? String {
+                return Int(num) ?? 0
+            }
+            return -1
+        }
+        set {
+            objc_setAssociatedObject(self, &kNSObjectIsFocus, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+    
+    func fill(_ hexColor:String){
+        self.fillColor = hexColor.colorValue.cgColor
+    }
+}
+
+extension UIBezierPath {
+    convenience init(ellipse center:CGPoint, rx:CGFloat, ry:CGFloat){
+        let rect = CGRect.init(x: center.x - rx, y: center.y - ry, width: rx, height: ry)
+        self.init(ovalIn: rect)
+    }
+    
+    convenience init(circle center:CGPoint, radius:CGFloat) {
+        self.init(arcCenter: center, radius: radius, startAngle: 0, endAngle: -2*CGFloat.pi, clockwise: true)
+    }
+    
+    convenience init(line point1:CGPoint, point2:CGPoint){
+        self.init()
+        self.move(to: point1)
+        self.addLine(to: point2)
+    }
+    
+    func fillWithHex(_ hexColor:String){
+        hexColor.colorValue.setFill()
+        self.fill()
+    }
+    
+    func strokeWithHex(_ hexColor:String){
+        hexColor.colorValue.setStroke()
+        self.stroke()
+    }
+}
+
+//MARK:--
+//MARK: Main Drawing Class
+
+class Winter : UIView {
+    var layerlist:[String:CAShapeLayer]?
+    var activeLayer:CAShapeLayer?
+    var mainLayer:CAShapeLayer?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        mainLayer = drawWinter()
+        if let main = mainLayer { layer.addSublayer(main) }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func drawWinter() -> CAShapeLayer {
+        return CAShapeLayer()
+    }
+}
+
+//MARK:--
+//MARK: User Interative
+extension Winter {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+}
+
+

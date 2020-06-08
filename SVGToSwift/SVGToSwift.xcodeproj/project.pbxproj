@@ -13,7 +13,17 @@
 		5A0FA512243EBCDA005DFFC7 /* SVGCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FA511243EBCDA005DFFC7 /* SVGCodeModel.swift */; };
 		5A203B1F2449536700E1014F /* ShapeAttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A203B1E2449536700E1014F /* ShapeAttributeModel.swift */; };
 		5A203B21244954AE00E1014F /* PathAttributeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A203B20244954AE00E1014F /* PathAttributeModel.swift */; };
+		5A2F1FC0245C236100A39800 /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F1FBF245C236100A39800 /* PreviewController.swift */; };
+		5A2F1FC3245C3FEA00A39800 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F1FC2245C3FEA00A39800 /* ReviewViewModel.swift */; };
+		5A2F1FC5245C414D00A39800 /* Macosx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F1FC4245C414D00A39800 /* Macosx.swift */; };
 		5A47E945243DF5E40083AFB7 /* CodeSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A47E944243DF5E40083AFB7 /* CodeSVG.swift */; };
+		5A5D09B3245EDBA900044C51 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D09B2245EDBA900044C51 /* SVGView.swift */; };
+		5A5D09B8245F1DA600044C51 /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D09B7245F1DA600044C51 /* DataStructure.swift */; };
+		5A9B9A23245E8FB3005A571C /* SVGConvertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9B9A22245E8FB3005A571C /* SVGConvertWindow.swift */; };
+		5AA11481245D4015007E4AE6 /* NSObject+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA11480245D4015007E4AE6 /* NSObject+SVG.swift */; };
+		5AA11483245D42B3007E4AE6 /* NSBezierPath+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA11482245D42B3007E4AE6 /* NSBezierPath+SVG.swift */; };
+		5AA11485245D439C007E4AE6 /* Value+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA11484245D439C007E4AE6 /* Value+SVG.swift */; };
+		5AA11487245D5F4F007E4AE6 /* CAShapeLayer+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA11486245D5F4F007E4AE6 /* CAShapeLayer+SVG.swift */; };
 		5AB87ED32452EE4B007ACC08 /* SwiftTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB87ED22452EE4B007ACC08 /* SwiftTemplate.swift */; };
 		5ACA659A243DC17800EB36B1 /* SVGConvertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA6599243DC17800EB36B1 /* SVGConvertViewModel.swift */; };
 		5ACA659C243DCD6600EB36B1 /* NSError+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA659B243DCD6600EB36B1 /* NSError+SVG.swift */; };
@@ -49,7 +59,17 @@
 		5A0FA511243EBCDA005DFFC7 /* SVGCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGCodeModel.swift; sourceTree = "<group>"; };
 		5A203B1E2449536700E1014F /* ShapeAttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeAttributeModel.swift; sourceTree = "<group>"; };
 		5A203B20244954AE00E1014F /* PathAttributeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathAttributeModel.swift; sourceTree = "<group>"; };
+		5A2F1FBF245C236100A39800 /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
+		5A2F1FC2245C3FEA00A39800 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
+		5A2F1FC4245C414D00A39800 /* Macosx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macosx.swift; sourceTree = "<group>"; };
 		5A47E944243DF5E40083AFB7 /* CodeSVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSVG.swift; sourceTree = "<group>"; };
+		5A5D09B2245EDBA900044C51 /* SVGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGView.swift; sourceTree = "<group>"; };
+		5A5D09B7245F1DA600044C51 /* DataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
+		5A9B9A22245E8FB3005A571C /* SVGConvertWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGConvertWindow.swift; sourceTree = "<group>"; };
+		5AA11480245D4015007E4AE6 /* NSObject+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+SVG.swift"; sourceTree = "<group>"; };
+		5AA11482245D42B3007E4AE6 /* NSBezierPath+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+SVG.swift"; sourceTree = "<group>"; };
+		5AA11484245D439C007E4AE6 /* Value+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value+SVG.swift"; sourceTree = "<group>"; };
+		5AA11486245D5F4F007E4AE6 /* CAShapeLayer+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+SVG.swift"; sourceTree = "<group>"; };
 		5AB87ED22452EE4B007ACC08 /* SwiftTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTemplate.swift; sourceTree = "<group>"; };
 		5ACA6599243DC17800EB36B1 /* SVGConvertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGConvertViewModel.swift; sourceTree = "<group>"; };
 		5ACA659B243DCD6600EB36B1 /* NSError+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+SVG.swift"; sourceTree = "<group>"; };
@@ -110,6 +130,7 @@
 				5A0FA50A243EB9AB005DFFC7 /* SwiftCode.swift */,
 				5A0FA50C243EB9C5005DFFC7 /* ObjCode.swift */,
 				5A0FA50E243EB9D0005DFFC7 /* JSCode.swift */,
+				5A2F1FC4245C414D00A39800 /* Macosx.swift */,
 			);
 			path = Language;
 			sourceTree = "<group>";
@@ -138,6 +159,41 @@
 			path = SwiftCssParser;
 			sourceTree = "<group>";
 		};
+		5A2F1FBE245C233800A39800 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65418D18214E3AC800733EBE /* ViewController.swift */,
+				5ADDE5072170B29900442550 /* SVGConvertController.swift */,
+				5A2F1FBF245C236100A39800 /* PreviewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5A2F1FC1245C244100A39800 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5ACA6599243DC17800EB36B1 /* SVGConvertViewModel.swift */,
+				5A2F1FC2245C3FEA00A39800 /* ReviewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5A5D09B4245EDBB600044C51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A5D09B2245EDBA900044C51 /* SVGView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A9B9A24245E8FBE005A571C /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				5A9B9A22245E8FB3005A571C /* SVGConvertWindow.swift */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
 		5AB87ED12452EE2A007ACC08 /* Template */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,13 +205,13 @@
 		5ACA659D243DD25900EB36B1 /* SVGHelper */ = {
 			isa = PBXGroup;
 			children = (
+				5A2F1FC1245C244100A39800 /* ViewModel */,
 				5AB87ED12452EE2A007ACC08 /* Template */,
 				5A0FA509243EB991005DFFC7 /* Language */,
 				65F8D5D021720B3D00C80E85 /* SVGAttribute.swift */,
 				65418D26214E3D8C00733EBE /* SVG2Swift.swift */,
 				5ADDE4A2216B536900442550 /* SVGXML.swift */,
 				5ADDE4B4216DC10E00442550 /* Extension.swift */,
-				5ACA6599243DC17800EB36B1 /* SVGConvertViewModel.swift */,
 				5A47E944243DF5E40083AFB7 /* CodeSVG.swift */,
 			);
 			path = SVGHelper;
@@ -167,6 +223,11 @@
 				5AD5D387243C87E20048AAA9 /* NSView+SVG.swift */,
 				5ACA659B243DCD6600EB36B1 /* NSError+SVG.swift */,
 				5ADF7595244825D8004DA5EF /* StyleElementEx.swift */,
+				5AA11480245D4015007E4AE6 /* NSObject+SVG.swift */,
+				5AA11482245D42B3007E4AE6 /* NSBezierPath+SVG.swift */,
+				5AA11484245D439C007E4AE6 /* Value+SVG.swift */,
+				5AA11486245D5F4F007E4AE6 /* CAShapeLayer+SVG.swift */,
+				5A5D09B7245F1DA600044C51 /* DataStructure.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -221,13 +282,14 @@
 		65418D15214E3AC700733EBE /* SVGToSwift */ = {
 			isa = PBXGroup;
 			children = (
+				5A5D09B4245EDBB600044C51 /* View */,
+				5A9B9A24245E8FBE005A571C /* Window */,
+				5A2F1FBE245C233800A39800 /* Controller */,
 				5A16243E24470C3C00F4A5E6 /* SwiftCssParser */,
 				5A0FA510243EBCC1005DFFC7 /* Model */,
 				5ACA659D243DD25900EB36B1 /* SVGHelper */,
 				5AD5D386243C87980048AAA9 /* Extension */,
 				65418D16214E3AC800733EBE /* AppDelegate.swift */,
-				65418D18214E3AC800733EBE /* ViewController.swift */,
-				5ADDE5072170B29900442550 /* SVGConvertController.swift */,
 				65418D1A214E3ACA00733EBE /* Assets.xcassets */,
 				65418D1C214E3ACA00733EBE /* Main.storyboard */,
 				65418D1F214E3ACA00733EBE /* Info.plist */,
@@ -343,14 +405,20 @@
 				5AFB529224480A630033E2A6 /* tokenizer.c in Sources */,
 				5ADF759824483439004DA5EF /* SVGStyleElement.swift in Sources */,
 				5ADDE5082170B29900442550 /* SVGConvertController.swift in Sources */,
+				5AA11485245D439C007E4AE6 /* Value+SVG.swift in Sources */,
+				5AA11487245D5F4F007E4AE6 /* CAShapeLayer+SVG.swift in Sources */,
 				5A0FA512243EBCDA005DFFC7 /* SVGCodeModel.swift in Sources */,
 				5AFB529724480A720033E2A6 /* StyleSheet.swift in Sources */,
 				5AFB528D24480A630033E2A6 /* katana.lex.c in Sources */,
+				5A2F1FC0245C236100A39800 /* PreviewController.swift in Sources */,
 				5ADDE4B5216DC10E00442550 /* Extension.swift in Sources */,
 				5AFB529624480A720033E2A6 /* StyleElement.swift in Sources */,
 				5A203B1F2449536700E1014F /* ShapeAttributeModel.swift in Sources */,
 				5ACA659C243DCD6600EB36B1 /* NSError+SVG.swift in Sources */,
+				5A2F1FC5245C414D00A39800 /* Macosx.swift in Sources */,
+				5A2F1FC3245C3FEA00A39800 /* ReviewViewModel.swift in Sources */,
 				5A203B21244954AE00E1014F /* PathAttributeModel.swift in Sources */,
+				5A5D09B8245F1DA600044C51 /* DataStructure.swift in Sources */,
 				5AD5D388243C87E20048AAA9 /* NSView+SVG.swift in Sources */,
 				5ADDE4A3216B536900442550 /* SVGXML.swift in Sources */,
 				5ACA659A243DC17800EB36B1 /* SVGConvertViewModel.swift in Sources */,
@@ -358,10 +426,14 @@
 				5AB87ED32452EE4B007ACC08 /* SwiftTemplate.swift in Sources */,
 				5ADF759A24486CBE004DA5EF /* StyleExtension.swift in Sources */,
 				5A47E945243DF5E40083AFB7 /* CodeSVG.swift in Sources */,
+				5AA11481245D4015007E4AE6 /* NSObject+SVG.swift in Sources */,
 				65418D27214E3D8C00733EBE /* SVG2Swift.swift in Sources */,
+				5AA11483245D42B3007E4AE6 /* NSBezierPath+SVG.swift in Sources */,
 				65418D19214E3AC800733EBE /* ViewController.swift in Sources */,
 				65F8D5D121720B3D00C80E85 /* SVGAttribute.swift in Sources */,
 				5A0FA50B243EB9AB005DFFC7 /* SwiftCode.swift in Sources */,
+				5A9B9A23245E8FB3005A571C /* SVGConvertWindow.swift in Sources */,
+				5A5D09B3245EDBA900044C51 /* SVGView.swift in Sources */,
 				5AFB528E24480A630033E2A6 /* selector.c in Sources */,
 				5AFB528F24480A630033E2A6 /* katana.tab.c in Sources */,
 				5AFB529124480A630033E2A6 /* parser.c in Sources */,

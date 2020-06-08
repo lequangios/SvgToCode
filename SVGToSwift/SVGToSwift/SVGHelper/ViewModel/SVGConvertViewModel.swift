@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 class SVGConvertViewModel {
     var svgType:SVGElementName = SVGElementName.svg
@@ -38,6 +39,11 @@ class SVGConvertViewModel {
                 else if strongSelf.svgType == .svg {
                     text = strongSelf.convertFileSVG()
                     complete(.success(text))
+                    DispatchQueue.main.async { [weak self] in
+                        if let strongSelf = self {
+                            strongSelf.openPreviewWindow()
+                        }
+                    }
                 }
                 else{
                     let e = NSError.init(msg: "\(strongSelf.svgType.rawValue) is not supported")
@@ -45,6 +51,34 @@ class SVGConvertViewModel {
                 }
             }
         }
+    }
+    
+    func openPreviewWindow(){
+        //let storyboard = NSStoryboard(name: "Main", bundle: nil)
+//        let previewWindowController = storyboard.instantiateController(withIdentifier: "PreviewWindowID") as? NSWindowController
+//        if let preview = previewWindowController?.window {
+//            let previewViewController = preview.contentViewController as! PreviewController
+//            let model = ReviewViewModel(self.rootModel, SVGXMLManager.shared.rootStyle)
+//            previewViewController.model = model
+//            previewWindowController?.showWindow(model)
+////            let application = NSApplication.shared
+////            application.runModal(for: preview)
+////            preview.close()
+//        }
+        
+        let storyboardName = NSStoryboard.Name(stringLiteral: "Main")
+        let storyboard = NSStoryboard(name: storyboardName, bundle: nil)
+        
+        let storyboardID = NSStoryboard.SceneIdentifier(stringLiteral: "PreviewWindowID")
+        
+        if let previewWindow = storyboard.instantiateController(withIdentifier: storyboardID) as? NSWindowController {
+            if let previewViewController = previewWindow.contentViewController as? PreviewController {
+                let model = ReviewViewModel(self.rootModel, SVGXMLManager.shared.rootStyle)
+                previewViewController.model = model
+            }
+            previewWindow.showWindow(nil)
+        }
+        
     }
     
     private func convertPath(_ element:SVGDataModel, _ deep:Int)->String{

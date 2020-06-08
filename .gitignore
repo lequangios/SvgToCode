@@ -88,3 +88,9 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+*.playground
+
+SVG2Code/Pods
+SVG2Code/SVG2Code.xcworkspace
+SVG2Code/Podfile.lock

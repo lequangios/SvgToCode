@@ -202,6 +202,20 @@ extension SVGDataModel {
     }
 }
 
+extension SVGDataModel : NodeProtocol {
+    func nodeInfo() -> String {
+        return name
+    }
+    
+    static func == (lhs: SVGDataModel, rhs: SVGDataModel) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        return self.clone()
+    }
+}
+
 extension Array where Element == SVGDataModel {
     func findPaths()->[SVGDataModel] {
         return self.filter{$0.type != .g && $0.type != .style && $0.type != .svg}

@@ -75,7 +75,6 @@ fileprivate enum Coordinates {
 }
 
 // MARK: Class
-
 public class SVGPath {
     public var commands: [SVGCommand] = []
     private var builder: SVGCommandBuilder = move
