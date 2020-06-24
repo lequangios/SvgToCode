@@ -143,8 +143,6 @@ extension SwiftCodeGeneration : CodeGenerationProtocol {
                 case .close:
                     code += "\(model.name).close()\n"
                     break
-                case .style:
-                    code += "\(model.name).fill(\"\(command.nameStyle)\")\n"
                 }
             }
             return code

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A00854C2496565D00480B44 /* Cocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A00854B2496565D00480B44 /* Cocoa.swift */; };
 		5A01C03D24650CCE00056430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C03C24650CCE00056430 /* AppDelegate.swift */; };
 		5A01C03F24650CCE00056430 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C03E24650CCE00056430 /* MainViewController.swift */; };
 		5A01C04224650CCE00056430 /* SVG2Code.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A01C04024650CCE00056430 /* SVG2Code.xcdatamodeld */; };
@@ -44,18 +45,56 @@
 		5A31975C2487A88C0006694B /* CALayer+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A31975B2487A88C0006694B /* CALayer+App.swift */; };
 		5A3445FC246A5E1A00927CC2 /* SVGPreviewGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3445FB246A5E1A00927CC2 /* SVGPreviewGeneration.swift */; };
 		5A3445FE246A708600927CC2 /* CAShapeLayer+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3445FD246A708600927CC2 /* CAShapeLayer+Preview.swift */; };
+		5A38F78F2499E0C500561420 /* QySVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38F78E2499E0C500561420 /* QySVG.swift */; };
+		5A38F7912499FEAA00561420 /* QySVGCSSElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38F7902499FEAA00561420 /* QySVGCSSElement.swift */; };
+		5A45F6FC24A0597A0087FA20 /* QySVGStyleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F6FB24A0597A0087FA20 /* QySVGStyleElement.swift */; };
+		5A45F70524A0B9D90087FA20 /* QySVGEllipseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F6FD24A0B9D80087FA20 /* QySVGEllipseElement.swift */; };
+		5A45F70624A0B9D90087FA20 /* QySVGGElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F6FE24A0B9D80087FA20 /* QySVGGElement.swift */; };
+		5A45F70724A0B9D90087FA20 /* QySVGLinearGradientElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F6FF24A0B9D80087FA20 /* QySVGLinearGradientElement.swift */; };
+		5A45F70824A0B9D90087FA20 /* QySVGLineElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F70024A0B9D90087FA20 /* QySVGLineElement.swift */; };
+		5A45F70924A0B9D90087FA20 /* QySVGAElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F70124A0B9D90087FA20 /* QySVGAElement.swift */; };
+		5A45F70A24A0B9D90087FA20 /* QySVGClipPathElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F70224A0B9D90087FA20 /* QySVGClipPathElement.swift */; };
+		5A45F70B24A0B9D90087FA20 /* QySVGDefsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F70324A0B9D90087FA20 /* QySVGDefsElement.swift */; };
+		5A45F70C24A0B9D90087FA20 /* QySVGCircleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F70424A0B9D90087FA20 /* QySVGCircleElement.swift */; };
+		5A45F70E24A0BC4E0087FA20 /* QySVGImageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F70D24A0BC4E0087FA20 /* QySVGImageElement.swift */; };
+		5A45F71024A0BC9A0087FA20 /* QySVGMarkerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F70F24A0BC9A0087FA20 /* QySVGMarkerElement.swift */; };
+		5A45F71224A0BCC50087FA20 /* QySVGMaskElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F71124A0BCC50087FA20 /* QySVGMaskElement.swift */; };
+		5A45F71424A0BCFF0087FA20 /* QySVGPathElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F71324A0BCFF0087FA20 /* QySVGPathElement.swift */; };
+		5A45F71624A0BD310087FA20 /* QySVGPatternElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F71524A0BD310087FA20 /* QySVGPatternElement.swift */; };
+		5A45F71824A0BDCA0087FA20 /* QySVGPolygonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F71724A0BDCA0087FA20 /* QySVGPolygonElement.swift */; };
+		5A45F71A24A0DF650087FA20 /* QySVGPolylineElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F71924A0DF650087FA20 /* QySVGPolylineElement.swift */; };
+		5A45F71C24A0DF8A0087FA20 /* QySVGRadialGradientElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F71B24A0DF8A0087FA20 /* QySVGRadialGradientElement.swift */; };
+		5A45F71E24A0DFAE0087FA20 /* QySVGRectElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F71D24A0DFAE0087FA20 /* QySVGRectElement.swift */; };
+		5A45F72024A0DFDF0087FA20 /* QySVGScriptElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F71F24A0DFDF0087FA20 /* QySVGScriptElement.swift */; };
+		5A45F72224A0E0110087FA20 /* QySVGSvgElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F72124A0E0110087FA20 /* QySVGSvgElement.swift */; };
+		5A45F72424A0E0390087FA20 /* QySVGTextElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F72324A0E0390087FA20 /* QySVGTextElement.swift */; };
+		5A45F72624A0E12E0087FA20 /* QySVGTextPathElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F72524A0E12E0087FA20 /* QySVGTextPathElement.swift */; };
+		5A45F72824A0E18E0087FA20 /* QySVGTitleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F72724A0E18E0087FA20 /* QySVGTitleElement.swift */; };
+		5A45F72A24A0E1B30087FA20 /* QySVGTspanElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F72924A0E1B30087FA20 /* QySVGTspanElement.swift */; };
+		5A45F72C24A0E1D90087FA20 /* QySVGUseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F72B24A0E1D90087FA20 /* QySVGUseElement.swift */; };
+		5A45F72E24A0E1FE0087FA20 /* QySVGViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45F72D24A0E1FE0087FA20 /* QySVGViewElement.swift */; };
 		5A5B7FB224683B5D005D73F1 /* CodeGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B7FB124683B5D005D73F1 /* CodeGeneration.swift */; };
 		5A5B7FB424683BB9005D73F1 /* LanguageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B7FB324683BB9005D73F1 /* LanguageEnum.swift */; };
 		5A5B7FB624683C23005D73F1 /* CodeGenerationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B7FB524683C23005D73F1 /* CodeGenerationProtocol.swift */; };
 		5A5B7FB924683D36005D73F1 /* SwiftCodeGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5B7FB824683D36005D73F1 /* SwiftCodeGeneration.swift */; };
 		5A67A10E247CCF1200A93AA1 /* SVGPreviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A67A10D247CCF1200A93AA1 /* SVGPreviewModel.swift */; };
 		5A67A110247CD19600A93AA1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A67A10F247CD19600A93AA1 /* ViewModel.swift */; };
+		5A70C743249E5066006FA875 /* green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5A70C742249E5066006FA875 /* green.svg */; };
+		5A90DF5B249B37F700F5E375 /* NSDataDetector+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A90DF5A249B37F700F5E375 /* NSDataDetector+SVG.swift */; };
+		5A90DF5D249B398900F5E375 /* QySVGAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A90DF5C249B398900F5E375 /* QySVGAttributeName.swift */; };
+		5A90DF5F249B3A0100F5E375 /* QySVGElementName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A90DF5E249B3A0100F5E375 /* QySVGElementName.swift */; };
 		5A963048247643CE003987B4 /* SVGDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A963047247643CE003987B4 /* SVGDataBuilder.swift */; };
 		5A999CFB24867C1E000B4BB6 /* ACEView+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A999CFA24867C1E000B4BB6 /* ACEView+App.swift */; };
 		5AA29E44246914CF00DF2117 /* String+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA29E43246914CF00DF2117 /* String+Swift.swift */; };
 		5AA29E4824698F2900DF2117 /* SwiftCALayer.tml in Resources */ = {isa = PBXBuildFile; fileRef = 5AA29E4724698F2900DF2117 /* SwiftCALayer.tml */; };
 		5AA940CB247694C900C1C2D0 /* NSViewController+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA940CA247694C900C1C2D0 /* NSViewController+App.swift */; };
+		5AAA37B6249205B50068508B /* QySVGNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA37B5249205B50068508B /* QySVGNode.swift */; };
+		5AAA37B8249207DF0068508B /* QySVGAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA37B7249207DF0068508B /* QySVGAttribute.swift */; };
+		5AAA37BA24920D300068508B /* QySVGTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA37B924920D300068508B /* QySVGTypes.swift */; };
+		5AAA37BC249258AE0068508B /* QySVGValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA37BB249258AE0068508B /* QySVGValues.swift */; };
 		5ABF6915248540C600D13D95 /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF6914248540C600D13D95 /* HTML */; };
+		5AC349442494CCE000647473 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC349432494CCE000647473 /* Foundation.swift */; };
+		5AC349462494CCF700647473 /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC349452494CCF700647473 /* CoreGraphics.swift */; };
 		5AC4C0682471395B00D39127 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4C0672471395B00D39127 /* MainWindowController.swift */; };
 		5AC4C06A24713D1C00D39127 /* NSTouchBarItem+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4C06924713D1C00D39127 /* NSTouchBarItem+App.swift */; };
 		5AC4C06C24713DB600D39127 /* NSToolbarItem+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4C06B24713DB600D39127 /* NSToolbarItem+App.swift */; };
@@ -92,6 +131,7 @@
 
 /* Begin PBXFileReference section */
 		148AEDEA688F01B555A161E2 /* Pods-SVG2Code.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SVG2Code.release.xcconfig"; path = "Pods/Target Support Files/Pods-SVG2Code/Pods-SVG2Code.release.xcconfig"; sourceTree = "<group>"; };
+		5A00854B2496565D00480B44 /* Cocoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocoa.swift; sourceTree = "<group>"; };
 		5A01C03924650CCE00056430 /* SVG2Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVG2Code.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A01C03C24650CCE00056430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A01C03E24650CCE00056430 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -145,18 +185,56 @@
 		5A31975B2487A88C0006694B /* CALayer+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+App.swift"; sourceTree = "<group>"; };
 		5A3445FB246A5E1A00927CC2 /* SVGPreviewGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPreviewGeneration.swift; sourceTree = "<group>"; };
 		5A3445FD246A708600927CC2 /* CAShapeLayer+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+Preview.swift"; sourceTree = "<group>"; };
+		5A38F78E2499E0C500561420 /* QySVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVG.swift; sourceTree = "<group>"; };
+		5A38F7902499FEAA00561420 /* QySVGCSSElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGCSSElement.swift; sourceTree = "<group>"; };
+		5A45F6FB24A0597A0087FA20 /* QySVGStyleElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGStyleElement.swift; sourceTree = "<group>"; };
+		5A45F6FD24A0B9D80087FA20 /* QySVGEllipseElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGEllipseElement.swift; sourceTree = "<group>"; };
+		5A45F6FE24A0B9D80087FA20 /* QySVGGElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGGElement.swift; sourceTree = "<group>"; };
+		5A45F6FF24A0B9D80087FA20 /* QySVGLinearGradientElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGLinearGradientElement.swift; sourceTree = "<group>"; };
+		5A45F70024A0B9D90087FA20 /* QySVGLineElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGLineElement.swift; sourceTree = "<group>"; };
+		5A45F70124A0B9D90087FA20 /* QySVGAElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGAElement.swift; sourceTree = "<group>"; };
+		5A45F70224A0B9D90087FA20 /* QySVGClipPathElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGClipPathElement.swift; sourceTree = "<group>"; };
+		5A45F70324A0B9D90087FA20 /* QySVGDefsElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGDefsElement.swift; sourceTree = "<group>"; };
+		5A45F70424A0B9D90087FA20 /* QySVGCircleElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGCircleElement.swift; sourceTree = "<group>"; };
+		5A45F70D24A0BC4E0087FA20 /* QySVGImageElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGImageElement.swift; sourceTree = "<group>"; };
+		5A45F70F24A0BC9A0087FA20 /* QySVGMarkerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGMarkerElement.swift; sourceTree = "<group>"; };
+		5A45F71124A0BCC50087FA20 /* QySVGMaskElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGMaskElement.swift; sourceTree = "<group>"; };
+		5A45F71324A0BCFF0087FA20 /* QySVGPathElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGPathElement.swift; sourceTree = "<group>"; };
+		5A45F71524A0BD310087FA20 /* QySVGPatternElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGPatternElement.swift; sourceTree = "<group>"; };
+		5A45F71724A0BDCA0087FA20 /* QySVGPolygonElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGPolygonElement.swift; sourceTree = "<group>"; };
+		5A45F71924A0DF650087FA20 /* QySVGPolylineElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGPolylineElement.swift; sourceTree = "<group>"; };
+		5A45F71B24A0DF8A0087FA20 /* QySVGRadialGradientElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGRadialGradientElement.swift; sourceTree = "<group>"; };
+		5A45F71D24A0DFAE0087FA20 /* QySVGRectElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGRectElement.swift; sourceTree = "<group>"; };
+		5A45F71F24A0DFDF0087FA20 /* QySVGScriptElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGScriptElement.swift; sourceTree = "<group>"; };
+		5A45F72124A0E0110087FA20 /* QySVGSvgElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGSvgElement.swift; sourceTree = "<group>"; };
+		5A45F72324A0E0390087FA20 /* QySVGTextElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGTextElement.swift; sourceTree = "<group>"; };
+		5A45F72524A0E12E0087FA20 /* QySVGTextPathElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGTextPathElement.swift; sourceTree = "<group>"; };
+		5A45F72724A0E18E0087FA20 /* QySVGTitleElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGTitleElement.swift; sourceTree = "<group>"; };
+		5A45F72924A0E1B30087FA20 /* QySVGTspanElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGTspanElement.swift; sourceTree = "<group>"; };
+		5A45F72B24A0E1D90087FA20 /* QySVGUseElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGUseElement.swift; sourceTree = "<group>"; };
+		5A45F72D24A0E1FE0087FA20 /* QySVGViewElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGViewElement.swift; sourceTree = "<group>"; };
 		5A5B7FB124683B5D005D73F1 /* CodeGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneration.swift; sourceTree = "<group>"; };
 		5A5B7FB324683BB9005D73F1 /* LanguageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageEnum.swift; sourceTree = "<group>"; };
 		5A5B7FB524683C23005D73F1 /* CodeGenerationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationProtocol.swift; sourceTree = "<group>"; };
 		5A5B7FB824683D36005D73F1 /* SwiftCodeGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCodeGeneration.swift; sourceTree = "<group>"; };
 		5A67A10D247CCF1200A93AA1 /* SVGPreviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPreviewModel.swift; sourceTree = "<group>"; };
 		5A67A10F247CD19600A93AA1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5A70C742249E5066006FA875 /* green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = green.svg; sourceTree = "<group>"; };
+		5A90DF5A249B37F700F5E375 /* NSDataDetector+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDataDetector+SVG.swift"; sourceTree = "<group>"; };
+		5A90DF5C249B398900F5E375 /* QySVGAttributeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGAttributeName.swift; sourceTree = "<group>"; };
+		5A90DF5E249B3A0100F5E375 /* QySVGElementName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGElementName.swift; sourceTree = "<group>"; };
 		5A963047247643CE003987B4 /* SVGDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGDataBuilder.swift; sourceTree = "<group>"; };
 		5A999CFA24867C1E000B4BB6 /* ACEView+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ACEView+App.swift"; sourceTree = "<group>"; };
 		5AA29E43246914CF00DF2117 /* String+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Swift.swift"; sourceTree = "<group>"; };
 		5AA29E4724698F2900DF2117 /* SwiftCALayer.tml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftCALayer.tml; sourceTree = "<group>"; };
 		5AA940CA247694C900C1C2D0 /* NSViewController+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+App.swift"; sourceTree = "<group>"; };
+		5AAA37B5249205B50068508B /* QySVGNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGNode.swift; sourceTree = "<group>"; };
+		5AAA37B7249207DF0068508B /* QySVGAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGAttribute.swift; sourceTree = "<group>"; };
+		5AAA37B924920D300068508B /* QySVGTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGTypes.swift; sourceTree = "<group>"; };
+		5AAA37BB249258AE0068508B /* QySVGValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGValues.swift; sourceTree = "<group>"; };
 		5ABF6914248540C600D13D95 /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
+		5AC349432494CCE000647473 /* Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
+		5AC349452494CCF700647473 /* CoreGraphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
 		5AC4C0672471395B00D39127 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		5AC4C06924713D1C00D39127 /* NSTouchBarItem+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTouchBarItem+App.swift"; sourceTree = "<group>"; };
 		5AC4C06B24713DB600D39127 /* NSToolbarItem+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSToolbarItem+App.swift"; sourceTree = "<group>"; };
@@ -270,6 +348,7 @@
 		5A01C06B24652E5100056430 /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				5A35B7DF249107990098D03C /* QySVG */,
 				5A01C0752465303100056430 /* SwiftCssParser */,
 				5A01C0A8246566B900056430 /* SVGPath.swift */,
 			);
@@ -431,10 +510,64 @@
 		5A01C0B224656DB400056430 /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				5A70C742249E5066006FA875 /* green.svg */,
 				5AA29E4724698F2900DF2117 /* SwiftCALayer.tml */,
 				5A01C0B324656DEE00056430 /* winter.svg */,
 			);
 			path = Template;
+			sourceTree = "<group>";
+		};
+		5A35B7DF249107990098D03C /* QySVG */ = {
+			isa = PBXGroup;
+			children = (
+				5A38F792249A453200561420 /* SVGInfo */,
+				5AC349422494CCC700647473 /* Extension */,
+				5AAA37B4249205A30068508B /* Model */,
+				5A38F78E2499E0C500561420 /* QySVG.swift */,
+			);
+			path = QySVG;
+			sourceTree = "<group>";
+		};
+		5A38F792249A453200561420 /* SVGInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5A90DF5C249B398900F5E375 /* QySVGAttributeName.swift */,
+				5A90DF5E249B3A0100F5E375 /* QySVGElementName.swift */,
+			);
+			path = SVGInfo;
+			sourceTree = "<group>";
+		};
+		5A45F6FA24A058E70087FA20 /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				5A45F70124A0B9D90087FA20 /* QySVGAElement.swift */,
+				5A45F70424A0B9D90087FA20 /* QySVGCircleElement.swift */,
+				5A45F70224A0B9D90087FA20 /* QySVGClipPathElement.swift */,
+				5A45F70324A0B9D90087FA20 /* QySVGDefsElement.swift */,
+				5A45F6FD24A0B9D80087FA20 /* QySVGEllipseElement.swift */,
+				5A45F6FE24A0B9D80087FA20 /* QySVGGElement.swift */,
+				5A45F6FF24A0B9D80087FA20 /* QySVGLinearGradientElement.swift */,
+				5A45F70024A0B9D90087FA20 /* QySVGLineElement.swift */,
+				5A45F6FB24A0597A0087FA20 /* QySVGStyleElement.swift */,
+				5A45F70D24A0BC4E0087FA20 /* QySVGImageElement.swift */,
+				5A45F70F24A0BC9A0087FA20 /* QySVGMarkerElement.swift */,
+				5A45F71124A0BCC50087FA20 /* QySVGMaskElement.swift */,
+				5A45F71324A0BCFF0087FA20 /* QySVGPathElement.swift */,
+				5A45F71524A0BD310087FA20 /* QySVGPatternElement.swift */,
+				5A45F71724A0BDCA0087FA20 /* QySVGPolygonElement.swift */,
+				5A45F71924A0DF650087FA20 /* QySVGPolylineElement.swift */,
+				5A45F71B24A0DF8A0087FA20 /* QySVGRadialGradientElement.swift */,
+				5A45F71D24A0DFAE0087FA20 /* QySVGRectElement.swift */,
+				5A45F71F24A0DFDF0087FA20 /* QySVGScriptElement.swift */,
+				5A45F72124A0E0110087FA20 /* QySVGSvgElement.swift */,
+				5A45F72324A0E0390087FA20 /* QySVGTextElement.swift */,
+				5A45F72524A0E12E0087FA20 /* QySVGTextPathElement.swift */,
+				5A45F72724A0E18E0087FA20 /* QySVGTitleElement.swift */,
+				5A45F72924A0E1B30087FA20 /* QySVGTspanElement.swift */,
+				5A45F72B24A0E1D90087FA20 /* QySVGUseElement.swift */,
+				5A45F72D24A0E1FE0087FA20 /* QySVGViewElement.swift */,
+			);
+			path = Element;
 			sourceTree = "<group>";
 		};
 		5A5B7FB024683B4F005D73F1 /* Service */ = {
@@ -454,6 +587,30 @@
 				5A3445FB246A5E1A00927CC2 /* SVGPreviewGeneration.swift */,
 			);
 			path = Language;
+			sourceTree = "<group>";
+		};
+		5AAA37B4249205A30068508B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A45F6FA24A058E70087FA20 /* Element */,
+				5AAA37B5249205B50068508B /* QySVGNode.swift */,
+				5AAA37B7249207DF0068508B /* QySVGAttribute.swift */,
+				5AAA37B924920D300068508B /* QySVGTypes.swift */,
+				5AAA37BB249258AE0068508B /* QySVGValues.swift */,
+				5A38F7902499FEAA00561420 /* QySVGCSSElement.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5AC349422494CCC700647473 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5AC349432494CCE000647473 /* Foundation.swift */,
+				5AC349452494CCF700647473 /* CoreGraphics.swift */,
+				5A00854B2496565D00480B44 /* Cocoa.swift */,
+				5A90DF5A249B37F700F5E375 /* NSDataDetector+SVG.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D8E1C3630AAA66570E0D87DB /* Pods */ = {
@@ -578,6 +735,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A70C743249E5066006FA875 /* green.svg in Resources */,
 				5A01C0B424656DEE00056430 /* winter.svg in Resources */,
 				5AA29E4824698F2900DF2117 /* SwiftCALayer.tml in Resources */,
 				5A01C04424650CCF00056430 /* Assets.xcassets in Resources */,
@@ -629,47 +787,84 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A5B7FB424683BB9005D73F1 /* LanguageEnum.swift in Sources */,
+				5A45F71224A0BCC50087FA20 /* QySVGMaskElement.swift in Sources */,
+				5A90DF5B249B37F700F5E375 /* NSDataDetector+SVG.swift in Sources */,
 				5A01C08F2465303100056430 /* foundation.c in Sources */,
+				5A45F70924A0B9D90087FA20 /* QySVGAElement.swift in Sources */,
+				5AAA37B6249205B50068508B /* QySVGNode.swift in Sources */,
 				5A01C03F24650CCE00056430 /* MainViewController.swift in Sources */,
 				5A01C0A32465651D00056430 /* CAShapeLayer+SVG.swift in Sources */,
 				5A31975C2487A88C0006694B /* CALayer+App.swift in Sources */,
+				5A45F71824A0BDCA0087FA20 /* QySVGPolygonElement.swift in Sources */,
 				5AC4C06C24713DB600D39127 /* NSToolbarItem+App.swift in Sources */,
 				5A01C0A7246565B400056430 /* String+SVG.swift in Sources */,
+				5A45F72E24A0E1FE0087FA20 /* QySVGViewElement.swift in Sources */,
+				5A45F71424A0BCFF0087FA20 /* QySVGPathElement.swift in Sources */,
 				5A67A110247CD19600A93AA1 /* ViewModel.swift in Sources */,
 				5A01C0A52465659300056430 /* NSColor+SVG.swift in Sources */,
 				5A01C0B624656F5400056430 /* NSString+SVG.swift in Sources */,
 				5A01C09D2465644900056430 /* NSError+SVG.swift in Sources */,
 				5A01C0AF24656C6F00056430 /* SVGNodeModel.swift in Sources */,
+				5A45F70E24A0BC4E0087FA20 /* QySVGImageElement.swift in Sources */,
 				5AE3E117247A80F8005C512E /* MainSplitViewController.swift in Sources */,
 				5A3445FC246A5E1A00927CC2 /* SVGPreviewGeneration.swift in Sources */,
 				5A01C0AD24656C5900056430 /* SVGTreeModel.swift in Sources */,
+				5AC349442494CCE000647473 /* Foundation.swift in Sources */,
+				5A45F71E24A0DFAE0087FA20 /* QySVGRectElement.swift in Sources */,
+				5A45F70624A0B9D90087FA20 /* QySVGGElement.swift in Sources */,
 				5AA29E44246914CF00DF2117 /* String+Swift.swift in Sources */,
 				5AF38B90247780A400C2F7CD /* NSNotification+App.swift in Sources */,
 				5A01C0902465303100056430 /* parser.c in Sources */,
+				5A45F72024A0DFDF0087FA20 /* QySVGScriptElement.swift in Sources */,
+				5A90DF5D249B398900F5E375 /* QySVGAttributeName.swift in Sources */,
+				5AAA37B8249207DF0068508B /* QySVGAttribute.swift in Sources */,
+				5A45F71024A0BC9A0087FA20 /* QySVGMarkerElement.swift in Sources */,
 				5AC4C06A24713D1C00D39127 /* NSTouchBarItem+App.swift in Sources */,
+				5A45F72C24A0E1D90087FA20 /* QySVGUseElement.swift in Sources */,
+				5AAA37BA24920D300068508B /* QySVGTypes.swift in Sources */,
+				5AC349462494CCF700647473 /* CoreGraphics.swift in Sources */,
 				5AF38B942477D7D500C2F7CD /* NSWindowController.swift in Sources */,
+				5A45F72224A0E0110087FA20 /* QySVGSvgElement.swift in Sources */,
 				5ACA7A3C2483C6BD00FF4AC0 /* SVGPreviewView.swift in Sources */,
 				5A5B7FB924683D36005D73F1 /* SwiftCodeGeneration.swift in Sources */,
 				5AD87908247BF8380014B8A6 /* AppTheme.swift in Sources */,
 				5AFFFE2824751FF1007AECE7 /* MBObserver.swift in Sources */,
 				5A01C0912465303100056430 /* tokenizer.c in Sources */,
 				5A01C0972465612800056430 /* SVGElementAttribute.swift in Sources */,
+				5A45F70B24A0B9D90087FA20 /* QySVGDefsElement.swift in Sources */,
 				5A3445FE246A708600927CC2 /* CAShapeLayer+Preview.swift in Sources */,
+				5A38F78F2499E0C500561420 /* QySVG.swift in Sources */,
+				5AAA37BC249258AE0068508B /* QySVGValues.swift in Sources */,
+				5A45F70524A0B9D90087FA20 /* QySVGEllipseElement.swift in Sources */,
+				5A45F72A24A0E1B30087FA20 /* QySVGTspanElement.swift in Sources */,
+				5A45F71A24A0DF650087FA20 /* QySVGPolylineElement.swift in Sources */,
 				5A01C0942465307200056430 /* DataStructure.swift in Sources */,
+				5A45F72424A0E0390087FA20 /* QySVGTextElement.swift in Sources */,
+				5A45F71C24A0DF8A0087FA20 /* QySVGRadialGradientElement.swift in Sources */,
 				5A01C09F2465647200056430 /* NSObject+SVG.swift in Sources */,
 				5A01C08C2465303100056430 /* katana.lex.c in Sources */,
+				5A45F6FC24A0597A0087FA20 /* QySVGStyleElement.swift in Sources */,
+				5A00854C2496565D00480B44 /* Cocoa.swift in Sources */,
 				5A5B7FB624683C23005D73F1 /* CodeGenerationProtocol.swift in Sources */,
 				5A963048247643CE003987B4 /* SVGDataBuilder.swift in Sources */,
 				5AC4C0682471395B00D39127 /* MainWindowController.swift in Sources */,
+				5A45F72824A0E18E0087FA20 /* QySVGTitleElement.swift in Sources */,
+				5A45F70C24A0B9D90087FA20 /* QySVGCircleElement.swift in Sources */,
 				5A5B7FB224683B5D005D73F1 /* CodeGeneration.swift in Sources */,
 				5A01C0892465303100056430 /* StyleSheet.swift in Sources */,
 				5A01C0A9246566B900056430 /* SVGPath.swift in Sources */,
+				5A45F71624A0BD310087FA20 /* QySVGPatternElement.swift in Sources */,
+				5A45F70824A0B9D90087FA20 /* QySVGLineElement.swift in Sources */,
 				5A67A10E247CCF1200A93AA1 /* SVGPreviewModel.swift in Sources */,
 				5AA940CB247694C900C1C2D0 /* NSViewController+App.swift in Sources */,
+				5A45F70A24A0B9D90087FA20 /* QySVGClipPathElement.swift in Sources */,
 				5AC4C072247153B200D39127 /* SVGCodeViewController.swift in Sources */,
+				5A45F72624A0E12E0087FA20 /* QySVGTextPathElement.swift in Sources */,
 				5A01C0AB2465676B00056430 /* SVGPathProtocol.swift in Sources */,
+				5A90DF5F249B3A0100F5E375 /* QySVGElementName.swift in Sources */,
 				5A01C03D24650CCE00056430 /* AppDelegate.swift in Sources */,
 				5A01C09A2465641400056430 /* NSView+SVG.swift in Sources */,
+				5A38F7912499FEAA00561420 /* QySVGCSSElement.swift in Sources */,
 				5A01C08D2465303100056430 /* selector.c in Sources */,
 				5A01C08A2465303100056430 /* StyleExtension.swift in Sources */,
 				5A05C7B82466B9BD0067D469 /* SVGStyleElement.swift in Sources */,
@@ -677,6 +872,7 @@
 				5A01C04224650CCE00056430 /* SVG2Code.xcdatamodeld in Sources */,
 				5AFB725924729177004DB703 /* MainViewModel.swift in Sources */,
 				5AC4C06E24714E6A00D39127 /* SVGInspectorController.swift in Sources */,
+				5A45F70724A0B9D90087FA20 /* QySVGLinearGradientElement.swift in Sources */,
 				5A01C0A1246564C500056430 /* NSBezierPath+SVG.swift in Sources */,
 				5AF38B922477D4FA00C2F7CD /* NSProgressIndicator+App.swift in Sources */,
 				5A01C0922465303100056430 /* StyleElement.swift in Sources */,

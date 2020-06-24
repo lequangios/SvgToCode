@@ -94,19 +94,15 @@ public extension SVGPath {
         }
         
         all.append(curr)
-        
-        //return all.map { CGFloat(NSDecimalNumber(string: $0, locale: locale)) }
-        return all.map{CGFloat($0.floatValue)}
+        return all.map{CGFloat(strtof($0, nil))}
     }
 }
 
 // MARK: Commands
-
 public struct SVGCommand {
     public var point:CGPoint
     public var control1:CGPoint
     public var control2:CGPoint
-    public var nameStyle:String
     public var type:Kind
     
     public enum Kind {
@@ -115,7 +111,6 @@ public struct SVGCommand {
         case cubeCurve
         case quadCurve
         case close
-        case style
     }
     
     public init () {
@@ -142,7 +137,6 @@ public struct SVGCommand {
         self.control1 = control1
         self.control2 = control2
         self.type = type
-        self.nameStyle = ""
     }
     
     fileprivate func relative (to other:SVGCommand?) -> SVGCommand {

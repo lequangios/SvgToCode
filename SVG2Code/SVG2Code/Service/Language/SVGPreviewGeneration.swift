@@ -125,8 +125,6 @@ extension SVGPreviewGeneration : PreviewGenerationProtocol {
                 case .close:
                     path.close()
                     break
-                case .style:
-                    break
                 }
             }
             return path

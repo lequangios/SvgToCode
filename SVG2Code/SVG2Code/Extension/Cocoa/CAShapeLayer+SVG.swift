@@ -10,6 +10,10 @@ import Foundation
 import Cocoa
 
 extension  CAShapeLayer {
+    struct State {
+        
+    }
+    
     func fill(_ hexColor:String){
         self.fillColor = hexColor.colorValue.cgColor
     }
