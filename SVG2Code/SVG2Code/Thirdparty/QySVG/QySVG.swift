@@ -191,10 +191,11 @@ extension QySVG {
     
     class func test() {
         do {
-            let svgContent = NSString.getTemplate(filename: "winter.svg")
+            let svgContent = NSString.getTemplate(filename: "green.svg")
             let xml = try XML.parse(svgContent)
             if let svg = xml["svg"].element {
                 let ele = try QySVG.buildTree(withXMLElement: svg)
+                try ele.computedNodeAttributes()
                 print(ele.memorySize)
                 print(ele.traceLogs.joined())
             }

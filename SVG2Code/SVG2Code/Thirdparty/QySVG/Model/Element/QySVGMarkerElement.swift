@@ -25,28 +25,28 @@ class QySVGMarkerElement: QySVGNode {
     override func updateNode(byElement element: XML.Element, index: Int, deep: Int) {
         super.updateNode(byElement: element, index: index, deep: deep)
         if let value = element.attributes[QySVGAttributeName.kMarkerHeight.rawValue], let attribute = self.attribute[QySVGAttributeName.kMarkerHeight.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kMarkerUnits.rawValue], let attribute = self.attribute[QySVGAttributeName.kMarkerUnits.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kMarkerWidth.rawValue], let attribute = self.attribute[QySVGAttributeName.kMarkerWidth.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kOrient.rawValue], let attribute = self.attribute[QySVGAttributeName.kOrient.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kPreserveAspectRatio.rawValue], let attribute = self.attribute[QySVGAttributeName.kPreserveAspectRatio.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kRefX.rawValue], let attribute = self.attribute[QySVGAttributeName.kRefX.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kRefY.rawValue], let attribute = self.attribute[QySVGAttributeName.kRefY.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kViewBox.rawValue], let attribute = self.attribute[QySVGAttributeName.kViewBox.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
     }
 }

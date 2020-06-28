@@ -38,7 +38,7 @@ enum QySVGPattern : String {
     case unit = "em|ex|px|in|cm|mm|pt|pc|%|deg|grad|rad"
     case url = "((url\\()([a-zA-Z0-9#]+)(\\)))"
     case urlValue = "([^\\(#])[0-9a-zA-Z_]+(?=\\))" // Example url(#wrapper) => wrapper
-    case viewBox = "([0-9.+-]*)(,)([0-9.+-]*)(,)([0-9.+-]*)(,)([0-9.+-]*)"
+    case viewBox = "([0-9.+-]*)(,| )([0-9.+-]*)(,| )([0-9.+-]*)(,| )([0-9.+-]*)"
 }
 
 struct QySVGValuePriority : Equatable {
@@ -80,12 +80,7 @@ enum QyLengthUnit : String {
 
 protocol QySVGValue : QySVGAttributeValue, Comparable {
     associatedtype T
-    var rawValue: String {get set}
-    var type:QySVGValueType {get set}
     var value:T {get set}
-    var unit:QyLengthUnit {get set}
-    var priority:QySVGValuePriority {get set}
-    var isValid:Bool { get }
     init(rawValue:String, priority:QySVGValuePriority)
 }
 
@@ -102,6 +97,11 @@ protocol QySVGTransformProperties {
 }
 
 protocol QySVGAttributeValue {
+    var priority:QySVGValuePriority {get set}
+    var rawValue: String {get set}
+    var type:QySVGValueType {get set}
+    var unit:QyLengthUnit {get set}
+    var isValid:Bool { get }
 }
 
 protocol QySVGPresentationAttributes{
@@ -152,6 +152,10 @@ struct QySVGInsetShapeFunction : QySVGValue , QySVGClipPathProperties, QySVGAttr
     static func == (lhs: QySVGInsetShapeFunction, rhs: QySVGInsetShapeFunction) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGInsetShapeFunction {
+        return QySVGInsetShapeFunction(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGCircleShapeFunction : QySVGValue , QySVGClipPathProperties {
@@ -182,6 +186,10 @@ struct QySVGCircleShapeFunction : QySVGValue , QySVGClipPathProperties {
     
     static func == (lhs: QySVGCircleShapeFunction, rhs: QySVGCircleShapeFunction) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGCircleShapeFunction {
+        return QySVGCircleShapeFunction(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -214,6 +222,10 @@ struct QySVGEllipseShapeFunction : QySVGValue , QySVGClipPathProperties {
     static func == (lhs: QySVGEllipseShapeFunction, rhs: QySVGEllipseShapeFunction) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGEllipseShapeFunction {
+        return QySVGEllipseShapeFunction(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGPolygonShapeFunction : QySVGValue , QySVGClipPathProperties {
@@ -243,6 +255,10 @@ struct QySVGPolygonShapeFunction : QySVGValue , QySVGClipPathProperties {
     
     static func == (lhs: QySVGPolygonShapeFunction, rhs: QySVGPolygonShapeFunction) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGPolygonShapeFunction {
+        return QySVGPolygonShapeFunction(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -274,6 +290,10 @@ struct QySVGPathShapeFunction : QySVGValue , QySVGClipPathProperties {
     static func == (lhs: QySVGPathShapeFunction, rhs: QySVGPathShapeFunction) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGPathShapeFunction {
+        return QySVGPathShapeFunction(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGBasicShape : QySVGValue {
@@ -301,6 +321,10 @@ struct QySVGBasicShape : QySVGValue {
     static func == (lhs: QySVGBasicShape, rhs: QySVGBasicShape) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGBasicShape {
+        return QySVGBasicShape(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGUrlValue : QySVGValue , QySVGClipPathProperties, QySVGPaintProperties, QySVGAttributeValue  {
@@ -326,6 +350,10 @@ struct QySVGUrlValue : QySVGValue , QySVGClipPathProperties, QySVGPaintPropertie
     
     static func == (lhs: QySVGUrlValue, rhs: QySVGUrlValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGUrlValue {
+        return QySVGUrlValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -357,6 +385,10 @@ struct QySVGSpreadMethodValue : QySVGValue {
     static func == (lhs: QySVGSpreadMethodValue, rhs: QySVGSpreadMethodValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGSpreadMethodValue {
+        return QySVGSpreadMethodValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGViewBoxValue : QySVGValue {
@@ -374,7 +406,7 @@ struct QySVGViewBoxValue : QySVGValue {
         self.priority = priority
         self.rawValue = rawValue
         if self.rawValue.isMatch(withPattern: QySVGPattern.viewBox.rawValue) {
-            let data = self.rawValue.split(separator: ",").map{$0.value.number}
+            let data = self.rawValue.split(separator: " ").map{$0.value.number}
             if data.count >= 4 {
                 self.value = .init(left: data[0], top: data[1], right: data[2], bottom: data[3])
             }
@@ -388,6 +420,10 @@ struct QySVGViewBoxValue : QySVGValue {
     
     static func == (lhs: QySVGViewBoxValue, rhs: QySVGViewBoxValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGViewBoxValue {
+        return QySVGViewBoxValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -419,6 +455,10 @@ struct QySVGTextAnchorValue : QySVGValue {
     static func == (lhs: QySVGTextAnchorValue, rhs: QySVGTextAnchorValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGTextAnchorValue {
+        return QySVGTextAnchorValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGStringValue : QySVGValue {
@@ -439,6 +479,10 @@ struct QySVGStringValue : QySVGValue {
     
     static func == (lhs: QySVGStringValue, rhs: QySVGStringValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGStringValue {
+        return QySVGStringValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -466,6 +510,10 @@ struct QySVGFontStyleValue : QySVGValue{
     
     static func == (lhs: QySVGFontStyleValue, rhs: QySVGFontStyleValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGFontStyleValue {
+        return QySVGFontStyleValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -497,6 +545,10 @@ struct QySVGFontWeightValue : QySVGValue {
     
     static func == (lhs: QySVGFontWeightValue, rhs: QySVGFontWeightValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGFontWeightValue {
+        return QySVGFontWeightValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -536,6 +588,10 @@ struct QySVGLengthValue : QySVGValue  {
     }
     
     static let zero:QySVGLengthValue = .init(rawValue: "0", priority: .initial)
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGLengthValue {
+        return QySVGLengthValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 
@@ -564,6 +620,10 @@ struct QySVGLengthListValue : QySVGValue  {
     
     static func == (lhs: QySVGLengthListValue, rhs: QySVGLengthListValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGLengthListValue {
+        return QySVGLengthListValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -608,6 +668,10 @@ struct QySVGColorValue : QySVGValue, QySVGPaintProperties {
     static func == (lhs: QySVGColorValue, rhs: QySVGColorValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGColorValue {
+        return QySVGColorValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGMatrixValue : QySVGValue, QySVGTransformProperties  {
@@ -640,6 +704,10 @@ struct QySVGMatrixValue : QySVGValue, QySVGTransformProperties  {
     static func == (lhs: QySVGMatrixValue, rhs: QySVGMatrixValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGMatrixValue {
+        return QySVGMatrixValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGTranslateValue : QySVGValue, QySVGTransformProperties  {
@@ -670,6 +738,10 @@ struct QySVGTranslateValue : QySVGValue, QySVGTransformProperties  {
     
     static func == (lhs: QySVGTranslateValue, rhs: QySVGTranslateValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGTranslateValue {
+        return QySVGTranslateValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -702,6 +774,10 @@ struct QySVGScaleValue : QySVGValue, QySVGTransformProperties  {
     
     static func == (lhs: QySVGScaleValue, rhs: QySVGScaleValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGScaleValue {
+        return QySVGScaleValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -743,6 +819,10 @@ struct QySVGRotateValue : QySVGValue, QySVGTransformProperties  {
     static func == (lhs: QySVGRotateValue, rhs: QySVGRotateValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGRotateValue {
+        return QySVGRotateValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGSkewXValue : QySVGValue, QySVGTransformProperties {
@@ -768,6 +848,10 @@ struct QySVGSkewXValue : QySVGValue, QySVGTransformProperties {
     
     static func == (lhs: QySVGSkewXValue, rhs: QySVGSkewXValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGSkewXValue {
+        return QySVGSkewXValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -795,6 +879,10 @@ struct QySVGSkewYValue : QySVGValue, QySVGTransformProperties  {
     static func == (lhs: QySVGSkewYValue, rhs: QySVGSkewYValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGSkewYValue {
+        return QySVGSkewYValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGClassValue : QySVGValue   {
@@ -815,6 +903,10 @@ struct QySVGClassValue : QySVGValue   {
     
     static func == (lhs: QySVGClassValue, rhs: QySVGClassValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGClassValue {
+        return QySVGClassValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -841,6 +933,10 @@ struct QySVGFillRuleValue : QySVGValue {
     static func == (lhs: QySVGFillRuleValue, rhs: QySVGFillRuleValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGFillRuleValue {
+        return QySVGFillRuleValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGLineCapValue : QySVGValue {
@@ -864,6 +960,10 @@ struct QySVGLineCapValue : QySVGValue {
     
     static func == (lhs: QySVGLineCapValue, rhs: QySVGLineCapValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGLineCapValue {
+        return QySVGLineCapValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -889,6 +989,10 @@ struct QySVGLineJoinValue : QySVGValue {
     static func == (lhs: QySVGLineJoinValue, rhs: QySVGLineJoinValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGLineJoinValue {
+        return QySVGLineJoinValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGVisibilityValue : QySVGValue {
@@ -912,6 +1016,10 @@ struct QySVGVisibilityValue : QySVGValue {
     static func == (lhs: QySVGVisibilityValue, rhs: QySVGVisibilityValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGVisibilityValue {
+        return QySVGVisibilityValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGPathValue : QySVGValue {
@@ -934,6 +1042,10 @@ struct QySVGPathValue : QySVGValue {
     
     static func == (lhs: QySVGPathValue, rhs: QySVGPathValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGPathValue {
+        return QySVGPathValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -980,6 +1092,10 @@ struct QySVGClipPathValue : QySVGValue {
     static func == (lhs: QySVGClipPathValue, rhs: QySVGClipPathValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGClipPathValue {
+        return QySVGClipPathValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGPaintValue : QySVGValue {
@@ -1008,6 +1124,10 @@ struct QySVGPaintValue : QySVGValue {
     
     static func == (lhs: QySVGPaintValue, rhs: QySVGPaintValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGPaintValue {
+        return QySVGPaintValue(rawValue: rawValue, priority: priority)
     }
 }
 
@@ -1051,6 +1171,10 @@ struct QySVGTransformValue : QySVGValue {
     static func == (lhs: QySVGTransformValue, rhs: QySVGTransformValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
     }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGTransformValue {
+        return QySVGTransformValue(rawValue: rawValue, priority: priority)
+    }
 }
 
 struct QySVGStyleValue : QySVGValue {
@@ -1074,5 +1198,9 @@ struct QySVGStyleValue : QySVGValue {
     
     static func == (lhs: QySVGStyleValue, rhs: QySVGStyleValue) -> Bool {
         return lhs.rawValue == rhs.rawValue && lhs.priority == rhs.priority
+    }
+    
+    static func make(rawValue: String, priority: QySVGValuePriority) -> QySVGStyleValue {
+        return QySVGStyleValue(rawValue: rawValue, priority: priority)
     }
 }

@@ -22,19 +22,19 @@ class QySVGLineElement: QySVGNode {
     override func updateNode(byElement element: XML.Element, index: Int, deep: Int) {
         super.updateNode(byElement: element, index: index, deep: deep)
         if let value = element.attributes[QySVGAttributeName.kX1.rawValue], let attribute = self.attribute[QySVGAttributeName.kX1.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kX2.rawValue], let attribute = self.attribute[QySVGAttributeName.kX2.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kY1.rawValue], let attribute = self.attribute[QySVGAttributeName.kY1.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kY2.rawValue], let attribute = self.attribute[QySVGAttributeName.kY2.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kPathLength.rawValue], let attribute = self.attribute[QySVGAttributeName.kPathLength.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
     }
 }

@@ -18,7 +18,7 @@ class QySVGStyleElement: QySVGNode {
     override func updateNode(byElement element: XML.Element, index: Int, deep: Int) {
         super.updateNode(byElement: element, index: index, deep: deep)
         if let text = element.text, let attribute = self.attribute[QySVGAttributeName.kContentStyleType.rawValue] {
-            attribute.addAttributeValue(value: text, priority: .inline)
+            attribute.setAttributeValue(value: text, priority: .inline)
         }
     }
     override func update(info text: String) {

@@ -20,13 +20,13 @@ class QySVGScriptElement: QySVGNode {
     override func updateNode(byElement element: XML.Element, index: Int, deep: Int) {
         super.updateNode(byElement: element, index: index, deep: deep)
         if let value = element.attributes[QySVGAttributeName.kHref.rawValue], let attribute = self.attribute[QySVGAttributeName.kHref.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kType.rawValue], let attribute = self.attribute[QySVGAttributeName.kType.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kXlinkHref.rawValue], let attribute = self.attribute[QySVGAttributeName.kXlinkHref.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         
     }

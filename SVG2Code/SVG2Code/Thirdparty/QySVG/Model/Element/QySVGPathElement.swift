@@ -19,10 +19,10 @@ class QySVGPathElement: QySVGNode {
     override func updateNode(byElement element: XML.Element, index: Int, deep: Int) {
         super.updateNode(byElement: element, index: index, deep: deep)
         if let value = element.attributes[QySVGAttributeName.kD.rawValue], let attribute = self.attribute[QySVGAttributeName.kD.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kPathLength.rawValue], let attribute = self.attribute[QySVGAttributeName.kPathLength.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
     }
 }

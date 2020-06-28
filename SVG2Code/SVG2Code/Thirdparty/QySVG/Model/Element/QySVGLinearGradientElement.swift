@@ -26,31 +26,31 @@ class QySVGLinearGradientElement: QySVGNode {
     override func updateNode(byElement element: XML.Element, index: Int, deep: Int) {
         super.updateNode(byElement: element, index: index, deep: deep)
         if let value = element.attributes[QySVGAttributeName.kGradientUnits.rawValue], let attribute = self.attribute[QySVGAttributeName.kGradientUnits.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kGradientTransform.rawValue], let attribute = self.attribute[QySVGAttributeName.kGradientTransform.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kHref.rawValue], let attribute = self.attribute[QySVGAttributeName.kHref.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kSpreadMethod.rawValue], let attribute = self.attribute[QySVGAttributeName.kSpreadMethod.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kX1.rawValue], let attribute = self.attribute[QySVGAttributeName.kX1.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kX2.rawValue], let attribute = self.attribute[QySVGAttributeName.kX2.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kXlinkHref.rawValue], let attribute = self.attribute[QySVGAttributeName.kXlinkHref.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kY1.rawValue], let attribute = self.attribute[QySVGAttributeName.kY1.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
         if let value = element.attributes[QySVGAttributeName.kY2.rawValue], let attribute = self.attribute[QySVGAttributeName.kY2.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+            attribute.setAttributeValue(value: value, priority: .inline)
         }
     }
 }

@@ -83,6 +83,7 @@
 		5A90DF5B249B37F700F5E375 /* NSDataDetector+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A90DF5A249B37F700F5E375 /* NSDataDetector+SVG.swift */; };
 		5A90DF5D249B398900F5E375 /* QySVGAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A90DF5C249B398900F5E375 /* QySVGAttributeName.swift */; };
 		5A90DF5F249B3A0100F5E375 /* QySVGElementName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A90DF5E249B3A0100F5E375 /* QySVGElementName.swift */; };
+		5A9402B424A849EA00E3D3F7 /* service-request.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5A9402B324A849EA00E3D3F7 /* service-request.svg */; };
 		5A963048247643CE003987B4 /* SVGDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A963047247643CE003987B4 /* SVGDataBuilder.swift */; };
 		5A999CFB24867C1E000B4BB6 /* ACEView+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A999CFA24867C1E000B4BB6 /* ACEView+App.swift */; };
 		5AA29E44246914CF00DF2117 /* String+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA29E43246914CF00DF2117 /* String+Swift.swift */; };
@@ -92,6 +93,7 @@
 		5AAA37B8249207DF0068508B /* QySVGAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA37B7249207DF0068508B /* QySVGAttribute.swift */; };
 		5AAA37BA24920D300068508B /* QySVGTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA37B924920D300068508B /* QySVGTypes.swift */; };
 		5AAA37BC249258AE0068508B /* QySVGValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAA37BB249258AE0068508B /* QySVGValues.swift */; };
+		5AAD29D124A48F3B001C7A14 /* QySVGDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAD29D024A48F3B001C7A14 /* QySVGDictionary.swift */; };
 		5ABF6915248540C600D13D95 /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF6914248540C600D13D95 /* HTML */; };
 		5AC349442494CCE000647473 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC349432494CCE000647473 /* Foundation.swift */; };
 		5AC349462494CCF700647473 /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC349452494CCF700647473 /* CoreGraphics.swift */; };
@@ -223,6 +225,7 @@
 		5A90DF5A249B37F700F5E375 /* NSDataDetector+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDataDetector+SVG.swift"; sourceTree = "<group>"; };
 		5A90DF5C249B398900F5E375 /* QySVGAttributeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGAttributeName.swift; sourceTree = "<group>"; };
 		5A90DF5E249B3A0100F5E375 /* QySVGElementName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGElementName.swift; sourceTree = "<group>"; };
+		5A9402B324A849EA00E3D3F7 /* service-request.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "service-request.svg"; sourceTree = "<group>"; };
 		5A963047247643CE003987B4 /* SVGDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGDataBuilder.swift; sourceTree = "<group>"; };
 		5A999CFA24867C1E000B4BB6 /* ACEView+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ACEView+App.swift"; sourceTree = "<group>"; };
 		5AA29E43246914CF00DF2117 /* String+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Swift.swift"; sourceTree = "<group>"; };
@@ -232,6 +235,7 @@
 		5AAA37B7249207DF0068508B /* QySVGAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGAttribute.swift; sourceTree = "<group>"; };
 		5AAA37B924920D300068508B /* QySVGTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGTypes.swift; sourceTree = "<group>"; };
 		5AAA37BB249258AE0068508B /* QySVGValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGValues.swift; sourceTree = "<group>"; };
+		5AAD29D024A48F3B001C7A14 /* QySVGDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QySVGDictionary.swift; sourceTree = "<group>"; };
 		5ABF6914248540C600D13D95 /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
 		5AC349432494CCE000647473 /* Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		5AC349452494CCF700647473 /* CoreGraphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
@@ -510,6 +514,7 @@
 		5A01C0B224656DB400056430 /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				5A9402B324A849EA00E3D3F7 /* service-request.svg */,
 				5A70C742249E5066006FA875 /* green.svg */,
 				5AA29E4724698F2900DF2117 /* SwiftCALayer.tml */,
 				5A01C0B324656DEE00056430 /* winter.svg */,
@@ -533,6 +538,7 @@
 			children = (
 				5A90DF5C249B398900F5E375 /* QySVGAttributeName.swift */,
 				5A90DF5E249B3A0100F5E375 /* QySVGElementName.swift */,
+				5AAD29D024A48F3B001C7A14 /* QySVGDictionary.swift */,
 			);
 			path = SVGInfo;
 			sourceTree = "<group>";
@@ -735,6 +741,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9402B424A849EA00E3D3F7 /* service-request.svg in Resources */,
 				5A70C743249E5066006FA875 /* green.svg in Resources */,
 				5A01C0B424656DEE00056430 /* winter.svg in Resources */,
 				5AA29E4824698F2900DF2117 /* SwiftCALayer.tml in Resources */,
@@ -840,6 +847,7 @@
 				5A45F71A24A0DF650087FA20 /* QySVGPolylineElement.swift in Sources */,
 				5A01C0942465307200056430 /* DataStructure.swift in Sources */,
 				5A45F72424A0E0390087FA20 /* QySVGTextElement.swift in Sources */,
+				5AAD29D124A48F3B001C7A14 /* QySVGDictionary.swift in Sources */,
 				5A45F71C24A0DF8A0087FA20 /* QySVGRadialGradientElement.swift in Sources */,
 				5A01C09F2465647200056430 /* NSObject+SVG.swift in Sources */,
 				5A01C08C2465303100056430 /* katana.lex.c in Sources */,

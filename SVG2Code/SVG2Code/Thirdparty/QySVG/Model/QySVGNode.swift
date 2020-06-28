@@ -111,7 +111,7 @@ class QySVGNode {
         self.selector = QySVGCSSElement.make(withNode: self)
         if let idValue = element.attributes["id"] { self.id = idValue }
         if let text = element.text { self.textContent = text }
-        updateAttributes(withElement: element)
+        computedNodeAttributes(withElement: element)
         update(info: "\(tag.rawValue) not implement now")
     }
     func isAcceptableChildNode(withTag tag:QySVGTag) -> Bool { return self.tag.had(category: .kContainerElements) }
@@ -120,123 +120,36 @@ class QySVGNode {
             childs.append(node)
         }
     }
-    func computedNodeAttributes(withSheet sheet:QySVGStyleSheet?){
-        if let styleSheet = sheet, let select = selector {
-            self.attribute.computedStyleValue(withSheet: styleSheet, selector: select, deep: deep)
-        }
+    // inline > css > inherit > initial
+    func computedNodeAttributes(withSheet sheet:QySVGStyleSheet?) {
+        computedNodeCSSAttributes(withSheet: sheet)
         if let parentsAttributes = parentNode?.attribute {
-            self.attribute.merge(withAttibutes: parentsAttributes)
+            self.attribute.merge(withParentAttibutes: parentsAttributes)
         }
+        var attr:[String:QySVGAttribute] = [:]
+        for (_, data) in self.attribute.enumerated() {
+            if data.value.value != nil { attr[data.key] = data.value }
+        }
+        self.attribute = attr
     }
-    
     //MARK: Should overide it
     func update(info text:String){ self.info = text }
     private func initAttributte() {
-        self.attribute[QySVGAttributeName.kClipPath.rawValue] = QySVGAttribute(attributeName: .kClipPath)
-        self.attribute[QySVGAttributeName.kClipRule.rawValue] = QySVGAttribute(attributeName: .kClipRule)
-        self.attribute[QySVGAttributeName.kColor.rawValue] = QySVGAttribute(attributeName: .kColor)
-        self.attribute[QySVGAttributeName.kColorInterpolation.rawValue] = QySVGAttribute(attributeName: .kColorInterpolation)
-        self.attribute[QySVGAttributeName.kColorRendering.rawValue] = QySVGAttribute(attributeName: .kColorRendering)
-        self.attribute[QySVGAttributeName.kCursor.rawValue] = QySVGAttribute(attributeName: .kCursor)
-        self.attribute[QySVGAttributeName.kDisplay.rawValue] = QySVGAttribute(attributeName: .kDisplay)
-        self.attribute[QySVGAttributeName.kFill.rawValue] = QySVGAttribute(attributeName: .kFill)
-        self.attribute[QySVGAttributeName.kFillOpacity.rawValue] = QySVGAttribute(attributeName: .kFillOpacity)
-        self.attribute[QySVGAttributeName.kFillRule.rawValue] = QySVGAttribute(attributeName: .kFillRule)
-        self.attribute[QySVGAttributeName.kFilter.rawValue] = QySVGAttribute(attributeName: .kFilter)
-        self.attribute[QySVGAttributeName.kMask.rawValue] = QySVGAttribute(attributeName: .kMask)
-        self.attribute[QySVGAttributeName.kOpacity.rawValue] = QySVGAttribute(attributeName: .kOpacity)
-        self.attribute[QySVGAttributeName.kPointerEvents.rawValue] = QySVGAttribute(attributeName: .kPointerEvents)
-        self.attribute[QySVGAttributeName.kShapeRendering.rawValue] = QySVGAttribute(attributeName: .kShapeRendering)
-        self.attribute[QySVGAttributeName.kStroke.rawValue] = QySVGAttribute(attributeName: .kStroke)
-        self.attribute[QySVGAttributeName.kStrokeDasharray.rawValue] = QySVGAttribute(attributeName: .kStrokeDasharray)
-        self.attribute[QySVGAttributeName.kStrokeDashoffset.rawValue] = QySVGAttribute(attributeName: .kStrokeDashoffset)
-        self.attribute[QySVGAttributeName.kStrokeLinecap.rawValue] = QySVGAttribute(attributeName: .kStrokeLinecap)
-        self.attribute[QySVGAttributeName.kStrokeLinejoin.rawValue] = QySVGAttribute(attributeName: .kStrokeLinejoin)
-        self.attribute[QySVGAttributeName.kStrokeMiterlimit.rawValue] = QySVGAttribute(attributeName: .kStrokeMiterlimit)
-        self.attribute[QySVGAttributeName.kStrokeOpacity.rawValue] = QySVGAttribute(attributeName: .kStrokeOpacity)
-        self.attribute[QySVGAttributeName.kStrokeWidth.rawValue] = QySVGAttribute(attributeName: .kStrokeWidth)
-        self.attribute[QySVGAttributeName.kTransform.rawValue] = QySVGAttribute(attributeName: .kTransform)
-        self.attribute[QySVGAttributeName.kVectorEffect.rawValue] = QySVGAttribute(attributeName: .kVectorEffect)
-        self.attribute[QySVGAttributeName.kVisibility.rawValue] = QySVGAttribute(attributeName: .kVisibility)
+        for item in QySVGAttributeNameCategory.presentationAttributes {
+            self.attribute[item.rawValue] = QySVGAttribute(attributeName: item)
+        }
     }
-    private func updateAttributes(withElement element:XML.Element){
-        if let value = element.attributes[QySVGAttributeName.kClipPath.rawValue], let attribute = self.attribute[QySVGAttributeName.kClipPath.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+    // Get element attribute
+    private func computedNodeAttributes(withElement element:XML.Element) {
+        for item in QySVGAttributeNameCategory.presentationAttributes {
+            if let value = element.attributes[item.rawValue], let attribute = self.attribute[item.rawValue] {
+                attribute.setAttributeValue(value: value, priority: .inline)
+            }
         }
-        if let value = element.attributes[QySVGAttributeName.kClipRule.rawValue], let attribute = self.attribute[QySVGAttributeName.kClipRule.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kColor.rawValue], let attribute = self.attribute[QySVGAttributeName.kColor.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kColorInterpolation.rawValue], let attribute = self.attribute[QySVGAttributeName.kColorInterpolation.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kColorRendering.rawValue], let attribute = self.attribute[QySVGAttributeName.kColorRendering.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kCursor.rawValue], let attribute = self.attribute[QySVGAttributeName.kCursor.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kDisplay.rawValue], let attribute = self.attribute[QySVGAttributeName.kDisplay.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kFill.rawValue], let attribute = self.attribute[QySVGAttributeName.kFill.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kFillOpacity.rawValue], let attribute = self.attribute[QySVGAttributeName.kFillOpacity.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kFillRule.rawValue], let attribute = self.attribute[QySVGAttributeName.kFillRule.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kFilter.rawValue], let attribute = self.attribute[QySVGAttributeName.kFilter.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kMask.rawValue], let attribute = self.attribute[QySVGAttributeName.kMask.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kOpacity.rawValue], let attribute = self.attribute[QySVGAttributeName.kOpacity.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kPointerEvents.rawValue], let attribute = self.attribute[QySVGAttributeName.kPointerEvents.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kShapeRendering.rawValue], let attribute = self.attribute[QySVGAttributeName.kShapeRendering.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kStroke.rawValue], let attribute = self.attribute[QySVGAttributeName.kStroke.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kStrokeDasharray.rawValue], let attribute = self.attribute[QySVGAttributeName.kStrokeDasharray.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kStrokeDashoffset.rawValue], let attribute = self.attribute[QySVGAttributeName.kStrokeDashoffset.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kStrokeLinecap.rawValue], let attribute = self.attribute[QySVGAttributeName.kStrokeLinecap.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kStrokeLinejoin.rawValue], let attribute = self.attribute[QySVGAttributeName.kStrokeLinejoin.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kStrokeMiterlimit.rawValue], let attribute = self.attribute[QySVGAttributeName.kStrokeMiterlimit.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kStrokeOpacity.rawValue], let attribute = self.attribute[QySVGAttributeName.kStrokeOpacity.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kStrokeWidth.rawValue], let attribute = self.attribute[QySVGAttributeName.kStrokeWidth.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kTransform.rawValue], let attribute = self.attribute[QySVGAttributeName.kTransform.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kVectorEffect.rawValue], let attribute = self.attribute[QySVGAttributeName.kVectorEffect.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
-        }
-        if let value = element.attributes[QySVGAttributeName.kVisibility.rawValue], let attribute = self.attribute[QySVGAttributeName.kVisibility.rawValue] {
-            attribute.addAttributeValue(value: value, priority: .inline)
+    }
+    private func computedNodeCSSAttributes(withSheet sheet:QySVGStyleSheet?) {
+        if let styleSheet = sheet, let select = selector {
+            self.attribute.computedStyleValue(withSheet: styleSheet, selector: select, deep: deep)
         }
     }
     deinit {

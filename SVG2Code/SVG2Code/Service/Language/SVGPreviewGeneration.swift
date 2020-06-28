@@ -260,8 +260,10 @@ extension SVGPreviewGeneration : PreviewGenerationProtocol {
     }
     
     func applyShapeStyle(model: SVGNodeModel, tree: SVGTreeModel, element: inout CAShapeLayer) {
-        let attribute = model.computingAttribute(tree.style)
-        element.applyAttribute(attribute: attribute)
+        if tree.style != nil {
+            let attribute = model.computingAttribute(tree.style)
+            element.applyAttribute(attribute: attribute)
+        }
     }
     
     func generatecode(model: SVGNodeModel, tree: SVGTreeModel) -> SVGPreviewModel? {

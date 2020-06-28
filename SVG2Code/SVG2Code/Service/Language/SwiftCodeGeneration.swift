@@ -294,6 +294,7 @@ extension SwiftCodeGeneration : CodeGenerationProtocol {
     }
     
     func applyShapeStyle(model: SVGNodeModel, tree:SVGTreeModel, shapename:String) -> String {
+        if tree.style == nil { return "" }
         let attribute = model.computingAttribute(tree.style)
         var code = ""
         if let fillColor = attribute.fillColor {
