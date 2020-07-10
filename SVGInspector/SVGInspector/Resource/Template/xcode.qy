@@ -1,0 +1,37 @@
+#font{
+    font-family:-apple-system-body;
+    font-size: 14px;
+    word-spacing: 5px;
+}
+#blockStyle{
+    background-color: transparent;
+    font-family:-apple-system-body;
+    font-size: 14px;
+    word-spacing: 5px;
+}
+#operactorStyle{
+    color:#0d65f2;
+    font-size: 14px;
+    word-spacing: 5px;
+}
+#tagStyle{
+    color:#ff6ea8;
+    word-spacing: 5px;
+}
+#attributeStyle{
+    color:#25fa1e;
+    word-spacing: 5px;
+}
+#attributeValueStyle{
+    color:#f2b50d;
+    word-spacing: 5px;
+}
+#contentValueStyle{color:#f2b50d;font-size: 14px;}
+#contentWaringValueStyle{color:#0d65f2;font-size: 14px;}
+#contentErrorValueStyle{color:#0d65f2;font-size: 14px;}
+#keywordStyle{color:#0d65f2;font-size: 14px;}
+#lineStyle{color:#0d65f2;font-size: 14px;}
+#lineWaringStyle{color:#0d65f2;font-size: 14px;}
+#lineErrorStyle{color:#0d65f2;font-size: 14px;}
+#lineNumberStyle{color:#0d65f2;font-size: 14px;}
+

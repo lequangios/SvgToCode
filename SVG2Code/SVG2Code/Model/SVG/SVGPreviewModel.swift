@@ -14,6 +14,13 @@ class SVGPreviewModel {
     var layerList:[String:CALayer]
     var size:CGSize
     var forcusLayerName:String = ""
+    var code:QySVGCode?
+    
+    init() {
+        self.layer = CALayer()
+        self.layerList = [:]
+        self.size = .zero
+    }
     
     init(layer:CALayer, layerList:[String:CALayer], size:CGSize) {
         self.layer = layer

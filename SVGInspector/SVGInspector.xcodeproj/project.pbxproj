@@ -1,0 +1,1122 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A722F2A24B5C4F100C1F5D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F2924B5C4F100C1F5D1 /* AppDelegate.swift */; };
+		5A722F2C24B5C4F100C1F5D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F2B24B5C4F100C1F5D1 /* ViewController.swift */; };
+		5A722F2E24B5C4F500C1F5D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A722F2D24B5C4F500C1F5D1 /* Assets.xcassets */; };
+		5A722F3124B5C4F600C1F5D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A722F2F24B5C4F600C1F5D1 /* Main.storyboard */; };
+		5A722F3D24B5C4F600C1F5D1 /* SVGInspectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F3C24B5C4F600C1F5D1 /* SVGInspectorTests.swift */; };
+		5A722F4824B5C4F600C1F5D1 /* SVGInspectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F4724B5C4F600C1F5D1 /* SVGInspectorUITests.swift */; };
+		5A722F7024B5C8F400C1F5D1 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F5E24B5C8F400C1F5D1 /* StyleSheet.swift */; };
+		5A722F7224B5C8F400C1F5D1 /* katana.lex.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F6924B5C8F400C1F5D1 /* katana.lex.c */; };
+		5A722F7324B5C8F400C1F5D1 /* selector.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F6A24B5C8F400C1F5D1 /* selector.c */; };
+		5A722F7424B5C8F400C1F5D1 /* katana.tab.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F6B24B5C8F400C1F5D1 /* katana.tab.c */; };
+		5A722F7524B5C8F400C1F5D1 /* foundation.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F6C24B5C8F400C1F5D1 /* foundation.c */; };
+		5A722F7624B5C8F400C1F5D1 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F6D24B5C8F400C1F5D1 /* parser.c */; };
+		5A722F7724B5C8F400C1F5D1 /* tokenizer.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F6E24B5C8F400C1F5D1 /* tokenizer.c */; };
+		5A722F7824B5C8F400C1F5D1 /* StyleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F6F24B5C8F400C1F5D1 /* StyleElement.swift */; };
+		5A722F7A24B5C90900C1F5D1 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F7924B5C90900C1F5D1 /* SVGPath.swift */; };
+		5A722F8524B5CD7400C1F5D1 /* QyClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F8424B5CD7400C1F5D1 /* QyClock.swift */; };
+		5A722F8824B5CDF700C1F5D1 /* QyFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F8724B5CDF700C1F5D1 /* QyFomatter.swift */; };
+		5A722F8A24B5CE0300C1F5D1 /* QyCSSPaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F8924B5CE0300C1F5D1 /* QyCSSPaser.swift */; };
+		5A722F8C24B5CE0B00C1F5D1 /* QyXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722F8B24B5CE0B00C1F5D1 /* QyXMLParser.swift */; };
+		5A72301424B5D2F400C1F5D1 /* QySVGElementName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FE724B5D2F400C1F5D1 /* QySVGElementName.swift */; };
+		5A72301624B5D2F400C1F5D1 /* QySVGInfoTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FE924B5D2F400C1F5D1 /* QySVGInfoTag.swift */; };
+		5A72301724B5D2F400C1F5D1 /* QySVGAttributeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FEA24B5D2F400C1F5D1 /* QySVGAttributeName.swift */; };
+		5A72301824B5D2F400C1F5D1 /* QySVGDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FEB24B5D2F400C1F5D1 /* QySVGDictionary.swift */; };
+		5A72301924B5D2F400C1F5D1 /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FED24B5D2F400C1F5D1 /* CoreGraphics.swift */; };
+		5A72301A24B5D2F400C1F5D1 /* Cocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FEE24B5D2F400C1F5D1 /* Cocoa.swift */; };
+		5A72301B24B5D2F400C1F5D1 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FEF24B5D2F400C1F5D1 /* Foundation.swift */; };
+		5A72301C24B5D2F400C1F5D1 /* NSDataDetector+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FF024B5D2F400C1F5D1 /* NSDataDetector+SVG.swift */; };
+		5A72301D24B5D2F400C1F5D1 /* QySVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FF124B5D2F400C1F5D1 /* QySVG.swift */; };
+		5A72301E24B5D2F400C1F5D1 /* QySVGAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FF324B5D2F400C1F5D1 /* QySVGAttribute.swift */; };
+		5A72301F24B5D2F400C1F5D1 /* QySVGStyleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FF524B5D2F400C1F5D1 /* QySVGStyleElement.swift */; };
+		5A72302024B5D2F400C1F5D1 /* QySVGPatternElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FF624B5D2F400C1F5D1 /* QySVGPatternElement.swift */; };
+		5A72302124B5D2F400C1F5D1 /* QySVGViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FF724B5D2F400C1F5D1 /* QySVGViewElement.swift */; };
+		5A72302224B5D2F400C1F5D1 /* QySVGMarkerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FF824B5D2F400C1F5D1 /* QySVGMarkerElement.swift */; };
+		5A72302324B5D2F400C1F5D1 /* QySVGPolygonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FF924B5D2F400C1F5D1 /* QySVGPolygonElement.swift */; };
+		5A72302424B5D2F400C1F5D1 /* QySVGRadialGradientElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FFA24B5D2F400C1F5D1 /* QySVGRadialGradientElement.swift */; };
+		5A72302524B5D2F400C1F5D1 /* QySVGPathElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FFB24B5D2F400C1F5D1 /* QySVGPathElement.swift */; };
+		5A72302624B5D2F400C1F5D1 /* QySVGScriptElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FFC24B5D2F400C1F5D1 /* QySVGScriptElement.swift */; };
+		5A72302724B5D2F400C1F5D1 /* QySVGTextPathElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FFD24B5D2F400C1F5D1 /* QySVGTextPathElement.swift */; };
+		5A72302824B5D2F400C1F5D1 /* QySVGEllipseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FFE24B5D2F400C1F5D1 /* QySVGEllipseElement.swift */; };
+		5A72302924B5D2F400C1F5D1 /* QySVGMaskElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A722FFF24B5D2F400C1F5D1 /* QySVGMaskElement.swift */; };
+		5A72302A24B5D2F400C1F5D1 /* QySVGTitleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300024B5D2F400C1F5D1 /* QySVGTitleElement.swift */; };
+		5A72302B24B5D2F400C1F5D1 /* QySVGClipPathElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300124B5D2F400C1F5D1 /* QySVGClipPathElement.swift */; };
+		5A72302C24B5D2F400C1F5D1 /* QySVGPolylineElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300224B5D2F400C1F5D1 /* QySVGPolylineElement.swift */; };
+		5A72302D24B5D2F400C1F5D1 /* QySVGDefsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300324B5D2F400C1F5D1 /* QySVGDefsElement.swift */; };
+		5A72302E24B5D2F400C1F5D1 /* QySVGLineElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300424B5D2F400C1F5D1 /* QySVGLineElement.swift */; };
+		5A72302F24B5D2F400C1F5D1 /* QySVGSvgElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300524B5D2F400C1F5D1 /* QySVGSvgElement.swift */; };
+		5A72303024B5D2F400C1F5D1 /* QySVGTextElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300624B5D2F400C1F5D1 /* QySVGTextElement.swift */; };
+		5A72303124B5D2F400C1F5D1 /* QySVGAElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300724B5D2F400C1F5D1 /* QySVGAElement.swift */; };
+		5A72303224B5D2F400C1F5D1 /* QySVGLinearGradientElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300824B5D2F400C1F5D1 /* QySVGLinearGradientElement.swift */; };
+		5A72303324B5D2F400C1F5D1 /* QySVGImageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300924B5D2F400C1F5D1 /* QySVGImageElement.swift */; };
+		5A72303424B5D2F400C1F5D1 /* QySVGUseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300A24B5D2F400C1F5D1 /* QySVGUseElement.swift */; };
+		5A72303524B5D2F400C1F5D1 /* QySVGRectElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300B24B5D2F400C1F5D1 /* QySVGRectElement.swift */; };
+		5A72303624B5D2F400C1F5D1 /* QySVGTspanElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300C24B5D2F400C1F5D1 /* QySVGTspanElement.swift */; };
+		5A72303724B5D2F400C1F5D1 /* QySVGCircleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300D24B5D2F400C1F5D1 /* QySVGCircleElement.swift */; };
+		5A72303824B5D2F400C1F5D1 /* QySVGGElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300E24B5D2F400C1F5D1 /* QySVGGElement.swift */; };
+		5A72303924B5D2F400C1F5D1 /* QySVGNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72300F24B5D2F400C1F5D1 /* QySVGNode.swift */; };
+		5A72303A24B5D2F400C1F5D1 /* QySVGCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72301024B5D2F400C1F5D1 /* QySVGCanvas.swift */; };
+		5A72303B24B5D2F400C1F5D1 /* QySVGCSSElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72301124B5D2F400C1F5D1 /* QySVGCSSElement.swift */; };
+		5A72303C24B5D2F400C1F5D1 /* QySVGValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72301224B5D2F400C1F5D1 /* QySVGValues.swift */; };
+		5A72303D24B5D2F400C1F5D1 /* QySVGTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72301324B5D2F400C1F5D1 /* QySVGTypes.swift */; };
+		5A72304124B5D96300C1F5D1 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72303E24B5D96300C1F5D1 /* BaseError.swift */; };
+		5A72304224B5D96300C1F5D1 /* BaseFoundationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72303F24B5D96300C1F5D1 /* BaseFoundationObject.swift */; };
+		5A72304324B5D96300C1F5D1 /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72304024B5D96300C1F5D1 /* BaseObject.swift */; };
+		5A72304524B5D99800C1F5D1 /* NSError+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72304424B5D99800C1F5D1 /* NSError+Qy.swift */; };
+		5A72304724B5DC7D00C1F5D1 /* String+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72304624B5DC7D00C1F5D1 /* String+Qy.swift */; };
+		5A72304924B5F8EB00C1F5D1 /* QyAppTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72304824B5F8EB00C1F5D1 /* QyAppTemplate.swift */; };
+		5A72304B24B5F9D800C1F5D1 /* NSString+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72304A24B5F9D800C1F5D1 /* NSString+Qy.swift */; };
+		5A72304D24B5FBCF00C1F5D1 /* NSColor+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72304C24B5FBCF00C1F5D1 /* NSColor+Qy.swift */; };
+		5A72304F24B5FC6200C1F5D1 /* Dictionary+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72304E24B5FC6200C1F5D1 /* Dictionary+Qy.swift */; };
+		5A72305324B5FDF100C1F5D1 /* QyLogProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72305124B5FDF100C1F5D1 /* QyLogProtocol.swift */; };
+		5A72305424B5FDF100C1F5D1 /* QyErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72305224B5FDF100C1F5D1 /* QyErrorProtocol.swift */; };
+		5A72305724B6000F00C1F5D1 /* xcode.qy in Resources */ = {isa = PBXBuildFile; fileRef = 5A72305624B6000F00C1F5D1 /* xcode.qy */; };
+		5A72305924B6013500C1F5D1 /* Array+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72305824B6013500C1F5D1 /* Array+Qy.swift */; };
+		5A952ECE24B7159C004D45A4 /* Number+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A952ECD24B7159C004D45A4 /* Number+Qy.swift */; };
+		5A952ED224B75390004D45A4 /* NSToolbarItem+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A952ED124B75390004D45A4 /* NSToolbarItem+Qy.swift */; };
+		5A952ED424B7553B004D45A4 /* NSView+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A952ED324B7553B004D45A4 /* NSView+Qy.swift */; };
+		5A952ED624B75564004D45A4 /* NSObject+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A952ED524B75564004D45A4 /* NSObject+Qy.swift */; };
+		5A952ED924B75AA4004D45A4 /* CATransition+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A952ED824B75AA4004D45A4 /* CATransition+Qy.swift */; };
+		5A9794CC24B81E7A004A8622 /* QYView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794CB24B81E7A004A8622 /* QYView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A722F3924B5C4F600C1F5D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A722F1E24B5C4F100C1F5D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A722F2524B5C4F100C1F5D1;
+			remoteInfo = SVGInspector;
+		};
+		5A722F4424B5C4F600C1F5D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A722F1E24B5C4F100C1F5D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A722F2524B5C4F100C1F5D1;
+			remoteInfo = SVGInspector;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5A722F2624B5C4F100C1F5D1 /* SVGInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVGInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A722F2924B5C4F100C1F5D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5A722F2B24B5C4F100C1F5D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5A722F2D24B5C4F500C1F5D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A722F3024B5C4F600C1F5D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A722F3224B5C4F600C1F5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A722F3324B5C4F600C1F5D1 /* SVGInspector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SVGInspector.entitlements; sourceTree = "<group>"; };
+		5A722F3824B5C4F600C1F5D1 /* SVGInspectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVGInspectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A722F3C24B5C4F600C1F5D1 /* SVGInspectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGInspectorTests.swift; sourceTree = "<group>"; };
+		5A722F3E24B5C4F600C1F5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A722F4324B5C4F600C1F5D1 /* SVGInspectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVGInspectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A722F4724B5C4F600C1F5D1 /* SVGInspectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGInspectorUITests.swift; sourceTree = "<group>"; };
+		5A722F4924B5C4F600C1F5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A722F5E24B5C8F400C1F5D1 /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
+		5A722F6024B5C8F400C1F5D1 /* CSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSParser.h; sourceTree = "<group>"; };
+		5A722F6224B5C8F400C1F5D1 /* katana.lex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.lex.h; sourceTree = "<group>"; };
+		5A722F6324B5C8F400C1F5D1 /* selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selector.h; sourceTree = "<group>"; };
+		5A722F6424B5C8F400C1F5D1 /* katana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.h; sourceTree = "<group>"; };
+		5A722F6524B5C8F400C1F5D1 /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
+		5A722F6624B5C8F400C1F5D1 /* foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foundation.h; sourceTree = "<group>"; };
+		5A722F6724B5C8F400C1F5D1 /* katana.tab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.tab.h; sourceTree = "<group>"; };
+		5A722F6824B5C8F400C1F5D1 /* tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tokenizer.h; sourceTree = "<group>"; };
+		5A722F6924B5C8F400C1F5D1 /* katana.lex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = katana.lex.c; sourceTree = "<group>"; };
+		5A722F6A24B5C8F400C1F5D1 /* selector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = selector.c; sourceTree = "<group>"; };
+		5A722F6B24B5C8F400C1F5D1 /* katana.tab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = katana.tab.c; sourceTree = "<group>"; };
+		5A722F6C24B5C8F400C1F5D1 /* foundation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = foundation.c; sourceTree = "<group>"; };
+		5A722F6D24B5C8F400C1F5D1 /* parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parser.c; sourceTree = "<group>"; };
+		5A722F6E24B5C8F400C1F5D1 /* tokenizer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tokenizer.c; sourceTree = "<group>"; };
+		5A722F6F24B5C8F400C1F5D1 /* StyleElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleElement.swift; sourceTree = "<group>"; };
+		5A722F7924B5C90900C1F5D1 /* SVGPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGPath.swift; sourceTree = "<group>"; };
+		5A722F7B24B5C92E00C1F5D1 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		5A722F8424B5CD7400C1F5D1 /* QyClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QyClock.swift; sourceTree = "<group>"; };
+		5A722F8724B5CDF700C1F5D1 /* QyFomatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QyFomatter.swift; sourceTree = "<group>"; };
+		5A722F8924B5CE0300C1F5D1 /* QyCSSPaser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QyCSSPaser.swift; sourceTree = "<group>"; };
+		5A722F8B24B5CE0B00C1F5D1 /* QyXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QyXMLParser.swift; sourceTree = "<group>"; };
+		5A722FE724B5D2F400C1F5D1 /* QySVGElementName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGElementName.swift; sourceTree = "<group>"; };
+		5A722FE924B5D2F400C1F5D1 /* QySVGInfoTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGInfoTag.swift; sourceTree = "<group>"; };
+		5A722FEA24B5D2F400C1F5D1 /* QySVGAttributeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGAttributeName.swift; sourceTree = "<group>"; };
+		5A722FEB24B5D2F400C1F5D1 /* QySVGDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGDictionary.swift; sourceTree = "<group>"; };
+		5A722FED24B5D2F400C1F5D1 /* CoreGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
+		5A722FEE24B5D2F400C1F5D1 /* Cocoa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cocoa.swift; sourceTree = "<group>"; };
+		5A722FEF24B5D2F400C1F5D1 /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
+		5A722FF024B5D2F400C1F5D1 /* NSDataDetector+SVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDataDetector+SVG.swift"; sourceTree = "<group>"; };
+		5A722FF124B5D2F400C1F5D1 /* QySVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVG.swift; sourceTree = "<group>"; };
+		5A722FF324B5D2F400C1F5D1 /* QySVGAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGAttribute.swift; sourceTree = "<group>"; };
+		5A722FF524B5D2F400C1F5D1 /* QySVGStyleElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGStyleElement.swift; sourceTree = "<group>"; };
+		5A722FF624B5D2F400C1F5D1 /* QySVGPatternElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGPatternElement.swift; sourceTree = "<group>"; };
+		5A722FF724B5D2F400C1F5D1 /* QySVGViewElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGViewElement.swift; sourceTree = "<group>"; };
+		5A722FF824B5D2F400C1F5D1 /* QySVGMarkerElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGMarkerElement.swift; sourceTree = "<group>"; };
+		5A722FF924B5D2F400C1F5D1 /* QySVGPolygonElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGPolygonElement.swift; sourceTree = "<group>"; };
+		5A722FFA24B5D2F400C1F5D1 /* QySVGRadialGradientElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGRadialGradientElement.swift; sourceTree = "<group>"; };
+		5A722FFB24B5D2F400C1F5D1 /* QySVGPathElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGPathElement.swift; sourceTree = "<group>"; };
+		5A722FFC24B5D2F400C1F5D1 /* QySVGScriptElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGScriptElement.swift; sourceTree = "<group>"; };
+		5A722FFD24B5D2F400C1F5D1 /* QySVGTextPathElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGTextPathElement.swift; sourceTree = "<group>"; };
+		5A722FFE24B5D2F400C1F5D1 /* QySVGEllipseElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGEllipseElement.swift; sourceTree = "<group>"; };
+		5A722FFF24B5D2F400C1F5D1 /* QySVGMaskElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGMaskElement.swift; sourceTree = "<group>"; };
+		5A72300024B5D2F400C1F5D1 /* QySVGTitleElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGTitleElement.swift; sourceTree = "<group>"; };
+		5A72300124B5D2F400C1F5D1 /* QySVGClipPathElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGClipPathElement.swift; sourceTree = "<group>"; };
+		5A72300224B5D2F400C1F5D1 /* QySVGPolylineElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGPolylineElement.swift; sourceTree = "<group>"; };
+		5A72300324B5D2F400C1F5D1 /* QySVGDefsElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGDefsElement.swift; sourceTree = "<group>"; };
+		5A72300424B5D2F400C1F5D1 /* QySVGLineElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGLineElement.swift; sourceTree = "<group>"; };
+		5A72300524B5D2F400C1F5D1 /* QySVGSvgElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGSvgElement.swift; sourceTree = "<group>"; };
+		5A72300624B5D2F400C1F5D1 /* QySVGTextElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGTextElement.swift; sourceTree = "<group>"; };
+		5A72300724B5D2F400C1F5D1 /* QySVGAElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGAElement.swift; sourceTree = "<group>"; };
+		5A72300824B5D2F400C1F5D1 /* QySVGLinearGradientElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGLinearGradientElement.swift; sourceTree = "<group>"; };
+		5A72300924B5D2F400C1F5D1 /* QySVGImageElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGImageElement.swift; sourceTree = "<group>"; };
+		5A72300A24B5D2F400C1F5D1 /* QySVGUseElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGUseElement.swift; sourceTree = "<group>"; };
+		5A72300B24B5D2F400C1F5D1 /* QySVGRectElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGRectElement.swift; sourceTree = "<group>"; };
+		5A72300C24B5D2F400C1F5D1 /* QySVGTspanElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGTspanElement.swift; sourceTree = "<group>"; };
+		5A72300D24B5D2F400C1F5D1 /* QySVGCircleElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGCircleElement.swift; sourceTree = "<group>"; };
+		5A72300E24B5D2F400C1F5D1 /* QySVGGElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGGElement.swift; sourceTree = "<group>"; };
+		5A72300F24B5D2F400C1F5D1 /* QySVGNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGNode.swift; sourceTree = "<group>"; };
+		5A72301024B5D2F400C1F5D1 /* QySVGCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGCanvas.swift; sourceTree = "<group>"; };
+		5A72301124B5D2F400C1F5D1 /* QySVGCSSElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGCSSElement.swift; sourceTree = "<group>"; };
+		5A72301224B5D2F400C1F5D1 /* QySVGValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGValues.swift; sourceTree = "<group>"; };
+		5A72301324B5D2F400C1F5D1 /* QySVGTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QySVGTypes.swift; sourceTree = "<group>"; };
+		5A72303E24B5D96300C1F5D1 /* BaseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
+		5A72303F24B5D96300C1F5D1 /* BaseFoundationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFoundationObject.swift; sourceTree = "<group>"; };
+		5A72304024B5D96300C1F5D1 /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
+		5A72304424B5D99800C1F5D1 /* NSError+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Qy.swift"; sourceTree = "<group>"; };
+		5A72304624B5DC7D00C1F5D1 /* String+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Qy.swift"; sourceTree = "<group>"; };
+		5A72304824B5F8EB00C1F5D1 /* QyAppTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QyAppTemplate.swift; sourceTree = "<group>"; };
+		5A72304A24B5F9D800C1F5D1 /* NSString+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Qy.swift"; sourceTree = "<group>"; };
+		5A72304C24B5FBCF00C1F5D1 /* NSColor+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Qy.swift"; sourceTree = "<group>"; };
+		5A72304E24B5FC6200C1F5D1 /* Dictionary+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Qy.swift"; sourceTree = "<group>"; };
+		5A72305124B5FDF100C1F5D1 /* QyLogProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QyLogProtocol.swift; sourceTree = "<group>"; };
+		5A72305224B5FDF100C1F5D1 /* QyErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QyErrorProtocol.swift; sourceTree = "<group>"; };
+		5A72305624B6000F00C1F5D1 /* xcode.qy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xcode.qy; sourceTree = "<group>"; };
+		5A72305824B6013500C1F5D1 /* Array+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Qy.swift"; sourceTree = "<group>"; };
+		5A952ECD24B7159C004D45A4 /* Number+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Qy.swift"; sourceTree = "<group>"; };
+		5A952ED124B75390004D45A4 /* NSToolbarItem+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSToolbarItem+Qy.swift"; sourceTree = "<group>"; };
+		5A952ED324B7553B004D45A4 /* NSView+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Qy.swift"; sourceTree = "<group>"; };
+		5A952ED524B75564004D45A4 /* NSObject+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Qy.swift"; sourceTree = "<group>"; };
+		5A952ED824B75AA4004D45A4 /* CATransition+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+Qy.swift"; sourceTree = "<group>"; };
+		5A9794CB24B81E7A004A8622 /* QYView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A722F2324B5C4F100C1F5D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A722F3524B5C4F600C1F5D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A722F4024B5C4F600C1F5D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A722F1D24B5C4F100C1F5D1 = {
+			isa = PBXGroup;
+			children = (
+				5A722F2824B5C4F100C1F5D1 /* SVGInspector */,
+				5A722F3B24B5C4F600C1F5D1 /* SVGInspectorTests */,
+				5A722F4624B5C4F600C1F5D1 /* SVGInspectorUITests */,
+				5A722F2724B5C4F100C1F5D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5A722F2724B5C4F100C1F5D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F2624B5C4F100C1F5D1 /* SVGInspector.app */,
+				5A722F3824B5C4F600C1F5D1 /* SVGInspectorTests.xctest */,
+				5A722F4324B5C4F600C1F5D1 /* SVGInspectorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A722F2824B5C4F100C1F5D1 /* SVGInspector */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F7F24B5CC2C00C1F5D1 /* Modules */,
+				5A722F7E24B5CBF100C1F5D1 /* App */,
+				5A722F7D24B5CBE600C1F5D1 /* Resource */,
+				5A722F5624B5C69100C1F5D1 /* Common */,
+				5A722F5524B5C52500C1F5D1 /* Thirdparty */,
+				5A722F2924B5C4F100C1F5D1 /* AppDelegate.swift */,
+				5A722F2B24B5C4F100C1F5D1 /* ViewController.swift */,
+				5A722F2D24B5C4F500C1F5D1 /* Assets.xcassets */,
+				5A722F2F24B5C4F600C1F5D1 /* Main.storyboard */,
+				5A722F3224B5C4F600C1F5D1 /* Info.plist */,
+				5A722F3324B5C4F600C1F5D1 /* SVGInspector.entitlements */,
+			);
+			path = SVGInspector;
+			sourceTree = "<group>";
+		};
+		5A722F3B24B5C4F600C1F5D1 /* SVGInspectorTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F3C24B5C4F600C1F5D1 /* SVGInspectorTests.swift */,
+				5A722F3E24B5C4F600C1F5D1 /* Info.plist */,
+			);
+			path = SVGInspectorTests;
+			sourceTree = "<group>";
+		};
+		5A722F4624B5C4F600C1F5D1 /* SVGInspectorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F4724B5C4F600C1F5D1 /* SVGInspectorUITests.swift */,
+				5A722F4924B5C4F600C1F5D1 /* Info.plist */,
+			);
+			path = SVGInspectorUITests;
+			sourceTree = "<group>";
+		};
+		5A722F5524B5C52500C1F5D1 /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F7924B5C90900C1F5D1 /* SVGPath.swift */,
+				5A722F5D24B5C8F400C1F5D1 /* SwiftCssParser */,
+				5A722F7B24B5C92E00C1F5D1 /* Header.h */,
+			);
+			path = Thirdparty;
+			sourceTree = "<group>";
+		};
+		5A722F5624B5C69100C1F5D1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5A72305024B5FDCF00C1F5D1 /* Protocol */,
+				5A722F5824B5C74200C1F5D1 /* Base */,
+				5A722F5724B5C6B700C1F5D1 /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5A722F5724B5C6B700C1F5D1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F5A24B5C82200C1F5D1 /* Cocoa */,
+				5A722F5924B5C80300C1F5D1 /* Foundation */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5A722F5824B5C74200C1F5D1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F5C24B5C85100C1F5D1 /* Foundation */,
+				5A722F5B24B5C84900C1F5D1 /* Cocoa */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5A722F5924B5C80300C1F5D1 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				5A72304424B5D99800C1F5D1 /* NSError+Qy.swift */,
+				5A72304624B5DC7D00C1F5D1 /* String+Qy.swift */,
+				5A72304E24B5FC6200C1F5D1 /* Dictionary+Qy.swift */,
+				5A72305824B6013500C1F5D1 /* Array+Qy.swift */,
+				5A952ECD24B7159C004D45A4 /* Number+Qy.swift */,
+				5A952ED524B75564004D45A4 /* NSObject+Qy.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		5A722F5A24B5C82200C1F5D1 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				5A952ED724B75A91004D45A4 /* Layer */,
+				5A952ED024B75383004D45A4 /* View */,
+				5A72304A24B5F9D800C1F5D1 /* NSString+Qy.swift */,
+				5A72304C24B5FBCF00C1F5D1 /* NSColor+Qy.swift */,
+			);
+			path = Cocoa;
+			sourceTree = "<group>";
+		};
+		5A722F5B24B5C84900C1F5D1 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				5A9794CA24B81E60004A8622 /* View */,
+			);
+			path = Cocoa;
+			sourceTree = "<group>";
+		};
+		5A722F5C24B5C85100C1F5D1 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				5A72303E24B5D96300C1F5D1 /* BaseError.swift */,
+				5A72303F24B5D96300C1F5D1 /* BaseFoundationObject.swift */,
+				5A72304024B5D96300C1F5D1 /* BaseObject.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		5A722F5D24B5C8F400C1F5D1 /* SwiftCssParser */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F5E24B5C8F400C1F5D1 /* StyleSheet.swift */,
+				5A722F6024B5C8F400C1F5D1 /* CSSParser.h */,
+				5A722F6124B5C8F400C1F5D1 /* katana */,
+				5A722F6F24B5C8F400C1F5D1 /* StyleElement.swift */,
+			);
+			path = SwiftCssParser;
+			sourceTree = "<group>";
+		};
+		5A722F6124B5C8F400C1F5D1 /* katana */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F6224B5C8F400C1F5D1 /* katana.lex.h */,
+				5A722F6324B5C8F400C1F5D1 /* selector.h */,
+				5A722F6424B5C8F400C1F5D1 /* katana.h */,
+				5A722F6524B5C8F400C1F5D1 /* parser.h */,
+				5A722F6624B5C8F400C1F5D1 /* foundation.h */,
+				5A722F6724B5C8F400C1F5D1 /* katana.tab.h */,
+				5A722F6824B5C8F400C1F5D1 /* tokenizer.h */,
+				5A722F6924B5C8F400C1F5D1 /* katana.lex.c */,
+				5A722F6A24B5C8F400C1F5D1 /* selector.c */,
+				5A722F6B24B5C8F400C1F5D1 /* katana.tab.c */,
+				5A722F6C24B5C8F400C1F5D1 /* foundation.c */,
+				5A722F6D24B5C8F400C1F5D1 /* parser.c */,
+				5A722F6E24B5C8F400C1F5D1 /* tokenizer.c */,
+			);
+			path = katana;
+			sourceTree = "<group>";
+		};
+		5A722F7D24B5CBE600C1F5D1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				5A72305524B6000000C1F5D1 /* Template */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		5A722F7E24B5CBF100C1F5D1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5A952ECF24B75212004D45A4 /* ViewController */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5A722F7F24B5CC2C00C1F5D1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F8624B5CDDD00C1F5D1 /* FormatKit */,
+				5A722F8324B5CC8B00C1F5D1 /* CommonKit */,
+				5A722F8224B5CC5500C1F5D1 /* CSSKit */,
+				5A722F8124B5CC4800C1F5D1 /* XMLKit */,
+				5A722F8024B5CC3600C1F5D1 /* SVGKit */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5A722F8024B5CC3600C1F5D1 /* SVGKit */ = {
+			isa = PBXGroup;
+			children = (
+				5A722FEC24B5D2F400C1F5D1 /* Extension */,
+				5A722FF224B5D2F400C1F5D1 /* Model */,
+				5A722FF124B5D2F400C1F5D1 /* QySVG.swift */,
+				5A722FE624B5D2F400C1F5D1 /* SVGInfo */,
+			);
+			path = SVGKit;
+			sourceTree = "<group>";
+		};
+		5A722F8124B5CC4800C1F5D1 /* XMLKit */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F8B24B5CE0B00C1F5D1 /* QyXMLParser.swift */,
+			);
+			path = XMLKit;
+			sourceTree = "<group>";
+		};
+		5A722F8224B5CC5500C1F5D1 /* CSSKit */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F8924B5CE0300C1F5D1 /* QyCSSPaser.swift */,
+			);
+			path = CSSKit;
+			sourceTree = "<group>";
+		};
+		5A722F8324B5CC8B00C1F5D1 /* CommonKit */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F8424B5CD7400C1F5D1 /* QyClock.swift */,
+			);
+			path = CommonKit;
+			sourceTree = "<group>";
+		};
+		5A722F8624B5CDDD00C1F5D1 /* FormatKit */ = {
+			isa = PBXGroup;
+			children = (
+				5A722F8724B5CDF700C1F5D1 /* QyFomatter.swift */,
+				5A72304824B5F8EB00C1F5D1 /* QyAppTemplate.swift */,
+			);
+			path = FormatKit;
+			sourceTree = "<group>";
+		};
+		5A722FE624B5D2F400C1F5D1 /* SVGInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5A722FE724B5D2F400C1F5D1 /* QySVGElementName.swift */,
+				5A722FE924B5D2F400C1F5D1 /* QySVGInfoTag.swift */,
+				5A722FEA24B5D2F400C1F5D1 /* QySVGAttributeName.swift */,
+				5A722FEB24B5D2F400C1F5D1 /* QySVGDictionary.swift */,
+			);
+			path = SVGInfo;
+			sourceTree = "<group>";
+		};
+		5A722FEC24B5D2F400C1F5D1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A722FED24B5D2F400C1F5D1 /* CoreGraphics.swift */,
+				5A722FEE24B5D2F400C1F5D1 /* Cocoa.swift */,
+				5A722FEF24B5D2F400C1F5D1 /* Foundation.swift */,
+				5A722FF024B5D2F400C1F5D1 /* NSDataDetector+SVG.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5A722FF224B5D2F400C1F5D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A722FF324B5D2F400C1F5D1 /* QySVGAttribute.swift */,
+				5A722FF424B5D2F400C1F5D1 /* Element */,
+				5A72300F24B5D2F400C1F5D1 /* QySVGNode.swift */,
+				5A72301024B5D2F400C1F5D1 /* QySVGCanvas.swift */,
+				5A72301124B5D2F400C1F5D1 /* QySVGCSSElement.swift */,
+				5A72301224B5D2F400C1F5D1 /* QySVGValues.swift */,
+				5A72301324B5D2F400C1F5D1 /* QySVGTypes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A722FF424B5D2F400C1F5D1 /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				5A722FF524B5D2F400C1F5D1 /* QySVGStyleElement.swift */,
+				5A722FF624B5D2F400C1F5D1 /* QySVGPatternElement.swift */,
+				5A722FF724B5D2F400C1F5D1 /* QySVGViewElement.swift */,
+				5A722FF824B5D2F400C1F5D1 /* QySVGMarkerElement.swift */,
+				5A722FF924B5D2F400C1F5D1 /* QySVGPolygonElement.swift */,
+				5A722FFA24B5D2F400C1F5D1 /* QySVGRadialGradientElement.swift */,
+				5A722FFB24B5D2F400C1F5D1 /* QySVGPathElement.swift */,
+				5A722FFC24B5D2F400C1F5D1 /* QySVGScriptElement.swift */,
+				5A722FFD24B5D2F400C1F5D1 /* QySVGTextPathElement.swift */,
+				5A722FFE24B5D2F400C1F5D1 /* QySVGEllipseElement.swift */,
+				5A722FFF24B5D2F400C1F5D1 /* QySVGMaskElement.swift */,
+				5A72300024B5D2F400C1F5D1 /* QySVGTitleElement.swift */,
+				5A72300124B5D2F400C1F5D1 /* QySVGClipPathElement.swift */,
+				5A72300224B5D2F400C1F5D1 /* QySVGPolylineElement.swift */,
+				5A72300324B5D2F400C1F5D1 /* QySVGDefsElement.swift */,
+				5A72300424B5D2F400C1F5D1 /* QySVGLineElement.swift */,
+				5A72300524B5D2F400C1F5D1 /* QySVGSvgElement.swift */,
+				5A72300624B5D2F400C1F5D1 /* QySVGTextElement.swift */,
+				5A72300724B5D2F400C1F5D1 /* QySVGAElement.swift */,
+				5A72300824B5D2F400C1F5D1 /* QySVGLinearGradientElement.swift */,
+				5A72300924B5D2F400C1F5D1 /* QySVGImageElement.swift */,
+				5A72300A24B5D2F400C1F5D1 /* QySVGUseElement.swift */,
+				5A72300B24B5D2F400C1F5D1 /* QySVGRectElement.swift */,
+				5A72300C24B5D2F400C1F5D1 /* QySVGTspanElement.swift */,
+				5A72300D24B5D2F400C1F5D1 /* QySVGCircleElement.swift */,
+				5A72300E24B5D2F400C1F5D1 /* QySVGGElement.swift */,
+			);
+			path = Element;
+			sourceTree = "<group>";
+		};
+		5A72305024B5FDCF00C1F5D1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5A72305224B5FDF100C1F5D1 /* QyErrorProtocol.swift */,
+				5A72305124B5FDF100C1F5D1 /* QyLogProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5A72305524B6000000C1F5D1 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				5A72305624B6000F00C1F5D1 /* xcode.qy */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		5A952ECF24B75212004D45A4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5A952ED024B75383004D45A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A952ED124B75390004D45A4 /* NSToolbarItem+Qy.swift */,
+				5A952ED324B7553B004D45A4 /* NSView+Qy.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A952ED724B75A91004D45A4 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				5A952ED824B75AA4004D45A4 /* CATransition+Qy.swift */,
+			);
+			path = Layer;
+			sourceTree = "<group>";
+		};
+		5A9794CA24B81E60004A8622 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A9794CB24B81E7A004A8622 /* QYView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A722F2524B5C4F100C1F5D1 /* SVGInspector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A722F4C24B5C4F600C1F5D1 /* Build configuration list for PBXNativeTarget "SVGInspector" */;
+			buildPhases = (
+				5A722F2224B5C4F100C1F5D1 /* Sources */,
+				5A722F2324B5C4F100C1F5D1 /* Frameworks */,
+				5A722F2424B5C4F100C1F5D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SVGInspector;
+			productName = SVGInspector;
+			productReference = 5A722F2624B5C4F100C1F5D1 /* SVGInspector.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A722F3724B5C4F600C1F5D1 /* SVGInspectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A722F4F24B5C4F600C1F5D1 /* Build configuration list for PBXNativeTarget "SVGInspectorTests" */;
+			buildPhases = (
+				5A722F3424B5C4F600C1F5D1 /* Sources */,
+				5A722F3524B5C4F600C1F5D1 /* Frameworks */,
+				5A722F3624B5C4F600C1F5D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A722F3A24B5C4F600C1F5D1 /* PBXTargetDependency */,
+			);
+			name = SVGInspectorTests;
+			productName = SVGInspectorTests;
+			productReference = 5A722F3824B5C4F600C1F5D1 /* SVGInspectorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5A722F4224B5C4F600C1F5D1 /* SVGInspectorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A722F5224B5C4F600C1F5D1 /* Build configuration list for PBXNativeTarget "SVGInspectorUITests" */;
+			buildPhases = (
+				5A722F3F24B5C4F600C1F5D1 /* Sources */,
+				5A722F4024B5C4F600C1F5D1 /* Frameworks */,
+				5A722F4124B5C4F600C1F5D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A722F4524B5C4F600C1F5D1 /* PBXTargetDependency */,
+			);
+			name = SVGInspectorUITests;
+			productName = SVGInspectorUITests;
+			productReference = 5A722F4324B5C4F600C1F5D1 /* SVGInspectorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A722F1E24B5C4F100C1F5D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Le Quang";
+				TargetAttributes = {
+					5A722F2524B5C4F100C1F5D1 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					5A722F3724B5C4F600C1F5D1 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 5A722F2524B5C4F100C1F5D1;
+					};
+					5A722F4224B5C4F600C1F5D1 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 5A722F2524B5C4F100C1F5D1;
+					};
+				};
+			};
+			buildConfigurationList = 5A722F2124B5C4F100C1F5D1 /* Build configuration list for PBXProject "SVGInspector" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A722F1D24B5C4F100C1F5D1;
+			productRefGroup = 5A722F2724B5C4F100C1F5D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A722F2524B5C4F100C1F5D1 /* SVGInspector */,
+				5A722F3724B5C4F600C1F5D1 /* SVGInspectorTests */,
+				5A722F4224B5C4F600C1F5D1 /* SVGInspectorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A722F2424B5C4F100C1F5D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A72305724B6000F00C1F5D1 /* xcode.qy in Resources */,
+				5A722F2E24B5C4F500C1F5D1 /* Assets.xcassets in Resources */,
+				5A722F3124B5C4F600C1F5D1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A722F3624B5C4F600C1F5D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A722F4124B5C4F600C1F5D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A722F2224B5C4F100C1F5D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A72304D24B5FBCF00C1F5D1 /* NSColor+Qy.swift in Sources */,
+				5A952ED624B75564004D45A4 /* NSObject+Qy.swift in Sources */,
+				5A722F7324B5C8F400C1F5D1 /* selector.c in Sources */,
+				5A72301A24B5D2F400C1F5D1 /* Cocoa.swift in Sources */,
+				5A72303724B5D2F400C1F5D1 /* QySVGCircleElement.swift in Sources */,
+				5A72304524B5D99800C1F5D1 /* NSError+Qy.swift in Sources */,
+				5A72301624B5D2F400C1F5D1 /* QySVGInfoTag.swift in Sources */,
+				5A722F8A24B5CE0300C1F5D1 /* QyCSSPaser.swift in Sources */,
+				5A72304124B5D96300C1F5D1 /* BaseError.swift in Sources */,
+				5A72303624B5D2F400C1F5D1 /* QySVGTspanElement.swift in Sources */,
+				5A72302724B5D2F400C1F5D1 /* QySVGTextPathElement.swift in Sources */,
+				5A72304F24B5FC6200C1F5D1 /* Dictionary+Qy.swift in Sources */,
+				5A72303924B5D2F400C1F5D1 /* QySVGNode.swift in Sources */,
+				5A72305424B5FDF100C1F5D1 /* QyErrorProtocol.swift in Sources */,
+				5A952ED924B75AA4004D45A4 /* CATransition+Qy.swift in Sources */,
+				5A722F7224B5C8F400C1F5D1 /* katana.lex.c in Sources */,
+				5A72302224B5D2F400C1F5D1 /* QySVGMarkerElement.swift in Sources */,
+				5A72305324B5FDF100C1F5D1 /* QyLogProtocol.swift in Sources */,
+				5A72301824B5D2F400C1F5D1 /* QySVGDictionary.swift in Sources */,
+				5A722F2C24B5C4F100C1F5D1 /* ViewController.swift in Sources */,
+				5A72302524B5D2F400C1F5D1 /* QySVGPathElement.swift in Sources */,
+				5A952ED224B75390004D45A4 /* NSToolbarItem+Qy.swift in Sources */,
+				5A72302D24B5D2F400C1F5D1 /* QySVGDefsElement.swift in Sources */,
+				5A72302E24B5D2F400C1F5D1 /* QySVGLineElement.swift in Sources */,
+				5A72305924B6013500C1F5D1 /* Array+Qy.swift in Sources */,
+				5A72303524B5D2F400C1F5D1 /* QySVGRectElement.swift in Sources */,
+				5A72301B24B5D2F400C1F5D1 /* Foundation.swift in Sources */,
+				5A722F7624B5C8F400C1F5D1 /* parser.c in Sources */,
+				5A72303224B5D2F400C1F5D1 /* QySVGLinearGradientElement.swift in Sources */,
+				5A722F7A24B5C90900C1F5D1 /* SVGPath.swift in Sources */,
+				5A72302C24B5D2F400C1F5D1 /* QySVGPolylineElement.swift in Sources */,
+				5A72302024B5D2F400C1F5D1 /* QySVGPatternElement.swift in Sources */,
+				5A72303824B5D2F400C1F5D1 /* QySVGGElement.swift in Sources */,
+				5A72303324B5D2F400C1F5D1 /* QySVGImageElement.swift in Sources */,
+				5A72302824B5D2F400C1F5D1 /* QySVGEllipseElement.swift in Sources */,
+				5A72301424B5D2F400C1F5D1 /* QySVGElementName.swift in Sources */,
+				5A722F7524B5C8F400C1F5D1 /* foundation.c in Sources */,
+				5A722F8524B5CD7400C1F5D1 /* QyClock.swift in Sources */,
+				5A72303A24B5D2F400C1F5D1 /* QySVGCanvas.swift in Sources */,
+				5A952ECE24B7159C004D45A4 /* Number+Qy.swift in Sources */,
+				5A72302F24B5D2F400C1F5D1 /* QySVGSvgElement.swift in Sources */,
+				5A72303D24B5D2F400C1F5D1 /* QySVGTypes.swift in Sources */,
+				5A72303B24B5D2F400C1F5D1 /* QySVGCSSElement.swift in Sources */,
+				5A72301D24B5D2F400C1F5D1 /* QySVG.swift in Sources */,
+				5A72302924B5D2F400C1F5D1 /* QySVGMaskElement.swift in Sources */,
+				5A72302B24B5D2F400C1F5D1 /* QySVGClipPathElement.swift in Sources */,
+				5A72302124B5D2F400C1F5D1 /* QySVGViewElement.swift in Sources */,
+				5A72304924B5F8EB00C1F5D1 /* QyAppTemplate.swift in Sources */,
+				5A722F7424B5C8F400C1F5D1 /* katana.tab.c in Sources */,
+				5A72301E24B5D2F400C1F5D1 /* QySVGAttribute.swift in Sources */,
+				5A722F7724B5C8F400C1F5D1 /* tokenizer.c in Sources */,
+				5A72303C24B5D2F400C1F5D1 /* QySVGValues.swift in Sources */,
+				5A72304324B5D96300C1F5D1 /* BaseObject.swift in Sources */,
+				5A72302424B5D2F400C1F5D1 /* QySVGRadialGradientElement.swift in Sources */,
+				5A72301924B5D2F400C1F5D1 /* CoreGraphics.swift in Sources */,
+				5A72303424B5D2F400C1F5D1 /* QySVGUseElement.swift in Sources */,
+				5A72304724B5DC7D00C1F5D1 /* String+Qy.swift in Sources */,
+				5A722F7824B5C8F400C1F5D1 /* StyleElement.swift in Sources */,
+				5A72302624B5D2F400C1F5D1 /* QySVGScriptElement.swift in Sources */,
+				5A72302A24B5D2F400C1F5D1 /* QySVGTitleElement.swift in Sources */,
+				5A722F2A24B5C4F100C1F5D1 /* AppDelegate.swift in Sources */,
+				5A72301F24B5D2F400C1F5D1 /* QySVGStyleElement.swift in Sources */,
+				5A9794CC24B81E7A004A8622 /* QYView.swift in Sources */,
+				5A72302324B5D2F400C1F5D1 /* QySVGPolygonElement.swift in Sources */,
+				5A72303024B5D2F400C1F5D1 /* QySVGTextElement.swift in Sources */,
+				5A72304224B5D96300C1F5D1 /* BaseFoundationObject.swift in Sources */,
+				5A72304B24B5F9D800C1F5D1 /* NSString+Qy.swift in Sources */,
+				5A72301C24B5D2F400C1F5D1 /* NSDataDetector+SVG.swift in Sources */,
+				5A722F8824B5CDF700C1F5D1 /* QyFomatter.swift in Sources */,
+				5A722F7024B5C8F400C1F5D1 /* StyleSheet.swift in Sources */,
+				5A952ED424B7553B004D45A4 /* NSView+Qy.swift in Sources */,
+				5A72303124B5D2F400C1F5D1 /* QySVGAElement.swift in Sources */,
+				5A722F8C24B5CE0B00C1F5D1 /* QyXMLParser.swift in Sources */,
+				5A72301724B5D2F400C1F5D1 /* QySVGAttributeName.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A722F3424B5C4F600C1F5D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A722F3D24B5C4F600C1F5D1 /* SVGInspectorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A722F3F24B5C4F600C1F5D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A722F4824B5C4F600C1F5D1 /* SVGInspectorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A722F3A24B5C4F600C1F5D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A722F2524B5C4F100C1F5D1 /* SVGInspector */;
+			targetProxy = 5A722F3924B5C4F600C1F5D1 /* PBXContainerItemProxy */;
+		};
+		5A722F4524B5C4F600C1F5D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A722F2524B5C4F100C1F5D1 /* SVGInspector */;
+			targetProxy = 5A722F4424B5C4F600C1F5D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5A722F2F24B5C4F600C1F5D1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A722F3024B5C4F600C1F5D1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A722F4A24B5C4F600C1F5D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5A722F4B24B5C4F600C1F5D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5A722F4D24B5C4F600C1F5D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SVGInspector/SVGInspector.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = SVGInspector/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVGInspector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SVGInspector/Thirdparty/Header.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5A722F4E24B5C4F600C1F5D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SVGInspector/SVGInspector.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = SVGInspector/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVGInspector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SVGInspector/Thirdparty/Header.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5A722F5024B5C4F600C1F5D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				INFOPLIST_FILE = SVGInspectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVGInspectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SVGInspector.app/Contents/MacOS/SVGInspector";
+			};
+			name = Debug;
+		};
+		5A722F5124B5C4F600C1F5D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				INFOPLIST_FILE = SVGInspectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVGInspectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SVGInspector.app/Contents/MacOS/SVGInspector";
+			};
+			name = Release;
+		};
+		5A722F5324B5C4F600C1F5D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				INFOPLIST_FILE = SVGInspectorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVGInspectorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SVGInspector;
+			};
+			name = Debug;
+		};
+		5A722F5424B5C4F600C1F5D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QN6X4PXHC5;
+				INFOPLIST_FILE = SVGInspectorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lunex.SVGInspectorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SVGInspector;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A722F2124B5C4F100C1F5D1 /* Build configuration list for PBXProject "SVGInspector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A722F4A24B5C4F600C1F5D1 /* Debug */,
+				5A722F4B24B5C4F600C1F5D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A722F4C24B5C4F600C1F5D1 /* Build configuration list for PBXNativeTarget "SVGInspector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A722F4D24B5C4F600C1F5D1 /* Debug */,
+				5A722F4E24B5C4F600C1F5D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A722F4F24B5C4F600C1F5D1 /* Build configuration list for PBXNativeTarget "SVGInspectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A722F5024B5C4F600C1F5D1 /* Debug */,
+				5A722F5124B5C4F600C1F5D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A722F5224B5C4F600C1F5D1 /* Build configuration list for PBXNativeTarget "SVGInspectorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A722F5324B5C4F600C1F5D1 /* Debug */,
+				5A722F5424B5C4F600C1F5D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A722F1E24B5C4F100C1F5D1 /* Project object */;
+}

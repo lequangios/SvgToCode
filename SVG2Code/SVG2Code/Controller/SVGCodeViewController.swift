@@ -13,8 +13,11 @@ import Sourceful
 class SVGCodeViewController: NSViewController {
     @IBOutlet weak var toucheventBtn: NSButton!
     @IBOutlet weak var extensionBtn: NSButton!
-    @IBOutlet weak var codeView: NSView!
+//    @IBOutlet weak var codeView: NSView!
     
+    @IBOutlet var informationView: NSTextView!
+    
+    @IBOutlet weak var codeView: NSView!
     private var syntaxTextView:SyntaxTextView!
     
     
@@ -54,7 +57,6 @@ class SVGCodeViewController: NSViewController {
         syntaxTextView.contentTextView.delegate = syntaxTextView
         syntaxTextView.theme = DefaultSourceCodeTheme()
         codeView.addConstraints([syntaxTextView.top(toView: codeView), syntaxTextView.bottom(toView: codeView), syntaxTextView.leading(toView: codeView), syntaxTextView.trailing(toView: codeView)])
-       
     }
 }
 
@@ -62,13 +64,24 @@ class SVGCodeViewController: NSViewController {
 extension SVGCodeViewController {
     @objc func map(notification: NSNotification){
         if let data = notification.userInfo as? [String:String] {
-            if let code = data["code"] {
+            if let code = data[ViewModel.DataKey.code.rawValue] {
                 syntaxTextView.text = code
+            }
+            if let logs = data[ViewModel.DataKey.info.rawValue] {
+                do {
+                    if let att = try NSAttributedString.attribute(fromHTML: logs) {
+                        informationView.textStorage?.setAttributedString(att)
+                    }
+                }
+                catch let e {
+                    print(e.localizedDescription)
+                }
+                
             }
         }
     }
     
     func addDataListener(){
-        NotificationCenter.default.addObserver(self, selector: #selector(map(notification:)), name: DataEvent.svgCodeChange.notification(), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(map(notification:)), name: MBObserver.DataEvent.svgCodeChange.notification, object: nil)
     }
 }

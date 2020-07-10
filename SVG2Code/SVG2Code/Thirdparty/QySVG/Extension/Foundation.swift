@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 extension Substring {
     var value:String { return String(self) }
 }
@@ -16,6 +17,13 @@ extension String {
     var number:NSNumber {
         return NSNumber(value: strtod(self, nil))
     }
+    
+    var isEmpty:Bool {
+        let pattern = "([ \t\n\r]+)"
+        return (count == 0) || isMatch(withPattern: pattern)
+    }
+    
+    var data:Data? { return self.data(using: .utf8) }
     
     var range:NSRange { return NSRange(location: 0, length: self.count) }
     
@@ -99,6 +107,11 @@ extension String {
     
     func find(inTag tag:String, pattern:String = ".+") -> [QyMatchPaternResult] {
         let pattern = "(?<=<\(tag)>)\(pattern)?(?=<//\(tag)>)"
+        return find(withPattern: pattern)
+    }
+    
+    func find(inGroup group:String, pattern:String = ".+") -> [QyMatchPaternResult] {
+        let pattern = "(?<=\(group))\(pattern)?(?=//\(group))"
         return find(withPattern: pattern)
     }
 }

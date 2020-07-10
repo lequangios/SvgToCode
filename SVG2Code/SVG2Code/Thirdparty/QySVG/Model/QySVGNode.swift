@@ -104,21 +104,32 @@ class QySVGNode {
         self.deep = node.deep
         self.id = node.id
     }
+    func updateNode(withElement element:QyXMLParser.Element){
+        self.deep = element.deep
+        self.index = element.index
+        self.selector = QySVGCSSElement.make(withNode: self)
+        if let idValue = element.attributes?["id"] { self.id = idValue }
+        computedNodeAttributes(withElement: element)
+        update(info: "<b>\(tag.rawValue)</b> not implement now")
+    }
     func updateNode(byElement element:XML.Element, index: Int, deep: Int){
-        self.element = element
+        self.element = element 
         self.deep = deep
         self.index = index
         self.selector = QySVGCSSElement.make(withNode: self)
         if let idValue = element.attributes["id"] { self.id = idValue }
         if let text = element.text { self.textContent = text }
         computedNodeAttributes(withElement: element)
-        update(info: "\(tag.rawValue) not implement now")
+        update(info: "<b>\(tag.rawValue)</b> not implement now")
     }
     func isAcceptableChildNode(withTag tag:QySVGTag) -> Bool { return self.tag.had(category: .kContainerElements) }
     func addChild(withNode node:QySVGNode) {
         if isAcceptableChildNode(withTag: node.tag) {
             childs.append(node)
         }
+    }
+    func render(fromSVGTree tree:QySVG, canvas:inout QySVGCanvas) -> String {
+        return "<b>\(tag.rawValue)</b> not render"
     }
     // inline > css > inherit > initial
     func computedNodeAttributes(withSheet sheet:QySVGStyleSheet?) {
@@ -143,6 +154,13 @@ class QySVGNode {
     private func computedNodeAttributes(withElement element:XML.Element) {
         for item in QySVGAttributeNameCategory.presentationAttributes {
             if let value = element.attributes[item.rawValue], let attribute = self.attribute[item.rawValue] {
+                attribute.setAttributeValue(value: value, priority: .inline)
+            }
+        }
+    }
+    private func computedNodeAttributes(withElement element:QyXMLParser.Element) {
+        for item in QySVGAttributeNameCategory.presentationAttributes {
+            if let value = element.attributes?[item.rawValue], let attribute = self.attribute[item.rawValue] {
                 attribute.setAttributeValue(value: value, priority: .inline)
             }
         }

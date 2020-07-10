@@ -148,12 +148,12 @@ extension NSViewController {
         toggleLoadingSpiner()
     }
     
-    func addLoadingListener(event:DataEvent){
-        NotificationCenter.default.addObserver(self, selector: #selector(loading), name: event.notification(), object: nil)
+    func addLoadingListener(event:MBObserver.DataEvent){
+        NotificationCenter.default.addObserver(self, selector: #selector(loading), name: event.notification, object: nil)
     }
     
-    func removeLoadingListener(event:DataEvent){
-        NotificationCenter.default.removeObserver(self, name: event.notification(), object: nil)
+    func removeLoadingListener(event:MBObserver.DataEvent){
+        NotificationCenter.default.removeObserver(self, name: event.notification, object: nil)
     }
 }
 

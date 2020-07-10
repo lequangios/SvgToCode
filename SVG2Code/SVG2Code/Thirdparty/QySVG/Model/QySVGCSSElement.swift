@@ -22,6 +22,7 @@ class QySVGStyleSheet {
             self.memoryQySVGStyleSheet = styleSize*self.styleSheet.rules.count
         }
     }
+    
 }
 
 class QySVGCSSElement: StyleElement, Equatable {

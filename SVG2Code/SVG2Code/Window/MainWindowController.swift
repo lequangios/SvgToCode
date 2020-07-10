@@ -70,7 +70,7 @@ class MainWindowController : NSWindowController {
     }
     
     @objc func saveCodeToFile(sender:AnyObject?) {
-        if let language = LanguageName(rawValue: model.svgCodeLange), let code = model.svgCode {
+        if let language = LanguageName(rawValue: model.svgCodeLange), let code = model.model?.svgCode {
             let mySave = NSSavePanel()
             mySave.allowedFileTypes = language.allowFiles()
             mySave.begin { (result) -> Void in

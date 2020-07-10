@@ -31,26 +31,20 @@ extension ErrorCode {
     }
 }
 
-extension Array where Element == String {
-    mutating func addWarning(log text:String) {
-        let data = "<t>.\(count)</t><w>\(text)</w>"
-        append(data)
+class QySVG : BaseObject {
+    struct Information {
+        var beautyText:String = ""
+        var beautyHtml:String = ""
+        var code:[String] = []
+        var name:String = ""
     }
-    mutating func addError(log text:String) {
-        let data = "<t>.\(count)</t><e>\(text)</e>"
-        append(data)
-    }
-    mutating func addInfo(log text:String) {
-        let data = "<t>.\(count)</t><i>\(text)</i>"
-        append(data)
-    }
-}
-
-class QySVG {
+    var information:Information = Information()
     var rootNode:QySVGNode?
     var cssStyle:QySVGStyleSheet?
-    var referencingNodes:[QySVGNode]?
-    var traceLogs:[String] = []
+    var referencingNodes:[QySVGNode] = []
+    var traceLogs:QySVGLogTag = .bootstrap
+    fileprivate(set) var parserStack:QyStack<QySVGNode> = QyStack<QySVGNode>()
+    fileprivate(set) var traverseQueue:QyQueue<QySVGNode> = QyQueue<QySVGNode>()
     private(set) var currentNode:QySVGNode?
     private(set) var listNodes:[QySVGNode] = [] {
         didSet {
@@ -62,8 +56,21 @@ class QySVG {
     }
     private var treeSize:Int = MemoryLayout<SVGTreeModel>.stride
     private(set) var memorySize:Int = 0
-    init() {
-        
+    override init() {
+        super.init()
+    }
+    
+    init(svgContent:String) throws {
+        super.init()
+        let parser = QyXMLParser(xmlString: svgContent)
+        parser.delegate = self
+        do {
+            try parser.parseXML()
+            printf("done")
+        }
+        catch let e {
+            throw e
+        }
     }
     
     func update(withNode node:QySVGNode) {
@@ -75,7 +82,7 @@ class QySVG {
         else {
             self.listNodes.append(node)
         }
-        if node.info != "" { self.traceLogs.addInfo(log: node.info) }
+        if node.info != "" { self.traceLogs.infoTag(text: node.info) }
     }
     
     func update(withCSSText sheet:String){
@@ -90,68 +97,121 @@ class QySVG {
     func findNode(byID id:String) -> QySVGNode? {
         let items = listNodes.filter({$0.id == id})
         if items.count > 1 {
-            traceLogs.addError(log: "Multi element had id are \(id)")
+            let text = "Multi element had id are <b>\(id)</b>"
+            traceLogs.errorTag(text: text)
         }
         return items.first
     }
     
-    func traverse(operation:(_ node:QySVGNode) -> Void) throws{
+    func renderSVG() throws -> QySVGCanvas {
+        var canvas:QySVGCanvas = QySVGCanvas()
+        traverse(operation: { [unowned self](node) in
+            let log = node.render(fromSVGTree: self, canvas: &canvas)
+            if log != "" { self.traceLogs.warningTag(text: log) }
+        })
+        return canvas
+    }
+    
+    
+    func traverse(operation:(_ node:QySVGNode) -> Void){
+        if traverseQueue.isEmpty == false { traverseQueue.empty() }
+        traverseQueue = QyQueue<QySVGNode>()
         if let node = rootNode {
-            let queueObj = Queue<QySVGNode>()
-            let errCode = queueObj.enQueue(data: node)
-            if errCode == .Success {
-                while queueObj.isEmpty == false {
-                    let objFront = queueObj.queueFront()
-                    _ = queueObj.deQueue()
-                    if let obj = objFront {
-                        operation(obj.data)
-                        if obj.data.isAllowChild == true {
-                            for item in obj.data.childs {
-                                let errCode = queueObj.enQueue(data: item)
-                                if errCode != .Success {
-                                    throw errCode.enQueueError(byNode: item)
-                                }
-                            }
+            traverseQueue.enQueue(data: node)
+            while traverseQueue.isEmpty == false {
+                if let traverseNode = traverseQueue.head {
+                    traverseQueue.deQueue()
+                    operation(traverseNode)
+                    if traverseNode.isAllowChild == true {
+                        for item in traverseNode.childs {
+                            traverseQueue.enQueue(data: item)
                         }
                     }
                 }
             }
-            else { throw errCode.enQueueError(byNode: node) }
         }
     }
     
-    func computedNodeAttributes() throws {
-        let queueObj = Queue<QySVGNode>()
+    func computedNodeAttributes(){
+        if traverseQueue.isEmpty == false { traverseQueue.empty() }
+        traverseQueue = QyQueue<QySVGNode>()
         if let node = rootNode {
-            let errCode = queueObj.enQueue(data: node)
-            if errCode != .Success { throw errCode.enQueueError(byNode: node) }
-            while queueObj.isEmpty == false {
-                let objFront = queueObj.queueFront()
-                _ = queueObj.deQueue()
-                if let obj = objFront {
-                    obj.data.computedNodeAttributes(withSheet: self.cssStyle)
-                    if obj.data.isAllowChild == true {
-                        for item in obj.data.childs {
-                            let errCode = queueObj.enQueue(data: item)
-                            if errCode != .Success { throw errCode.enQueueError(byNode: item)}
+            traverseQueue.enQueue(data: node)
+            while traverseQueue.isEmpty == false {
+                if let traverseNode = traverseQueue.head {
+                    traverseQueue.deQueue()
+                    traverseNode.computedNodeAttributes(withSheet: self.cssStyle)
+                    if traverseNode.isAllowChild == true {
+                        for item in traverseNode.childs {
+                            traverseQueue.enQueue(data: item)
                         }
                     }
                 }
             }
         }
+    }
+    
+    // MARK:- Generate Preview Data
+    func generatePreview() -> SVGPreviewModel? {
+        return SVGPreviewModel()
     }
     
     deinit {
         print("☠️ deinit QySVG")
+        if self.parserStack.count > 0 { self.parserStack.empty() }
+        if self.traverseQueue.count > 0 { self.traverseQueue.empty() }
         self.listNodes.removeAll()
-        self.traceLogs.removeAll()
-        self.referencingNodes?.removeAll()
+        self.traceLogs.tags.removeAll()
+        self.referencingNodes.removeAll()
         self.rootNode = nil
         self.currentNode = nil
     }
 }
 
+extension QySVG : QyXMLParserProtocol {
+    func startParsing(element: QyXMLParser.Element) {
+        let node = QySVGNode.node(withTagName: element.tag)
+        node.updateNode(withElement: element)
+        if element.isRoot {
+            self.rootNode = node
+            parserStack.push(data: node)
+        }
+        else {
+            if let head = parserStack.head {
+                if head.isAllowChild == true {
+                    node.parentNode = head
+                    head.addChild(withNode: node)
+                    parserStack.push(data: node)
+                }
+                else {
+                    let text = "\(element.tag) not allow has child element."
+                    self.traceLogs.warningTag(text: text)
+                }
+            }
+        }
+    }
+    
+    func endParsing(element: QyXMLParser.Element) {
+        if element.isRoot == true {
+            information.beautyText = element.rawData
+            information.beautyHtml = element.htmlData
+        }
+        if let head = parserStack.head {
+            if head.tag.rawValue == element.tag {
+                if element.text != "" { head.textContent = element.text }
+                self.update(withNode: head)
+                if head.isRenderableNode == false { self.referencingNodes.append(head) }
+                parserStack.pop()
+            }
+        }
+    }
+}
+
 extension QySVG {
+    class func buildTree() {
+        
+    }
+    
     class func buildTree(withXMLElement element:XML.Element) throws -> QySVG {
         var svg = QySVG(), index = 0, deep = 0
         let queueObj = Queue<QySVGNode>()
@@ -181,9 +241,13 @@ extension QySVG {
                     }
                 }
                 else {
-                    if obj.data.childs.count > 0 { svg.traceLogs.addError(log: "\(obj.data.name) not allow has child element.") }
+                    if obj.data.childs.count > 0 {
+                        let text = "\(obj.data.name) not allow has child element."
+                        svg.traceLogs.warningTag(text: text)
+                    }
                 }
                 svg.update(withNode: obj.data)
+                if obj.data.isRenderableNode == false { svg.referencingNodes.append(obj.data) }
             }
         }
         return svg
@@ -192,16 +256,10 @@ extension QySVG {
     class func test() {
         do {
             let svgContent = NSString.getTemplate(filename: "green.svg")
-            let xml = try XML.parse(svgContent)
-            if let svg = xml["svg"].element {
-                let ele = try QySVG.buildTree(withXMLElement: svg)
-                try ele.computedNodeAttributes()
-                print(ele.memorySize)
-                print(ele.traceLogs.joined())
-            }
+            let svg = try QySVG.init(svgContent: svgContent)
         }
         catch let e {
-            print(e.failureReason)
+            //print(e.failureReason)
         }
     }
 }

@@ -20,7 +20,9 @@ class SVGInspectorController: NSViewController {
     private var svgLayer:CALayer?
     
     @IBOutlet weak var svgPreview: NSClipView!
+//    @IBOutlet var svgContentFile: NSTextView!
     
+    @IBOutlet var svgContentFile: SVGContentView!
     override func viewDidLoad() {
         super.viewDidLoad()
         addDataListener()
@@ -51,6 +53,10 @@ extension SVGInspectorController {
         
         if let svgView = svgPreview.documentView as? SVGPreviewView {
             svgView.updateModel(svgModel: model)
+            model.code?.beautifull()
+            if let code = model.code?.svgCode {
+                svgContentFile.textStorage?.setAttributedString(code)
+            }
         }
         
         self.view.layoutSubtreeIfNeeded()
@@ -69,7 +75,7 @@ extension SVGInspectorController {
 
     
     func addDataListener(){
-        NotificationCenter.default.addObserver(self, selector: #selector(map(notification:)), name: DataEvent.svgPreviewChange.notification(), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(map(notification:)), name: MBObserver.DataEvent.svgPreviewChange.notification, object: nil)
     }
     
    

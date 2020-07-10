@@ -57,4 +57,21 @@ class QySVGSvgElement: QySVGNode {
             attribute.setAttributeValue(value: value, priority: .inline)
         }
     }
+    override func render(fromSVGTree tree: QySVG, canvas: inout QySVGCanvas) -> String {
+        let view = canvas.canvas
+        var logs = ""
+        if self.attribute[QySVGAttributeName.kBaseProfile.rawValue] != nil { logs = "<b>\(QySVGAttributeName.kBaseProfile.rawValue)</b> not support" }
+        if self.attribute[QySVGAttributeName.kContentScriptType.rawValue] != nil {logs = "<b>\(QySVGAttributeName.kContentScriptType.rawValue)</b> not support"}
+        if self.attribute[QySVGAttributeName.kContentStyleType.rawValue] != nil {logs = "<b>\(QySVGAttributeName.kContentStyleType.rawValue)</b> not support"}
+        if self.attribute[QySVGAttributeName.kHeight.rawValue] != nil {logs = "<b>\(QySVGAttributeName.kHeight.rawValue)</b> not support"}
+        if self.attribute[QySVGAttributeName.kPreserveAspectRatio.rawValue] != nil {logs = "<b>\(QySVGAttributeName.kPreserveAspectRatio.rawValue)</b> not support"}
+        if self.attribute[QySVGAttributeName.kVersion.rawValue] != nil {logs = "<b>\(QySVGAttributeName.kVersion.rawValue)</b> not support"}
+        if let value = self.attribute[QySVGAttributeName.kViewBox.rawValue], let attrValue = value.value as? QySVGViewBoxValue {
+            view.frame = CGRect(x: attrValue.value.left.doubleValue, y: attrValue.value.top.doubleValue, width: attrValue.value.right.doubleValue, height: attrValue.value.bottom.doubleValue)
+        }
+        if self.attribute[QySVGAttributeName.kWidth.rawValue] != nil {logs = "<b>\(QySVGAttributeName.kWidth.rawValue)</b> not support"}
+        if self.attribute[QySVGAttributeName.kX.rawValue] != nil {logs = "<b>\(QySVGAttributeName.kX.rawValue)</b> not support"}
+        if self.attribute[QySVGAttributeName.kY.rawValue] != nil {logs = "<b>\(QySVGAttributeName.kY.rawValue)</b> not support"}
+        return logs
+    }
 }

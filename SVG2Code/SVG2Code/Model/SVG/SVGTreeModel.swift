@@ -113,6 +113,8 @@ class SVGTreeModel {
     var listNodes:[SVGNodeModel] = []
     var root:SVGNodeModel?
     var current:SVGNodeModel?
+    var svgTree:QySVG?
+    var svgCode:QySVGCode?
     
     var description:String { return "Tree with \(listNodes.count) nodes and size \(memorySize/1024) kb" }
     

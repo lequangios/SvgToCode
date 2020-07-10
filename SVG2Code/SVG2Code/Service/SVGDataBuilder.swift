@@ -11,13 +11,51 @@ import SwiftyXMLParser
 import JavaScriptCore
 
 class SVGDataBuilder: NSObject {
+    // MARK:- Build SVG Tree Model from XML String (New)
+    class func buildTree(withName name:String, svgContent:String, audit:Bool, complete:@escaping(Result<MainViewModel.Model,Error>)->Void) {
+        DispatchQueue.global(qos: .background).sync {
+            do {
+                let svg = try QySVG(svgContent: svgContent)
+                svg.information.name = name
+                svg.computedNodeAttributes()
+                let model = MainViewModel.Model()
+                model.svg = svg
+                complete(.success(model))
+            }
+            catch let e { complete(.failure(e)) }
+        }
+    }
+    
+    // MARK:- Build Preview from SVG Tree Model (New)
+    class func buildPreview(withTree tree:QySVG, complete:@escaping(Result<SVGPreviewModel,Error>)->Void){
+        DispatchQueue.global(qos: .background).sync {
+            if let _ = tree.rootNode {
+                if let preview = tree.generatePreview() {
+                    preview.code = QySVGCode(svgTextContent: tree.information.beautyHtml)
+                    DispatchQueue.main.async {
+                        complete(.success(preview))
+                    }
+                    return
+                }
+            }
+            
+            let error = NSError(domain: NSErrorDomain.svgXMLPaserDomain.rawValue, code: NSErrorCode.internalCode.rawValue, description: "Invalid SVG Tree Model", failureReason: "Invalid SVG Tree Model, please generate SVG Tree Model again!")
+            DispatchQueue.main.async {
+                complete(.failure(error))
+            }
+        }
+    }
+    
     // MARK:- Build SVG Tree Model from XML String
     class func buildTree(name:String, svgContent:String, audit:Bool, complete:@escaping(Result<SVGTreeModel,Error>)->Void) {
-        DispatchQueue.global(qos: .utility).sync {
+        DispatchQueue.global(qos: .background).sync {
             do {
                 let xml = try XML.parse(svgContent)
                 if let element = xml["svg"].element {
                     let tree = SVGTreeModel.buildTree(name: name, element: element)
+                    tree.svgTree = try QySVG.buildTree(withXMLElement: element)
+                    tree.svgCode = QySVGCode(svgTextContent: svgContent)
+                    tree.svgCode?.beautifull()
                     if audit == true {
                         print(tree.description)
                     }
@@ -42,12 +80,13 @@ class SVGDataBuilder: NSObject {
     
     // MARK:- Build Preview from SVG Tree Model
     class func buildPreview(withTree tree:SVGTreeModel, complete:@escaping(Result<SVGPreviewModel,Error>)->Void){
-        DispatchQueue.global(qos: .utility).sync {
+        DispatchQueue.global(qos: .background).sync {
             if let root = tree.root {
                 let tool = SVGPreviewGeneration()
                 if let preview = tool.generatecode(model: root, tree: tree) {
                     let list = preview.layerList.sorted{ $1.value < $0.value }
                     preview.layerList.removeAll()
+                    preview.code = tree.svgCode
                     
                     for item in list {
                         preview.layerList[item.key] = item.value
@@ -72,7 +111,6 @@ class SVGDataBuilder: NSObject {
             let tool = SVGPreviewGeneration()
             if let preview = tool.generatecode(model: root, tree: tree) {
                 //let preview = SVGPreviewModel(layer: layer, layerList: tool.layerTable, size: data.viewbox.size)
-                
                 return (preview,nil)
             }
         }
@@ -85,6 +123,7 @@ class SVGDataBuilder: NSObject {
     // MARK:- Build Code from SVG Tree Model
     class func buildCode(withTree tree:SVGTreeModel, codeMaker:CodeGenerationProtocol, complete:@escaping(Result<String,Error>)->Void) {
         DispatchQueue.global(qos: .utility).sync {
+            
             //let code = codeMa
             if let root = tree.root {
                 let code = codeMaker.generatecode(codemaker: codeMaker, model: root, tree: tree)

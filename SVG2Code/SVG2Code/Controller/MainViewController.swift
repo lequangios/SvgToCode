@@ -29,37 +29,38 @@ class MainViewController: NSViewController {
 
 // MARK: - Window Controller With MainViewModel
 extension MainViewController : MainViewDataBinding {
-    func syns(tree data: SVGTreeModel?, error: Error?, dataEvent: DataEvent) {
+    func syns(tree data: MainViewModel.Model?, error: Error?, dataEvent: MBObserver.DataEvent) {
         
     }
     
-    func syns(preview data: SVGPreviewModel?, error: Error?, dataEvent: DataEvent) {
-        if let model = data, dataEvent == .svgPreviewChange {
-            NotificationCenter.default.post(name: dataEvent.notification(), object: nil, userInfo: ["model":model])
+    func syns(preview data: MainViewModel.Model?, error: Error?, dataEvent: MBObserver.DataEvent) {
+        if let model = data?.svgPreviewModel, dataEvent == .svgPreviewChange {
+            NotificationCenter.default.post(name: dataEvent.notification, object: nil, userInfo: ["model":model])
         }
     }
     
-    func syns(code data: String?, error: Error?, dataEvent: DataEvent) {
-        if let code = data, dataEvent == .svgCodeChange {
-            NotificationCenter.default.post(name: dataEvent.notification(), object: nil, userInfo: ["code":code])
-        }
+    func syns(code data: MainViewModel.Model?, error: Error?, dataEvent: MBObserver.DataEvent) {
+        
+//        if let code = data?[ViewModel.DataKey.code.rawValue] as? String, let log = data?[ViewModel.DataKey.info.rawValue] as? String, dataEvent == .svgCodeChange {
+//            NotificationCenter.default.post(name: dataEvent.notification(), object: nil, userInfo: [ViewModel.DataKey.code.rawValue:code, ViewModel.DataKey.info.rawValue:log])
+//        }
     }
     
-    func toogleProccessingView(event: DataEvent) {
+    func toogleProccessingView(event: MBObserver.DataEvent) {
         if event == .modelChange {
-            NotificationCenter.default.post(name: event.notification(), object: nil)
+            NotificationCenter.default.post(name: event.notification, object: nil)
         }
     }
     
-    func toogleErrorView(error: Error, event: DataEvent) {
+    func toogleErrorView(error: Error, event: MBObserver.DataEvent) {
         if event == .modelChange {
             toggleAlertInformation(with: error as NSError)
         }
         else if event == .svgPreviewChange {
-            NotificationCenter.default.post(name: event.notification(), object: nil, userInfo: ["error":error])
+            NotificationCenter.default.post(name: event.notification, object: nil, userInfo: ["error":error])
         }
         else if event == .svgCodeChange {
-            NotificationCenter.default.post(name: event.notification(), object: nil, userInfo: ["error":error])
+            NotificationCenter.default.post(name: event.notification, object: nil, userInfo: ["error":error])
         }
     }
     
