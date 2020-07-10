@@ -28,6 +28,9 @@ struct AppTheme {
     var onBackground:String = ""
     var onError:String = ""
     
+    var iconToolbarSize:CGSize = .init(width: 30, height: 40)
+    var dropdownToolbarSize:CGSize = .init(width: 80, height: 40)
+    
     static let Indigo:AppTheme = .init(primary: "#3F51B5",
                                        primaryLight: "#7986CB",
                                        primaryDark: "#283593",

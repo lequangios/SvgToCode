@@ -1,58 +1,68 @@
 {
   "images" : [
     {
+      "size" : "16x16",
       "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "16x16"
+      "filename" : "svg16.png",
+      "scale" : "1x"
     },
     {
+      "size" : "16x16",
       "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "16x16"
+      "filename" : "svg16@2x.png",
+      "scale" : "2x"
     },
     {
+      "size" : "32x32",
       "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "32x32"
+      "filename" : "svg32.png",
+      "scale" : "1x"
     },
     {
+      "size" : "32x32",
       "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "32x32"
+      "filename" : "svg32@2x.png",
+      "scale" : "2x"
     },
     {
+      "size" : "128x128",
       "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "128x128"
+      "filename" : "svg128.png",
+      "scale" : "1x"
     },
     {
+      "size" : "128x128",
       "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "128x128"
+      "filename" : "svg128@2x.png",
+      "scale" : "2x"
     },
     {
+      "size" : "256x256",
       "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "256x256"
+      "filename" : "svg256.png",
+      "scale" : "1x"
     },
     {
+      "size" : "256x256",
       "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "256x256"
+      "filename" : "svg256@2x.png",
+      "scale" : "2x"
     },
     {
+      "size" : "512x512",
       "idiom" : "mac",
-      "scale" : "1x",
-      "size" : "512x512"
+      "filename" : "svg512.png",
+      "scale" : "1x"
     },
     {
+      "size" : "512x512",
       "idiom" : "mac",
-      "scale" : "2x",
-      "size" : "512x512"
+      "filename" : "svg512@2x.png",
+      "scale" : "2x"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   }
 }

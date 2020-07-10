@@ -86,6 +86,17 @@
 		5A952ED624B75564004D45A4 /* NSObject+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A952ED524B75564004D45A4 /* NSObject+Qy.swift */; };
 		5A952ED924B75AA4004D45A4 /* CATransition+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A952ED824B75AA4004D45A4 /* CATransition+Qy.swift */; };
 		5A9794CC24B81E7A004A8622 /* QYView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794CB24B81E7A004A8622 /* QYView.swift */; };
+		5A9794D224B8330F004A8622 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A9794D424B8330F004A8622 /* Localizable.strings */; };
+		5A9794D924B833DB004A8622 /* CommonMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794D824B833DB004A8622 /* CommonMethod.swift */; };
+		5A9794DB24B83808004A8622 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794DA24B83808004A8622 /* LeftViewController.swift */; };
+		5A9794DD24B83827004A8622 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794DC24B83827004A8622 /* RightViewController.swift */; };
+		5A9794DF24B8399C004A8622 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794DE24B8399C004A8622 /* MainSplitViewController.swift */; };
+		5A9794E224B839E6004A8622 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794E124B839E6004A8622 /* MainWindowController.swift */; };
+		5A9794E424B83A49004A8622 /* QYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794E324B83A49004A8622 /* QYViewController.swift */; };
+		5A9794E624B86F36004A8622 /* NSAppearance+Qy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794E524B86F36004A8622 /* NSAppearance+Qy.swift */; };
+		5A9794E924B87357004A8622 /* ProgrammingLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794E824B87357004A8622 /* ProgrammingLanguage.swift */; };
+		5A9794EC24B874FA004A8622 /* SVGBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794EB24B874FA004A8622 /* SVGBuilder.swift */; };
+		5A9794F024B87566004A8622 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9794EF24B87566004A8622 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +212,21 @@
 		5A952ED524B75564004D45A4 /* NSObject+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Qy.swift"; sourceTree = "<group>"; };
 		5A952ED824B75AA4004D45A4 /* CATransition+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+Qy.swift"; sourceTree = "<group>"; };
 		5A9794CB24B81E7A004A8622 /* QYView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYView.swift; sourceTree = "<group>"; };
+		5A9794CE24B83220004A8622 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		5A9794CF24B83231004A8622 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Main.strings"; sourceTree = "<group>"; };
+		5A9794D324B8330F004A8622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A9794D524B83316004A8622 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5A9794D624B83318004A8622 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A9794D824B833DB004A8622 /* CommonMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMethod.swift; sourceTree = "<group>"; };
+		5A9794DA24B83808004A8622 /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		5A9794DC24B83827004A8622 /* RightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		5A9794DE24B8399C004A8622 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
+		5A9794E124B839E6004A8622 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		5A9794E324B83A49004A8622 /* QYViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYViewController.swift; sourceTree = "<group>"; };
+		5A9794E524B86F36004A8622 /* NSAppearance+Qy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAppearance+Qy.swift"; sourceTree = "<group>"; };
+		5A9794E824B87357004A8622 /* ProgrammingLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguage.swift; sourceTree = "<group>"; };
+		5A9794EB24B874FA004A8622 /* SVGBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGBuilder.swift; sourceTree = "<group>"; };
+		5A9794EF24B87566004A8622 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,7 +283,6 @@
 				5A722F5624B5C69100C1F5D1 /* Common */,
 				5A722F5524B5C52500C1F5D1 /* Thirdparty */,
 				5A722F2924B5C4F100C1F5D1 /* AppDelegate.swift */,
-				5A722F2B24B5C4F100C1F5D1 /* ViewController.swift */,
 				5A722F2D24B5C4F500C1F5D1 /* Assets.xcassets */,
 				5A722F2F24B5C4F600C1F5D1 /* Main.storyboard */,
 				5A722F3224B5C4F600C1F5D1 /* Info.plist */,
@@ -297,6 +322,7 @@
 		5A722F5624B5C69100C1F5D1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5A9794D724B833C3004A8622 /* Helper */,
 				5A72305024B5FDCF00C1F5D1 /* Protocol */,
 				5A722F5824B5C74200C1F5D1 /* Base */,
 				5A722F5724B5C6B700C1F5D1 /* Extension */,
@@ -350,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				5A9794CA24B81E60004A8622 /* View */,
+				5A9794E524B86F36004A8622 /* NSAppearance+Qy.swift */,
 			);
 			path = Cocoa;
 			sourceTree = "<group>";
@@ -399,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				5A72305524B6000000C1F5D1 /* Template */,
+				5A9794D424B8330F004A8622 /* Localizable.strings */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -406,6 +434,10 @@
 		5A722F7E24B5CBF100C1F5D1 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5A9794EA24B874E1004A8622 /* ViewModel */,
+				5A9794E724B8733C004A8622 /* Model */,
+				5A9794E024B839D9004A8622 /* Window */,
+				5A9794CD24B82EFA004A8622 /* DataSource */,
 				5A952ECF24B75212004D45A4 /* ViewController */,
 			);
 			path = App;
@@ -556,6 +588,10 @@
 		5A952ECF24B75212004D45A4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5A722F2B24B5C4F100C1F5D1 /* ViewController.swift */,
+				5A9794DA24B83808004A8622 /* LeftViewController.swift */,
+				5A9794DC24B83827004A8622 /* RightViewController.swift */,
+				5A9794DE24B8399C004A8622 /* MainSplitViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -581,8 +617,49 @@
 			isa = PBXGroup;
 			children = (
 				5A9794CB24B81E7A004A8622 /* QYView.swift */,
+				5A9794E324B83A49004A8622 /* QYViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5A9794CD24B82EFA004A8622 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5A9794EB24B874FA004A8622 /* SVGBuilder.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5A9794D724B833C3004A8622 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5A9794D824B833DB004A8622 /* CommonMethod.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		5A9794E024B839D9004A8622 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				5A9794E124B839E6004A8622 /* MainWindowController.swift */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		5A9794E724B8733C004A8622 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A9794E824B87357004A8622 /* ProgrammingLanguage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A9794EA24B874E1004A8622 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A9794EF24B87566004A8622 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -671,6 +748,8 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
+				"en-GB",
 			);
 			mainGroup = 5A722F1D24B5C4F100C1F5D1;
 			productRefGroup = 5A722F2724B5C4F100C1F5D1 /* Products */;
@@ -690,6 +769,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A72305724B6000F00C1F5D1 /* xcode.qy in Resources */,
+				5A9794D224B8330F004A8622 /* Localizable.strings in Resources */,
 				5A722F2E24B5C4F500C1F5D1 /* Assets.xcassets in Resources */,
 				5A722F3124B5C4F600C1F5D1 /* Main.storyboard in Resources */,
 			);
@@ -725,9 +805,11 @@
 				5A72301624B5D2F400C1F5D1 /* QySVGInfoTag.swift in Sources */,
 				5A722F8A24B5CE0300C1F5D1 /* QyCSSPaser.swift in Sources */,
 				5A72304124B5D96300C1F5D1 /* BaseError.swift in Sources */,
+				5A9794E924B87357004A8622 /* ProgrammingLanguage.swift in Sources */,
 				5A72303624B5D2F400C1F5D1 /* QySVGTspanElement.swift in Sources */,
 				5A72302724B5D2F400C1F5D1 /* QySVGTextPathElement.swift in Sources */,
 				5A72304F24B5FC6200C1F5D1 /* Dictionary+Qy.swift in Sources */,
+				5A9794D924B833DB004A8622 /* CommonMethod.swift in Sources */,
 				5A72303924B5D2F400C1F5D1 /* QySVGNode.swift in Sources */,
 				5A72305424B5FDF100C1F5D1 /* QyErrorProtocol.swift in Sources */,
 				5A952ED924B75AA4004D45A4 /* CATransition+Qy.swift in Sources */,
@@ -741,6 +823,7 @@
 				5A72302D24B5D2F400C1F5D1 /* QySVGDefsElement.swift in Sources */,
 				5A72302E24B5D2F400C1F5D1 /* QySVGLineElement.swift in Sources */,
 				5A72305924B6013500C1F5D1 /* Array+Qy.swift in Sources */,
+				5A9794E424B83A49004A8622 /* QYViewController.swift in Sources */,
 				5A72303524B5D2F400C1F5D1 /* QySVGRectElement.swift in Sources */,
 				5A72301B24B5D2F400C1F5D1 /* Foundation.swift in Sources */,
 				5A722F7624B5C8F400C1F5D1 /* parser.c in Sources */,
@@ -748,18 +831,24 @@
 				5A722F7A24B5C90900C1F5D1 /* SVGPath.swift in Sources */,
 				5A72302C24B5D2F400C1F5D1 /* QySVGPolylineElement.swift in Sources */,
 				5A72302024B5D2F400C1F5D1 /* QySVGPatternElement.swift in Sources */,
+				5A9794F024B87566004A8622 /* MainViewModel.swift in Sources */,
 				5A72303824B5D2F400C1F5D1 /* QySVGGElement.swift in Sources */,
 				5A72303324B5D2F400C1F5D1 /* QySVGImageElement.swift in Sources */,
 				5A72302824B5D2F400C1F5D1 /* QySVGEllipseElement.swift in Sources */,
+				5A9794DD24B83827004A8622 /* RightViewController.swift in Sources */,
 				5A72301424B5D2F400C1F5D1 /* QySVGElementName.swift in Sources */,
+				5A9794DB24B83808004A8622 /* LeftViewController.swift in Sources */,
 				5A722F7524B5C8F400C1F5D1 /* foundation.c in Sources */,
 				5A722F8524B5CD7400C1F5D1 /* QyClock.swift in Sources */,
 				5A72303A24B5D2F400C1F5D1 /* QySVGCanvas.swift in Sources */,
 				5A952ECE24B7159C004D45A4 /* Number+Qy.swift in Sources */,
 				5A72302F24B5D2F400C1F5D1 /* QySVGSvgElement.swift in Sources */,
+				5A9794DF24B8399C004A8622 /* MainSplitViewController.swift in Sources */,
 				5A72303D24B5D2F400C1F5D1 /* QySVGTypes.swift in Sources */,
 				5A72303B24B5D2F400C1F5D1 /* QySVGCSSElement.swift in Sources */,
+				5A9794E224B839E6004A8622 /* MainWindowController.swift in Sources */,
 				5A72301D24B5D2F400C1F5D1 /* QySVG.swift in Sources */,
+				5A9794E624B86F36004A8622 /* NSAppearance+Qy.swift in Sources */,
 				5A72302924B5D2F400C1F5D1 /* QySVGMaskElement.swift in Sources */,
 				5A72302B24B5D2F400C1F5D1 /* QySVGClipPathElement.swift in Sources */,
 				5A72302124B5D2F400C1F5D1 /* QySVGViewElement.swift in Sources */,
@@ -778,6 +867,7 @@
 				5A72302A24B5D2F400C1F5D1 /* QySVGTitleElement.swift in Sources */,
 				5A722F2A24B5C4F100C1F5D1 /* AppDelegate.swift in Sources */,
 				5A72301F24B5D2F400C1F5D1 /* QySVGStyleElement.swift in Sources */,
+				5A9794EC24B874FA004A8622 /* SVGBuilder.swift in Sources */,
 				5A9794CC24B81E7A004A8622 /* QYView.swift in Sources */,
 				5A72302324B5D2F400C1F5D1 /* QySVGPolygonElement.swift in Sources */,
 				5A72303024B5D2F400C1F5D1 /* QySVGTextElement.swift in Sources */,
@@ -829,8 +919,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				5A722F3024B5C4F600C1F5D1 /* Base */,
+				5A9794CE24B83220004A8622 /* vi */,
+				5A9794CF24B83231004A8622 /* en-GB */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5A9794D424B8330F004A8622 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A9794D324B8330F004A8622 /* en */,
+				5A9794D524B83316004A8622 /* en-GB */,
+				5A9794D624B83318004A8622 /* vi */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -840,6 +942,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -900,6 +1003,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

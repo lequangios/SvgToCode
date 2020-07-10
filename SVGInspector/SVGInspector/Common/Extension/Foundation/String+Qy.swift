@@ -15,6 +15,7 @@ extension Substring {
 
 //MARK: - Add custom value to String
 extension String {
+    var localized:String { return NSLocalizedString(self, comment: "Localized String for key : \(self)") }
     var number:NSNumber {
         return NSNumber(value: strtod(self, nil))
     }
@@ -62,7 +63,7 @@ extension String {
 //MARK: - String and Color
 public typealias rgba = (r:Int, g:Int, b:Int, a:Double)
 extension String {
-    var colorPrefix:String { return "" }
+    var colorPrefix:String { return "#" }
     var isHexColorString:Bool {
         let check = "#[0-9A-Fa-f]{3}|#[0-9A-Fa-f]{6}"
         let check_value = NSPredicate(format:"SELF MATCHES %@", check)

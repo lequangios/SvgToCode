@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SVGInspector" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -682,36 +683,124 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="SVGInspector" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="8E82F281-B4C1-452F-89AD-D8CA65624E06" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="ltH-zm-GVp">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="C6AB7F1A-7AB8-4FD2-9B0E-DCADC04AE61C" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="9Ky-xw-FRs">
+                                    <nil key="toolTip"/>
+                                    <popUpButton key="view" verticalHuggingPriority="750" id="3Hf-Iu-iNE">
+                                        <rect key="frame" x="0.0" y="14" width="100" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IN2-RE-RvS">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <menu key="menu" id="A6g-C8-6r7"/>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="794C7DCD-6C46-4C5A-AC38-FBE8DAD2959F" label="Custom View" paletteLabel="Custom View" image="savecode" sizingBehavior="auto" id="zjy-Kz-q2j">
+                                    <nil key="toolTip"/>
+                                    <button key="view" id="y4D-4r-Y3i">
+                                        <rect key="frame" x="14" y="14" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="savecode" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="6g7-fN-8OR">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="F6B45849-ACD6-460A-8958-94B808FBFC94" label="Custom View" paletteLabel="Custom View" image="addnewfile" sizingBehavior="auto" id="0IY-Yb-sfW">
+                                    <nil key="toolTip"/>
+                                    <button key="view" id="AMA-Gv-QnL">
+                                        <rect key="frame" x="14" y="14" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="addnewfile" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ZMF-RR-Al1">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems/>
+                            <connections>
+                                <outlet property="delegate" destination="B8D-0N-5wS" id="aw1-5b-W2X"/>
+                            </connections>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <outlet property="addNewSVGBarItem" destination="ZMF-RR-Al1" id="JqR-J3-cjV"/>
+                        <outlet property="mainToolbar" destination="ltH-zm-GVp" id="H1d-Qw-vt2"/>
+                        <outlet property="saveCodeBarItem" destination="6g7-fN-8OR" id="4Yh-wP-5FK"/>
+                        <outlet property="selectProgramNameBarItem" destination="3Hf-Iu-iNE" id="PqP-30-t1B"/>
+                        <segue destination="Z19-MD-mRp" kind="relationship" relationship="window.shadowedContentViewController" id="GoM-Pb-Aos"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Split View Controller-->
+        <scene sceneID="tus-WU-86z">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <splitViewController id="Z19-MD-mRp" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="mP5-tu-APs"/>
+                        <splitViewItem id="vyr-Kq-1ng"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="5nt-7D-jJM">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="Z19-MD-mRp" id="dHV-uW-Sld"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="5nt-7D-jJM" id="MGk-il-lNF"/>
+                        <segue destination="OWc-Qf-qZN" kind="relationship" relationship="splitItems" id="8uY-DP-Epx"/>
+                        <segue destination="u8o-ee-wgA" kind="relationship" relationship="splitItems" id="w29-tk-W3X"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="8yr-Ge-N6C" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="835"/>
+        </scene>
+        <!--Right View Controller-->
+        <scene sceneID="30Z-am-Qlh">
+            <objects>
+                <viewController id="OWc-Qf-qZN" customClass="RightViewController" customModule="SVGInspector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="qcB-U9-aHU">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="ROA-yw-jYH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="351" y="1449"/>
+        </scene>
+        <!--Left View Controller-->
+        <scene sceneID="3SK-hn-p2w">
+            <objects>
+                <viewController id="u8o-ee-wgA" customClass="LeftViewController" customModule="SVGInspector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="BHI-ms-mmm">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="m15-PL-3gI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-207" y="1441"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addnewfile" width="128" height="128"/>
+        <image name="savecode" width="512" height="512"/>
+    </resources>
 </document>
