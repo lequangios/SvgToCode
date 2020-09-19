@@ -792,7 +792,53 @@
                     <view key="view" id="BHI-ms-mmm">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="q2z-pp-IZd">
+                                <rect key="frame" x="0.0" y="260" width="450" height="40"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="flT-jG-FQu">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7cn-4z-Nof"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="roundRect" title="Round Rect" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="1Va-p1-cqu">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="label" size="12"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C3s-sl-l17">
+                                        <rect key="frame" x="230" y="0.0" width="220" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="6Dz-VP-kwf"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="roundRect" title="Round Rect" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="hta-10-uE3">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="label" size="12"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="C3s-sl-l17" firstAttribute="width" secondItem="q2z-pp-IZd" secondAttribute="width" multiplier="0.5" constant="-5" id="0uR-Jd-5ix"/>
+                                    <constraint firstItem="flT-jG-FQu" firstAttribute="leading" secondItem="q2z-pp-IZd" secondAttribute="leading" id="2xG-sf-hxS"/>
+                                    <constraint firstItem="flT-jG-FQu" firstAttribute="top" secondItem="q2z-pp-IZd" secondAttribute="top" id="BeG-O6-LCi"/>
+                                    <constraint firstItem="C3s-sl-l17" firstAttribute="top" secondItem="q2z-pp-IZd" secondAttribute="top" id="Qg4-QU-36V"/>
+                                    <constraint firstAttribute="trailing" secondItem="C3s-sl-l17" secondAttribute="trailing" id="eoH-AD-9Vd"/>
+                                    <constraint firstAttribute="height" constant="40" id="vql-oB-dSE"/>
+                                    <constraint firstItem="flT-jG-FQu" firstAttribute="width" secondItem="q2z-pp-IZd" secondAttribute="width" multiplier="0.5" constant="-5" id="yeZ-Vh-ao3"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="q2z-pp-IZd" firstAttribute="top" secondItem="BHI-ms-mmm" secondAttribute="top" id="H29-9i-uKf"/>
+                            <constraint firstAttribute="trailing" secondItem="q2z-pp-IZd" secondAttribute="trailing" id="sgC-Ws-3Yg"/>
+                            <constraint firstItem="q2z-pp-IZd" firstAttribute="leading" secondItem="BHI-ms-mmm" secondAttribute="leading" id="tmy-Gx-dn6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="previewBtn" destination="flT-jG-FQu" id="KYS-DP-trQ"/>
+                        <outlet property="svgContentBtn" destination="C3s-sl-l17" id="vGb-oe-kPg"/>
+                        <outlet property="tabViewContainer" destination="q2z-pp-IZd" id="H33-Qh-Cm6"/>
+                    </connections>
                 </viewController>
                 <customObject id="m15-PL-3gI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
