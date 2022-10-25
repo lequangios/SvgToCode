@@ -44,7 +44,9 @@ final class ObjCode : CodeMaker {
     }
     
     func makeCircle(_ model: SVGDataModel, _ center:CGPoint, _ radius:Double) -> String {
-        return ""
+        var code = "UIBezierPath* \(model.name) = [UIBezierPath new];\n"
+        code += "[\(model.name) addArcWithCenter:CGPointMake(\(center.x), \(center.y)) radius:\(radius) startAngle:0 endAngle:2*M_PI clockwise:YES];\n"
+        return code
     }
     
     func makeClipPath(_ model:SVGDataModel, childs:[CodeGroup]) -> String {
@@ -56,7 +58,7 @@ final class ObjCode : CodeMaker {
     }
     
     func makeEllipse(_ model: SVGDataModel, _ center:CGPoint, _ radius1:Double, _ radius2:Double) -> String {
-        return ""
+        return "UIBezierPath* \(model.name) = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(\(center.x - radius1), \(center.y - radius2), \(radius1), \(radius2))];\n"
     }
     
     func makeGlyph(_ model: SVGDataModel) -> String {
@@ -64,10 +66,22 @@ final class ObjCode : CodeMaker {
     }
     
     func makeLine(_ model: SVGDataModel, _ point1:CGPoint, _ point2:CGPoint) -> String {
-        return ""
+        var code = "UIBezierPath* \(model.name) = [UIBezierPath new];\n"
+        code += "[\(model.name) moveToPoint:CGPointMake(\(point1.x), \(point1.y)];\n"
+        code += "[\(model.name) addLineToPoint:CGPointMake(\(point2.x), \(point2.y))];\n"
+        return code
     }
     
     func makePolyline(_ model:SVGDataModel, _ points:[CGPoint]) -> String {
+        if points.count >= 3 {
+            var code:String = "UIBezierPath* \(model.name) = [UIBezierPath new];\n"
+            code += "[\(model.name) moveToPoint:CGPointMake(\(points[0].x), \(points[0].y)];\n"
+            for i in 1...points.count-1 {
+                code += "[\(model.name) addLineToPoint:CGPointMake(\(points[i].x), \(points[i].y))];\n"
+            }
+            code += "[\(model.name) closePath];\n"
+            return code
+        }
         return ""
     }
     
@@ -76,6 +90,15 @@ final class ObjCode : CodeMaker {
     }
     
     func makePolygon(_ model:SVGDataModel, _ points:[CGPoint])->String {
+        if points.count >= 3 {
+            var code:String = "UIBezierPath* \(model.name) = [UIBezierPath new];\n"
+            code += "[\(model.name) moveToPoint:CGPointMake(\(points[0].x), \(points[0].y)];\n"
+            for i in 1...points.count-1 {
+                code += "[\(model.name) addLineToPoint:CGPointMake(\(points[i].x), \(points[i].y))];\n"
+            }
+            code += "[\(model.name) closePath];\n"
+            return code
+        }
         return ""
     }
     
@@ -85,14 +108,60 @@ final class ObjCode : CodeMaker {
     }
     
     func parseModel(_ model:SVGDataModel, _ style:StyleSheet, _ deep:Int = 0) -> String {
-        return ""
+        model.printModel("\(deep)")
+        var code = model.code
+        let childPaths = model.childs.findPaths()
+        var isOnePath = false
+        if childPaths.count == 1 {
+            isOnePath = true
+        }
+        
+        for child in model.childs {
+            if child.isPath {
+                code += child.code
+            
+                if isOnePath == false {
+                    let name = "\(model.type.rawValue)\(child.name.trim(child.type.rawValue))"
+                    code += "CAShapeLayer* \(name) = [CAShapeLayer new];\n"
+                    code += "\(name).path = \(child.name).cgPath;\n"
+                    child.name = name
+                    code += applyShapeStyle(child, style, child.name)
+                    code += "[\(model.name) addSublayer(\(child.name)];\n\n"
+                }
+                else {
+                    code += "\(model.name).path = \(child.name).cgPath;\n"
+                    code += applyShapeStyle(child, style, model.name)
+                }
+                
+            }
+            else if child.isShape {
+                code += self.parseModel(child, style, deep+1)
+                code += applyShapeStyle(child, style, child.name)
+                code += "[\(model.name) addSublayer(\(child.name)];\n\n"
+            }
+        }
+        return code
     }
     
     func makeSVG(_ model:SVGDataModel)->String {
-        return ""
+        var code = "\nCAShapeLayer* \(model.name) = [CAShapeLayer new];\n"
+        code += "\(model.name).frame = CGRectMake(\(model.frame.origin.x), \(model.frame.origin.y), \(model.frame.size.width), \(model.frame.size.height));\n"
+        code += "\(model.name).name = \(model.name.objStr());\n"
+        code += "CGSize viewSize = \(model.name).frame.size\n"
+        code += "let affine = CGAffineTransform.init(translationX: (UIScreen.main.bounds.size.width-viewSize.width)/2, y: (UIScreen.main.bounds.size.height-viewSize.height)/2)\n"
+        code += "\(model.name).setAffineTransform(affine)\n"
+        return code
     }
     
     func getCode(_ model:SVGDataModel, _ style:StyleSheet) -> String {
+        return parseModel(model, style, 0)
+    }
+    
+    private func applyPathStyle(_ model:SVGDataModel, _ style:StyleSheet) -> String {
+        return ""
+    }
+    
+    private func applyShapeStyle(_ model:SVGDataModel, _ style:StyleSheet, _ name:String) -> String {
         return ""
     }
 }
