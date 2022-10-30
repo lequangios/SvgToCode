@@ -1,0 +1,825 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		028CA02FE482E19D8F5720D608B9F3AD /* SourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EC274D7E87AD2F4660ADFB005B4E15 /* SourceCodeTheme.swift */; };
+		16AEC5EAD3C0EBAE948D277A2504DCC1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B00F85BA6F1D19D2BEF1FF247588C /* Error.swift */; };
+		199AA80771B5DD88E7BF76982EB84C33 /* Python3Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECEA98BE98928F22B16FF7D87DB17F1 /* Python3Lexer.swift */; };
+		1DF10ED522F287DAAF7A75F7010E1D44 /* InnerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B71F9FC6F2A504F87B44CBE51E786 /* InnerTextView.swift */; };
+		1E0EACBA77C99F511EA1961480D16A82 /* TextViewWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC406EF1856365A8276F591F6674DD /* TextViewWrapperView.swift */; };
+		2211078C46F7594F0E7C299D10FB16B9 /* DefaultSourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356F13A414FA1DB34564675A20EE2EA /* DefaultSourceCodeTheme.swift */; };
+		23054F57AA65E3C54148AB5AE84C2D6C /* NSTextView+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A1E396D8EAE4ACD2ACD46EAD825B0D /* NSTextView+UIKit.swift */; };
+		2EAEBDF088D298231076E7E8F38EE4CC /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ED8EB19CF0A9FAEA3234A2E64AE277 /* Paragraph.swift */; };
+		3809657EFC4D01E7B07B980B3F2D2B00 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0A0EAA602DBDFCAA3D08177D2482A6 /* Element.swift */; };
+		46327C3E233665D880EE7C6C73800352 /* SwiftyXMLParser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A6B2CDC8EC84FE2C9E256450745AB2B /* SwiftyXMLParser-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4D9A6BB94F15C438C543B0B1C9F3626C /* SyntaxTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E20D497BE2EC66B1BEBD0D9403C7A /* SyntaxTextView.swift */; };
+		558140EAA9EE70C77E9041CA36375612 /* SyntaxTextView+TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F56AB0B9FF406B023B74875156BCCAF /* SyntaxTextView+TextViewDelegate.swift */; };
+		6B09A197F3E9979C52FFDB4416E5BCAA /* Sourceful-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93450B5EF5AD0EDC9D5BB717C999C6C5 /* Sourceful-dummy.m */; };
+		6BFE9146CC0A23C3B0B423B8AC93F2AD /* SwiftyXMLParser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 778F071DA99A5BAB6E672F01E7169FFB /* SwiftyXMLParser-dummy.m */; };
+		707301C7FAA2B7BF99C728FDC75291BB /* SwiftLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6E59BE21668856FEF0A6919EB0F316 /* SwiftLexer.swift */; };
+		71C5274B7F729830ED68BEA7B106FA2F /* XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE1933E680CD62145FF3A6CCCBE3708 /* XML.swift */; };
+		818D09F83114392DD5D50ABCB745D18E /* SyntaxColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0C84992691C97A8373E56EA0DC15F /* SyntaxColorTheme.swift */; };
+		8DA33BBFB9BDDF8AFB9345916E9B3371 /* Paragraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C680A35B4D1E3A17DBDC1F5C41ACAE4 /* Paragraphs.swift */; };
+		9EEE35ADCD407D148E0B01143498F9B5 /* Sourceful-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D8DE3CAA85E98AFDD8A072E4E31A1BC1 /* Sourceful-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AA0537587341E406525A2CD636C01144 /* Pods-SVG2Code-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5A4F15AD4A96DFB79E29E286695C764 /* Pods-SVG2Code-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AAADCA278F5E6050C69D1F10AE5C609D /* SourceCodeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5146662E5C9099D8EFE26E7A08401B /* SourceCodeToken.swift */; };
+		AC76F850A8495F8921419D47CA10C9AC /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBB15FEBFEDA13D5781A261F43DE436 /* String+Range.swift */; };
+		AD0A0034E9B6EB93E8D5B5BCB622732A /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50413706035AAA98092124C553AD4EE8 /* Lexer.swift */; };
+		BB916034A06FAE39507BEDCB65073D7F /* Accessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B5CB93EDF386FF9E508FD0B807E5C4 /* Accessor.swift */; };
+		BD37EC294F6226E075EBBFFD4E0692C6 /* SyntaxTextViewLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369A792C2AAE0CA5C1E5C5EB343EB1B /* SyntaxTextViewLayoutManager.swift */; };
+		BE42C83DFE9C778CBCC1670DA7209A1A /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF496E9BE17315FE7B9292BAB1C7EA /* Types.swift */; };
+		C546968FBD3F88EF602ABF39A5077598 /* ASTVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF1FBD4509B3131C3821D9E8D6E8F08 /* ASTVisualizer.swift */; };
+		C6FAAC6F54339ADA618A2938DF121943 /* NSMutableAttributedString+Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F89C649BCE476F82463BF98A86093A3 /* NSMutableAttributedString+Tokens.swift */; };
+		CE0799D0704DF85BCFE4682F00500BEA /* LineNumberLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CBE7BBE879AF70424B599637C4293B /* LineNumberLayoutManager.swift */; };
+		D086038540DCC6C4BD73A35294360E4B /* RegexLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCADE8CFE85B599C3637CB2D274B04A /* RegexLexer.swift */; };
+		E250E0954927395C1BDFE171DE4F2728 /* Pods-SVG2Code-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A649CFF3FCF8C034F98F59D0E355FCB8 /* Pods-SVG2Code-dummy.m */; };
+		E3222456044551D2626527E552B453FE /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B97F88F64FEC99C0B8EB194F5DCBDD /* Token.swift */; };
+		E7E73C11FF0D5F095FE37416A0EBC4D6 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B702EE94AE00E53D6A94DA690689325 /* Parser.swift */; };
+		F007E16860F34B93A2770A3529670846 /* SourceCodeRegexLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8537E4DDFA200FA1227272FB811B88B /* SourceCodeRegexLexer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		826FE2A1D96AB9D25FD7D9678DC181AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67A07E7E10F8C0544A5A1AF1C1BBF49A;
+			remoteInfo = SwiftyXMLParser;
+		};
+		C6D11975FB2C130B905C80C74546E65B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F33B3A8D6B1A541B9D995ECE93C1E4E;
+			remoteInfo = Sourceful;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F89C649BCE476F82463BF98A86093A3 /* NSMutableAttributedString+Tokens.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSMutableAttributedString+Tokens.swift"; path = "Sources/Sourceful/Util/NSMutableAttributedString+Tokens.swift"; sourceTree = "<group>"; };
+		1272DF3D40C135B2161777CBDEE5ADB6 /* Pods-SVG2Code-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVG2Code-acknowledgements.plist"; sourceTree = "<group>"; };
+		1356F13A414FA1DB34564675A20EE2EA /* DefaultSourceCodeTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultSourceCodeTheme.swift; path = Sources/Sourceful/Themes/DefaultSourceCodeTheme.swift; sourceTree = "<group>"; };
+		1A9E20D497BE2EC66B1BEBD0D9403C7A /* SyntaxTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SyntaxTextView.swift; path = Sources/Sourceful/View/SyntaxTextView.swift; sourceTree = "<group>"; };
+		25B5CB93EDF386FF9E508FD0B807E5C4 /* Accessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Accessor.swift; path = SwiftyXMLParser/Accessor.swift; sourceTree = "<group>"; };
+		37A1E396D8EAE4ACD2ACD46EAD825B0D /* NSTextView+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSTextView+UIKit.swift"; path = "Sources/Sourceful/Util/NSTextView+UIKit.swift"; sourceTree = "<group>"; };
+		3D0A0EAA602DBDFCAA3D08177D2482A6 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Element.swift; path = SwiftyXMLParser/Element.swift; sourceTree = "<group>"; };
+		3E5146662E5C9099D8EFE26E7A08401B /* SourceCodeToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceCodeToken.swift; path = Sources/Sourceful/SourceCodeToken.swift; sourceTree = "<group>"; };
+		3ECEA98BE98928F22B16FF7D87DB17F1 /* Python3Lexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Python3Lexer.swift; path = Sources/Sourceful/Languages/Python3Lexer.swift; sourceTree = "<group>"; };
+		4B702EE94AE00E53D6A94DA690689325 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = SwiftyXMLParser/Parser.swift; sourceTree = "<group>"; };
+		4D0DB2CF728E075EC478B2D0810578DF /* Pods-SVG2Code-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SVG2Code-frameworks.sh"; sourceTree = "<group>"; };
+		4DD04C44FBCFF95C23E85AD895C2CB12 /* SwiftyXMLParser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyXMLParser.xcconfig; sourceTree = "<group>"; };
+		50413706035AAA98092124C553AD4EE8 /* Lexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lexer.swift; path = Sources/Sourceful/Model/Lexer.swift; sourceTree = "<group>"; };
+		57107E14BBA112A9353A214D8B314CE7 /* Sourceful-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Sourceful-prefix.pch"; sourceTree = "<group>"; };
+		58B7153AA2FB9B8BB1AE5C8A46BC2DEE /* Pods-SVG2Code-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SVG2Code-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5BE1933E680CD62145FF3A6CCCBE3708 /* XML.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XML.swift; path = SwiftyXMLParser/XML.swift; sourceTree = "<group>"; };
+		5C214584EEE088FF7C5E1C7AFB2E1BAB /* Pods-SVG2Code.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVG2Code.debug.xcconfig"; sourceTree = "<group>"; };
+		5F56AB0B9FF406B023B74875156BCCAF /* SyntaxTextView+TextViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SyntaxTextView+TextViewDelegate.swift"; path = "Sources/Sourceful/View/SyntaxTextView+TextViewDelegate.swift"; sourceTree = "<group>"; };
+		60C0C84992691C97A8373E56EA0DC15F /* SyntaxColorTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SyntaxColorTheme.swift; path = Sources/Sourceful/Model/SyntaxColorTheme.swift; sourceTree = "<group>"; };
+		63ED8EB19CF0A9FAEA3234A2E64AE277 /* Paragraph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Paragraph.swift; path = Sources/Sourceful/Model/Paragraph.swift; sourceTree = "<group>"; };
+		6D10646199DC6FCF83F741425ABA0639 /* Sourceful.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Sourceful.xcconfig; sourceTree = "<group>"; };
+		778F071DA99A5BAB6E672F01E7169FFB /* SwiftyXMLParser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyXMLParser-dummy.m"; sourceTree = "<group>"; };
+		798706B064A4F67A09BCF96BB74E2EB1 /* Pods-SVG2Code.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SVG2Code.modulemap"; sourceTree = "<group>"; };
+		7A6B2CDC8EC84FE2C9E256450745AB2B /* SwiftyXMLParser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftyXMLParser-umbrella.h"; path = "../../Headers/Public/SwiftyXMLParser/SwiftyXMLParser-umbrella.h"; sourceTree = "<group>"; };
+		7B1A71F9CB64BF15C3EC6E8F22A9CC6E /* libSourceful.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSourceful.a; path = libSourceful.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BBB15FEBFEDA13D5781A261F43DE436 /* String+Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Range.swift"; path = "Sources/Sourceful/Util/String+Range.swift"; sourceTree = "<group>"; };
+		7BBF496E9BE17315FE7B9292BAB1C7EA /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Types.swift; path = Sources/Sourceful/Util/Types.swift; sourceTree = "<group>"; };
+		7BF1FBD4509B3131C3821D9E8D6E8F08 /* ASTVisualizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ASTVisualizer.swift; path = Sources/Sourceful/ASTVisualizer.swift; sourceTree = "<group>"; };
+		8278A9BEF4111F58D1CC3FCD9ED09D2F /* SwiftyXMLParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyXMLParser-prefix.pch"; sourceTree = "<group>"; };
+		8A4B00F85BA6F1D19D2BEF1FF247588C /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = SwiftyXMLParser/Error.swift; sourceTree = "<group>"; };
+		8C2B71F9FC6F2A504F87B44CBE51E786 /* InnerTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InnerTextView.swift; path = Sources/Sourceful/View/InnerTextView.swift; sourceTree = "<group>"; };
+		8D47E82240CA46F6751ADB4BDE15015E /* Pods-SVG2Code-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SVG2Code-resources.sh"; sourceTree = "<group>"; };
+		91B97F88F64FEC99C0B8EB194F5DCBDD /* Token.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Token.swift; path = Sources/Sourceful/Model/Token.swift; sourceTree = "<group>"; };
+		93450B5EF5AD0EDC9D5BB717C999C6C5 /* Sourceful-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Sourceful-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94EC274D7E87AD2F4660ADFB005B4E15 /* SourceCodeTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceCodeTheme.swift; path = Sources/Sourceful/SourceCodeTheme.swift; sourceTree = "<group>"; };
+		9C680A35B4D1E3A17DBDC1F5C41ACAE4 /* Paragraphs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Paragraphs.swift; path = Sources/Sourceful/View/Paragraphs.swift; sourceTree = "<group>"; };
+		A3DC406EF1856365A8276F591F6674DD /* TextViewWrapperView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextViewWrapperView.swift; path = Sources/Sourceful/View/TextViewWrapperView.swift; sourceTree = "<group>"; };
+		A649CFF3FCF8C034F98F59D0E355FCB8 /* Pods-SVG2Code-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SVG2Code-dummy.m"; sourceTree = "<group>"; };
+		A8537E4DDFA200FA1227272FB811B88B /* SourceCodeRegexLexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceCodeRegexLexer.swift; path = Sources/Sourceful/SourceCodeRegexLexer.swift; sourceTree = "<group>"; };
+		B90FCFCA81C8E3CADBADD760BCDDD7FC /* SwiftyXMLParser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = SwiftyXMLParser.modulemap; path = ../../Headers/Public/SwiftyXMLParser/SwiftyXMLParser.modulemap; sourceTree = "<group>"; };
+		C369A792C2AAE0CA5C1E5C5EB343EB1B /* SyntaxTextViewLayoutManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SyntaxTextViewLayoutManager.swift; path = Sources/Sourceful/View/SyntaxTextViewLayoutManager.swift; sourceTree = "<group>"; };
+		C8CBE7BBE879AF70424B599637C4293B /* LineNumberLayoutManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineNumberLayoutManager.swift; path = Sources/Sourceful/View/LineNumberLayoutManager.swift; sourceTree = "<group>"; };
+		D07C417FBBEC50782C4BF9E29099902C /* libPods-SVG2Code.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SVG2Code.a"; path = "libPods-SVG2Code.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D743DF20DB9EEFFC0AA72EF50DA8AD2F /* Sourceful.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = Sourceful.modulemap; path = ../../Headers/Public/Sourceful/Sourceful.modulemap; sourceTree = "<group>"; };
+		D8DE3CAA85E98AFDD8A072E4E31A1BC1 /* Sourceful-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Sourceful-umbrella.h"; path = "../../Headers/Public/Sourceful/Sourceful-umbrella.h"; sourceTree = "<group>"; };
+		DDBAEB37EA3AC684B8487349A30A4D37 /* libSwiftyXMLParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSwiftyXMLParser.a; path = libSwiftyXMLParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDCADE8CFE85B599C3637CB2D274B04A /* RegexLexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RegexLexer.swift; path = Sources/Sourceful/Model/RegexLexer.swift; sourceTree = "<group>"; };
+		E5A4F15AD4A96DFB79E29E286695C764 /* Pods-SVG2Code-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SVG2Code-umbrella.h"; sourceTree = "<group>"; };
+		EC26488D1A56799823B0ED7E499D2A68 /* Pods-SVG2Code.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVG2Code.release.xcconfig"; sourceTree = "<group>"; };
+		EC6E59BE21668856FEF0A6919EB0F316 /* SwiftLexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftLexer.swift; path = Sources/Sourceful/Languages/SwiftLexer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		012236D87F00360C48F0A6615A1DFCF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82B2DE8246FF01A49E454DB6C26E3DA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E99B1DA8CD27675FE4456E2BBDA5E490 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		20FC255EF8ECE1F958C07718BC58624A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B90FCFCA81C8E3CADBADD760BCDDD7FC /* SwiftyXMLParser.modulemap */,
+				4DD04C44FBCFF95C23E85AD895C2CB12 /* SwiftyXMLParser.xcconfig */,
+				778F071DA99A5BAB6E672F01E7169FFB /* SwiftyXMLParser-dummy.m */,
+				8278A9BEF4111F58D1CC3FCD9ED09D2F /* SwiftyXMLParser-prefix.pch */,
+				7A6B2CDC8EC84FE2C9E256450745AB2B /* SwiftyXMLParser-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyXMLParser";
+			sourceTree = "<group>";
+		};
+		30953E1E0FDD94F63A4404F3B4399FC1 /* Sourceful */ = {
+			isa = PBXGroup;
+			children = (
+				7BF1FBD4509B3131C3821D9E8D6E8F08 /* ASTVisualizer.swift */,
+				1356F13A414FA1DB34564675A20EE2EA /* DefaultSourceCodeTheme.swift */,
+				8C2B71F9FC6F2A504F87B44CBE51E786 /* InnerTextView.swift */,
+				50413706035AAA98092124C553AD4EE8 /* Lexer.swift */,
+				C8CBE7BBE879AF70424B599637C4293B /* LineNumberLayoutManager.swift */,
+				0F89C649BCE476F82463BF98A86093A3 /* NSMutableAttributedString+Tokens.swift */,
+				37A1E396D8EAE4ACD2ACD46EAD825B0D /* NSTextView+UIKit.swift */,
+				63ED8EB19CF0A9FAEA3234A2E64AE277 /* Paragraph.swift */,
+				9C680A35B4D1E3A17DBDC1F5C41ACAE4 /* Paragraphs.swift */,
+				3ECEA98BE98928F22B16FF7D87DB17F1 /* Python3Lexer.swift */,
+				DDCADE8CFE85B599C3637CB2D274B04A /* RegexLexer.swift */,
+				A8537E4DDFA200FA1227272FB811B88B /* SourceCodeRegexLexer.swift */,
+				94EC274D7E87AD2F4660ADFB005B4E15 /* SourceCodeTheme.swift */,
+				3E5146662E5C9099D8EFE26E7A08401B /* SourceCodeToken.swift */,
+				7BBB15FEBFEDA13D5781A261F43DE436 /* String+Range.swift */,
+				EC6E59BE21668856FEF0A6919EB0F316 /* SwiftLexer.swift */,
+				60C0C84992691C97A8373E56EA0DC15F /* SyntaxColorTheme.swift */,
+				1A9E20D497BE2EC66B1BEBD0D9403C7A /* SyntaxTextView.swift */,
+				5F56AB0B9FF406B023B74875156BCCAF /* SyntaxTextView+TextViewDelegate.swift */,
+				C369A792C2AAE0CA5C1E5C5EB343EB1B /* SyntaxTextViewLayoutManager.swift */,
+				A3DC406EF1856365A8276F591F6674DD /* TextViewWrapperView.swift */,
+				91B97F88F64FEC99C0B8EB194F5DCBDD /* Token.swift */,
+				7BBF496E9BE17315FE7B9292BAB1C7EA /* Types.swift */,
+				A66A26153D78CB28731BFF945547BC75 /* Support Files */,
+			);
+			name = Sourceful;
+			path = Sourceful;
+			sourceTree = "<group>";
+		};
+		4C342EB44A19F9393ACF1EFF46FF8181 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBA48C255BDD08836FB56BF35F7FCDAB /* Pods-SVG2Code */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5D3D994B2EFAFAD74D47CF27142AFE51 /* SwiftyXMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				25B5CB93EDF386FF9E508FD0B807E5C4 /* Accessor.swift */,
+				3D0A0EAA602DBDFCAA3D08177D2482A6 /* Element.swift */,
+				8A4B00F85BA6F1D19D2BEF1FF247588C /* Error.swift */,
+				4B702EE94AE00E53D6A94DA690689325 /* Parser.swift */,
+				5BE1933E680CD62145FF3A6CCCBE3708 /* XML.swift */,
+				20FC255EF8ECE1F958C07718BC58624A /* Support Files */,
+			);
+			name = SwiftyXMLParser;
+			path = SwiftyXMLParser;
+			sourceTree = "<group>";
+		};
+		6E964A2CA7C39A26308A0FE1CA7606F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D07C417FBBEC50782C4BF9E29099902C /* libPods-SVG2Code.a */,
+				7B1A71F9CB64BF15C3EC6E8F22A9CC6E /* libSourceful.a */,
+				DDBAEB37EA3AC684B8487349A30A4D37 /* libSwiftyXMLParser.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				D6A4E6E13278263BE49D55D905D0D33D /* Pods */,
+				6E964A2CA7C39A26308A0FE1CA7606F9 /* Products */,
+				4C342EB44A19F9393ACF1EFF46FF8181 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A66A26153D78CB28731BFF945547BC75 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D743DF20DB9EEFFC0AA72EF50DA8AD2F /* Sourceful.modulemap */,
+				6D10646199DC6FCF83F741425ABA0639 /* Sourceful.xcconfig */,
+				93450B5EF5AD0EDC9D5BB717C999C6C5 /* Sourceful-dummy.m */,
+				57107E14BBA112A9353A214D8B314CE7 /* Sourceful-prefix.pch */,
+				D8DE3CAA85E98AFDD8A072E4E31A1BC1 /* Sourceful-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Sourceful";
+			sourceTree = "<group>";
+		};
+		CBA48C255BDD08836FB56BF35F7FCDAB /* Pods-SVG2Code */ = {
+			isa = PBXGroup;
+			children = (
+				798706B064A4F67A09BCF96BB74E2EB1 /* Pods-SVG2Code.modulemap */,
+				58B7153AA2FB9B8BB1AE5C8A46BC2DEE /* Pods-SVG2Code-acknowledgements.markdown */,
+				1272DF3D40C135B2161777CBDEE5ADB6 /* Pods-SVG2Code-acknowledgements.plist */,
+				A649CFF3FCF8C034F98F59D0E355FCB8 /* Pods-SVG2Code-dummy.m */,
+				4D0DB2CF728E075EC478B2D0810578DF /* Pods-SVG2Code-frameworks.sh */,
+				8D47E82240CA46F6751ADB4BDE15015E /* Pods-SVG2Code-resources.sh */,
+				E5A4F15AD4A96DFB79E29E286695C764 /* Pods-SVG2Code-umbrella.h */,
+				5C214584EEE088FF7C5E1C7AFB2E1BAB /* Pods-SVG2Code.debug.xcconfig */,
+				EC26488D1A56799823B0ED7E499D2A68 /* Pods-SVG2Code.release.xcconfig */,
+			);
+			name = "Pods-SVG2Code";
+			path = "Target Support Files/Pods-SVG2Code";
+			sourceTree = "<group>";
+		};
+		D6A4E6E13278263BE49D55D905D0D33D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30953E1E0FDD94F63A4404F3B4399FC1 /* Sourceful */,
+				5D3D994B2EFAFAD74D47CF27142AFE51 /* SwiftyXMLParser */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		626D8423CBC2A2013CD2F4C2ACF4B90E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46327C3E233665D880EE7C6C73800352 /* SwiftyXMLParser-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F4B397044E0FDE92D52944193D06501 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EEE35ADCD407D148E0B01143498F9B5 /* Sourceful-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A84B85AFB58A2E91E6496866E21530D0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0537587341E406525A2CD636C01144 /* Pods-SVG2Code-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5FA8018E9B81A258560F8B3314ED7132 /* Pods-SVG2Code */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 375FA46F5046F3867407C71A520D6CDE /* Build configuration list for PBXNativeTarget "Pods-SVG2Code" */;
+			buildPhases = (
+				B85FB03383002B84F13CC89BBFC75923 /* Sources */,
+				012236D87F00360C48F0A6615A1DFCF0 /* Frameworks */,
+				A84B85AFB58A2E91E6496866E21530D0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				848981A8ACC566F7F5308C0822E5F43C /* PBXTargetDependency */,
+				4942AB61F0920A9F95F8A24E33272D9A /* PBXTargetDependency */,
+			);
+			name = "Pods-SVG2Code";
+			productName = "Pods-SVG2Code";
+			productReference = D07C417FBBEC50782C4BF9E29099902C /* libPods-SVG2Code.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		67A07E7E10F8C0544A5A1AF1C1BBF49A /* SwiftyXMLParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBE0E7112DA287DBFA4B39E43870C8A0 /* Build configuration list for PBXNativeTarget "SwiftyXMLParser" */;
+			buildPhases = (
+				D4FA59F682586D5687F8F4C4FA7B12BF /* Sources */,
+				E99B1DA8CD27675FE4456E2BBDA5E490 /* Frameworks */,
+				626D8423CBC2A2013CD2F4C2ACF4B90E /* Headers */,
+				7CE6ACC9AFF03D191FFBD1717202FF2F /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyXMLParser;
+			productName = SwiftyXMLParser;
+			productReference = DDBAEB37EA3AC684B8487349A30A4D37 /* libSwiftyXMLParser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6F33B3A8D6B1A541B9D995ECE93C1E4E /* Sourceful */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D569019A254D589FFB82BC45950A5FB3 /* Build configuration list for PBXNativeTarget "Sourceful" */;
+			buildPhases = (
+				1C464AD6C6627A7C0361D9188C81567C /* Sources */,
+				82B2DE8246FF01A49E454DB6C26E3DA9 /* Frameworks */,
+				6F4B397044E0FDE92D52944193D06501 /* Headers */,
+				A0290BE3031FA2566D97F7800DCE8DC2 /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sourceful;
+			productName = Sourceful;
+			productReference = 7B1A71F9CB64BF15C3EC6E8F22A9CC6E /* libSourceful.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 6E964A2CA7C39A26308A0FE1CA7606F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FA8018E9B81A258560F8B3314ED7132 /* Pods-SVG2Code */,
+				6F33B3A8D6B1A541B9D995ECE93C1E4E /* Sourceful */,
+				67A07E7E10F8C0544A5A1AF1C1BBF49A /* SwiftyXMLParser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7CE6ACC9AFF03D191FFBD1717202FF2F /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/SwiftyXMLParser/SwiftyXMLParser.modulemap",
+				"${PODS_ROOT}/Headers/Public/SwiftyXMLParser/SwiftyXMLParser-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftyXMLParser/SwiftyXMLParser.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftyXMLParser/SwiftyXMLParser-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+			showEnvVarsInLog = 1;
+		};
+		A0290BE3031FA2566D97F7800DCE8DC2 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/Sourceful/Sourceful.modulemap",
+				"${PODS_ROOT}/Headers/Public/Sourceful/Sourceful-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/Sourceful-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Sourceful/Sourceful.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Sourceful/Sourceful-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+			showEnvVarsInLog = 1;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C464AD6C6627A7C0361D9188C81567C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C546968FBD3F88EF602ABF39A5077598 /* ASTVisualizer.swift in Sources */,
+				2211078C46F7594F0E7C299D10FB16B9 /* DefaultSourceCodeTheme.swift in Sources */,
+				1DF10ED522F287DAAF7A75F7010E1D44 /* InnerTextView.swift in Sources */,
+				AD0A0034E9B6EB93E8D5B5BCB622732A /* Lexer.swift in Sources */,
+				CE0799D0704DF85BCFE4682F00500BEA /* LineNumberLayoutManager.swift in Sources */,
+				C6FAAC6F54339ADA618A2938DF121943 /* NSMutableAttributedString+Tokens.swift in Sources */,
+				23054F57AA65E3C54148AB5AE84C2D6C /* NSTextView+UIKit.swift in Sources */,
+				2EAEBDF088D298231076E7E8F38EE4CC /* Paragraph.swift in Sources */,
+				8DA33BBFB9BDDF8AFB9345916E9B3371 /* Paragraphs.swift in Sources */,
+				199AA80771B5DD88E7BF76982EB84C33 /* Python3Lexer.swift in Sources */,
+				D086038540DCC6C4BD73A35294360E4B /* RegexLexer.swift in Sources */,
+				F007E16860F34B93A2770A3529670846 /* SourceCodeRegexLexer.swift in Sources */,
+				028CA02FE482E19D8F5720D608B9F3AD /* SourceCodeTheme.swift in Sources */,
+				AAADCA278F5E6050C69D1F10AE5C609D /* SourceCodeToken.swift in Sources */,
+				6B09A197F3E9979C52FFDB4416E5BCAA /* Sourceful-dummy.m in Sources */,
+				AC76F850A8495F8921419D47CA10C9AC /* String+Range.swift in Sources */,
+				707301C7FAA2B7BF99C728FDC75291BB /* SwiftLexer.swift in Sources */,
+				818D09F83114392DD5D50ABCB745D18E /* SyntaxColorTheme.swift in Sources */,
+				558140EAA9EE70C77E9041CA36375612 /* SyntaxTextView+TextViewDelegate.swift in Sources */,
+				4D9A6BB94F15C438C543B0B1C9F3626C /* SyntaxTextView.swift in Sources */,
+				BD37EC294F6226E075EBBFFD4E0692C6 /* SyntaxTextViewLayoutManager.swift in Sources */,
+				1E0EACBA77C99F511EA1961480D16A82 /* TextViewWrapperView.swift in Sources */,
+				E3222456044551D2626527E552B453FE /* Token.swift in Sources */,
+				BE42C83DFE9C778CBCC1670DA7209A1A /* Types.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B85FB03383002B84F13CC89BBFC75923 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E250E0954927395C1BDFE171DE4F2728 /* Pods-SVG2Code-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4FA59F682586D5687F8F4C4FA7B12BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB916034A06FAE39507BEDCB65073D7F /* Accessor.swift in Sources */,
+				3809657EFC4D01E7B07B980B3F2D2B00 /* Element.swift in Sources */,
+				16AEC5EAD3C0EBAE948D277A2504DCC1 /* Error.swift in Sources */,
+				E7E73C11FF0D5F095FE37416A0EBC4D6 /* Parser.swift in Sources */,
+				6BFE9146CC0A23C3B0B423B8AC93F2AD /* SwiftyXMLParser-dummy.m in Sources */,
+				71C5274B7F729830ED68BEA7B106FA2F /* XML.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4942AB61F0920A9F95F8A24E33272D9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyXMLParser;
+			target = 67A07E7E10F8C0544A5A1AF1C1BBF49A /* SwiftyXMLParser */;
+			targetProxy = 826FE2A1D96AB9D25FD7D9678DC181AC /* PBXContainerItemProxy */;
+		};
+		848981A8ACC566F7F5308C0822E5F43C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sourceful;
+			target = 6F33B3A8D6B1A541B9D995ECE93C1E4E /* Sourceful */;
+			targetProxy = C6D11975FB2C130B905C80C74546E65B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4F233F5852B399381BF55ADFEE5F86BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		74EBB7D9D3DA1D79A8EDCADC06F6379F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC26488D1A56799823B0ED7E499D2A68 /* Pods-SVG2Code.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MODULEMAP_FILE = "Target Support Files/Pods-SVG2Code/Pods-SVG2Code.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		8E9A6C5A179F2A11CAE7EE06D41B974D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D10646199DC6FCF83F741425ABA0639 /* Sourceful.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/Sourceful/Sourceful-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = Headers/Public/Sourceful/Sourceful.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Sourceful;
+				PRODUCT_NAME = Sourceful;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A224AB6EB8F125CD3BC7C22294C5F1F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D10646199DC6FCF83F741425ABA0639 /* Sourceful.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/Sourceful/Sourceful-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = Headers/Public/Sourceful/Sourceful.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Sourceful;
+				PRODUCT_NAME = Sourceful;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A976DF6A83286A87113B4798A287CE1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD04C44FBCFF95C23E85AD895C2CB12 /* SwiftyXMLParser.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyXMLParser/SwiftyXMLParser-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = Headers/Public/SwiftyXMLParser/SwiftyXMLParser.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftyXMLParser;
+				PRODUCT_NAME = SwiftyXMLParser;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BED73BBF3D8D4ACF0C16FB41515C3B7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C214584EEE088FF7C5E1C7AFB2E1BAB /* Pods-SVG2Code.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MODULEMAP_FILE = "Target Support Files/Pods-SVG2Code/Pods-SVG2Code.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E0DD51070354FD6B41D87C4FB3BEBC23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		FB2078CA8BE69698F74A7F2F3153ED90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD04C44FBCFF95C23E85AD895C2CB12 /* SwiftyXMLParser.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyXMLParser/SwiftyXMLParser-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = Headers/Public/SwiftyXMLParser/SwiftyXMLParser.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftyXMLParser;
+				PRODUCT_NAME = SwiftyXMLParser;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0DD51070354FD6B41D87C4FB3BEBC23 /* Debug */,
+				4F233F5852B399381BF55ADFEE5F86BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		375FA46F5046F3867407C71A520D6CDE /* Build configuration list for PBXNativeTarget "Pods-SVG2Code" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BED73BBF3D8D4ACF0C16FB41515C3B7D /* Debug */,
+				74EBB7D9D3DA1D79A8EDCADC06F6379F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D569019A254D589FFB82BC45950A5FB3 /* Build configuration list for PBXNativeTarget "Sourceful" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E9A6C5A179F2A11CAE7EE06D41B974D /* Debug */,
+				A224AB6EB8F125CD3BC7C22294C5F1F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBE0E7112DA287DBFA4B39E43870C8A0 /* Build configuration list for PBXNativeTarget "SwiftyXMLParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A976DF6A83286A87113B4798A287CE1A /* Debug */,
+				FB2078CA8BE69698F74A7F2F3153ED90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

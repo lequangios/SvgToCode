@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -736,6 +736,16 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <size key="minSize" width="276" height="553"/>
                                                     <size key="maxSize" width="463" height="10000000"/>
+                                                    <attributedString key="textStorage">
+                                                        <fragment>
+                                                            <string key="content">&lt;svg viewBox="0 0 13 14"&gt;&lt;path class="rhombus" d="M5.9,1.2L0.7,6.5C0.5,6.7,0.5,7,0.7,7.2l5.2,5.4c0.2,0.2,0.5,0.2,0.7,0l5.2-5.4 C12,7,12,6.7,11.8,6.5L6.6,1.2C6.4,0.9,6.1,0.9,5.9,1.2L5.9,1.2z M3.4,6.5L6,3.9c0.2-0.2,0.5-0.2,0.7,0l2.6,2.6 c0.2,0.2,0.2,0.5,0,0.7L6.6,9.9c-0.2,0.2-0.5,0.2-0.7,0L3.4,7.3C3.2,7.1,3.2,6.8,3.4,6.5L3.4,6.5z" /&gt;&lt;/svg&gt;</string>
+                                                            <attributes>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
                                             </subviews>
@@ -869,13 +879,13 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CCy-Y6-vTC" userLabel="langSelect">
-                                                        <rect key="frame" x="111" y="-3" width="200" height="44"/>
+                                                        <rect key="frame" x="110" y="-4" width="202" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="HrF-Mr-B3s"/>
                                                         </constraints>
                                                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="hER-p1-EoU">
                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" metaFont="menu"/>
                                                             <menu key="menu" id="8UC-WZ-9N6"/>
                                                         </popUpButtonCell>
                                                         <connections>
@@ -910,13 +920,13 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hjS-CS-bUV" userLabel="typeSelect">
-                                                        <rect key="frame" x="111" y="-3" width="200" height="44"/>
+                                                        <rect key="frame" x="110" y="-4" width="202" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Tqk-s7-W3j"/>
                                                         </constraints>
                                                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="yFL-va-3bA">
                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" metaFont="menu"/>
                                                             <menu key="menu" id="ez5-ZI-Dae"/>
                                                         </popUpButtonCell>
                                                         <connections>
@@ -1013,7 +1023,7 @@
                                                 <rect key="frame" x="5" y="205" width="308" height="40"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ODh-EO-IeX" userLabel="convert">
-                                                        <rect key="frame" x="-6" y="-7" width="156" height="51"/>
+                                                        <rect key="frame" x="-7" y="-7" width="158" height="52"/>
                                                         <buttonCell key="cell" type="push" title="Convert" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Tz-Nt-JTu">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
@@ -1023,7 +1033,7 @@
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="efp-na-OIS" userLabel="save">
-                                                        <rect key="frame" x="158" y="-7" width="156" height="51"/>
+                                                        <rect key="frame" x="157" y="-7" width="158" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="gna-ef-fYJ"/>
                                                         </constraints>
@@ -1056,7 +1066,7 @@
                                                 <rect key="frame" x="5" y="160" width="308" height="40"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5S5-Xf-jcq" userLabel="useCSS">
-                                                        <rect key="frame" x="-2" y="-2" width="148" height="44"/>
+                                                        <rect key="frame" x="-2" y="-1" width="146" height="42"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="mIL-iR-0de"/>
                                                         </constraints>
@@ -1066,7 +1076,7 @@
                                                         </buttonCell>
                                                     </button>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fn9-Pk-vet" userLabel="showPreview">
-                                                        <rect key="frame" x="162" y="-2" width="148" height="44"/>
+                                                        <rect key="frame" x="162" y="-1" width="146" height="42"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="rQj-sI-JP5"/>
                                                         </constraints>

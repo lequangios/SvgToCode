@@ -17,7 +17,7 @@ enum LanguageName : String {
     case Js = "Javascript Canvas"
     
     func all() -> [LanguageName] {
-        return [LanguageName.Swift];
+        return [LanguageName.Swift, LanguageName.Obj];
     }
     
     func type()->CodeMaker{
