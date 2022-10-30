@@ -103,7 +103,14 @@ final class ObjCode : CodeMaker {
     }
     
     func makeGrapth(_ name: String, _ model: SVGDataModel) -> String {
-        let code = "CAShapeLayer* \(name) = [CAShapeLayer new];\n"
+        var code = "\nCAShapeLayer*  \(model.name) =  [CAShapeLayer new];\n"
+        if let namelayer = model.layerName {
+            code += "\(model.name).name = \(namelayer.objStr());\n"
+        }
+        else {
+            code += "\(model.name).name = \(model.name.objStr())\n"
+        }
+        
         return code
     }
     
@@ -147,9 +154,10 @@ final class ObjCode : CodeMaker {
         var code = "\nCAShapeLayer* \(model.name) = [CAShapeLayer new];\n"
         code += "\(model.name).frame = CGRectMake(\(model.frame.origin.x), \(model.frame.origin.y), \(model.frame.size.width), \(model.frame.size.height));\n"
         code += "\(model.name).name = \(model.name.objStr());\n"
-        code += "CGSize viewSize = \(model.name).frame.size\n"
-        code += "let affine = CGAffineTransform.init(translationX: (UIScreen.main.bounds.size.width-viewSize.width)/2, y: (UIScreen.main.bounds.size.height-viewSize.height)/2)\n"
-        code += "\(model.name).setAffineTransform(affine)\n"
+        code += "CGSize viewSize = \(model.name).frame.size;\n"
+        code += "CGSize screenSize = [UIScreen mainScreen].bounds.size;\n"
+        code += "CGAffineTransform affine = CGAffineTransformMakeTranslation((screenSize.width - viewSize.width)/2, (screenSize.height - viewSize.width)/2);\n"
+        code += "[\(model.name) setAffineTransform:affine];\n"
         return code
     }
     
