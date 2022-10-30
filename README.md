@@ -3,11 +3,13 @@
 <a href="https://github.com/wxxsw/Refresh/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
 </p>
 
-# SvgToCode
+# SvgToCode (1.3.0)
 
 ![SVGToCode logo](Document/icon.png)
 
 Hello there! I’m **SVGToCode**, the open source Code Generater for OS X. 
+
+**The verison 1.3.0 just added**
 
 Let me introduce myself.
 
@@ -33,12 +35,21 @@ SVG is similar to Adobe's proprietary Flash technology, but it is a text-based o
 
 ![SVGToCode logo](Document/p2.png)
 
+### What is new with SVGToCode 1.3.0 ?
+
+In this new version I have :
+
+`-` Supported exporting to Objective-C code   
+`-` Added a review on MACOSX
+
+![SVGToCode logo](Document/1.3.0.png)
+
 # License
 
 `-` **SvgToCode** is released under the MIT license. [See LICENSE](LICENSE) for details.
 
 `-` Love **SvgToCode** ? Please consider donating to sustain our activities ? Please consider [donating](https://www.paypal.me/lequang1988) to sustain my activities.
 <p align="center">
-<a href="https://www.paypal.me/lequang1988"><img width="100px" src="Document/donate.png"></a>
+<a href="https://www.paypal.me/lequang1988"><img width="50px" src="Document/donate.png"></a>
 </p>
 
