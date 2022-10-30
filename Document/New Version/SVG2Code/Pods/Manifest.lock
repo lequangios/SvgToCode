@@ -1,0 +1,29 @@
+PODS:
+  - Sourceful (0.3.0)
+  - SwiftyXMLParser (5.1.0)
+
+DEPENDENCIES:
+  - Sourceful (from `https://github.com/twostraws/Sourceful.git`)
+  - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
+
+EXTERNAL SOURCES:
+  Sourceful:
+    :git: https://github.com/twostraws/Sourceful.git
+  SwiftyXMLParser:
+    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
+
+CHECKOUT OPTIONS:
+  Sourceful:
+    :commit: aa87f034e6d6d6c8e5b5e7992d66805678b01fb1
+    :git: https://github.com/twostraws/Sourceful.git
+  SwiftyXMLParser:
+    :commit: 9d82653e535a13a518b411934c0a5c0c84406c22
+    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
+
+SPEC CHECKSUMS:
+  Sourceful: 05c8e4fcce4f268ea3ef22047a46c49dfd95adee
+  SwiftyXMLParser: 8271497e0a37b5c04b0b167c77b4896e36175a21
+
+PODFILE CHECKSUM: 0e31560c19dd435d23a49287b7e5d71ab786a371
+
+COCOAPODS: 1.5.2

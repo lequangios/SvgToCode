@@ -1,0 +1,6 @@
+module Pods_SVG2Code {
+  umbrella header "Pods-SVG2Code-umbrella.h"
+
+  export *
+  module * { export * }
+}
