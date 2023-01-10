@@ -28,4 +28,16 @@ extension String {
         }
         return points
     }
+    
+    public func makeStyle() -> [String:String] {
+        var styles = [String:String]()
+        let lists = self.split(separator: ";")
+        for item in lists {
+            let arr = item.split(separator: ":")
+            if arr.count > 1 {
+                styles[String(arr[0])] = String(arr[1])
+            }
+        }
+        return styles
+    }
 }

@@ -34,66 +34,71 @@ struct ShapeStyleModel {
     }
     
     init(_ element:XML.Element, _ priority:Int) {
-        if let opacity = element.attributes["opacity"]{
-            self.opacity = (CGFloat(opacity.doubleValue), false)
-        }
-        
-        if let fill = element.attributes["fill"] {
-            // Check if it is shape
-            let shapes = fill.split(separator: "(")
-            if shapes.count >= 2 {
-                self.isFillByShape = true
-                self.shapeFillId = String(shapes[1]).replacingOccurrences(of: ")", with: "")
+        print("🍎🍎🍎🍎 attributes = \(element.attributes)")
+        if let value = element.attributes["style"] {
+            let styles = value.makeStyle()
+            if let opacity = styles["opacity"]{
+                self.opacity = (CGFloat(opacity.doubleValue), false)
             }
-            else {
-                self.fillColor = fill.trim("#")
+            
+            if let fill = styles["fill"] {
+                // Check if it is shape
+                let shapes = fill.split(separator: "(")
+                if shapes.count >= 2 {
+                    self.isFillByShape = true
+                    self.shapeFillId = String(shapes[1]).replacingOccurrences(of: ")", with: "")
+                }
+                else {
+                    self.fillColor = fill.trim("#")
+                }
             }
-        }
-        
-        if let fill_rule = element.attributes["fill-rule"] {
-            if fill_rule == "evenodd" {
-                self.fillRule = (.evenOdd, false)
+            
+            if let fill_rule = styles["fill-rule"] {
+                if fill_rule == "evenodd" {
+                    self.fillRule = (.evenOdd, false)
+                }
             }
-        }
-        
-        if let line_cap = element.attributes["stroke-linecap"] {
-            if line_cap == "round" {
-                self.lineCap = (.round, false)
+            
+            if let line_cap = styles["stroke-linecap"] {
+                if line_cap == "round" {
+                    self.lineCap = (.round, false)
+                }
+                else if line_cap == "square" {
+                    self.lineCap = (.square, false)
+                }
             }
-            else if line_cap == "square" {
-                self.lineCap = (.square, false)
+            
+            if let line_join = styles["stroke-linejoin"] {
+                if line_join == "bevel" {
+                    self.lineJoin = (.bevel, false)
+                }
+                else if line_join == "round" {
+                    self.lineJoin = (.round, false)
+                }
             }
-        }
-        
-        if let line_join = element.attributes["stroke-linejoin"] {
-            if line_join == "bevel" {
-                self.lineJoin = (.bevel, false)
+            
+            if let name = styles["name"]{
+                self.name = name
             }
-            else if line_join == "round" {
-                self.lineJoin = (.round, false)
+            
+            if let line_width = styles["stroke-width"] {
+                self.lineWidth = (CGFloat(line_width.doubleValue), false)
             }
-        }
-        
-        if let name = element.attributes["name"]{
-            self.name = name
-        }
-        
-        if let line_width = element.attributes["stroke-width"] {
-            self.lineWidth = (CGFloat(line_width.doubleValue), false)
-        }
-        
-        if let miter_limit = element.attributes["stroke-miterlimit"] {
-            self.miterLimit = (CGFloat(miter_limit.doubleValue), false)
-        }
-        
-        if let stroke_color = element.attributes["stroke"] {
-            self.strokeColor = stroke_color.trim("#")
+            
+            if let miter_limit = styles["stroke-miterlimit"] {
+                self.miterLimit = (CGFloat(miter_limit.doubleValue), false)
+            }
+            
+            if let stroke_color = styles["stroke"] {
+                self.strokeColor = stroke_color.trim("#")
+            }
         }
         
         self.priority = priority
     }
     
     init(_ style:SVGStyleElement, _ priority:Int) {
+        print("properties = \(style.properties)")
         if let opacity = style.properties?["opacity"]?.value {
                 self.opacity = (CGFloat(opacity.doubleValue), false)
             }
@@ -167,7 +172,7 @@ extension Array where Element == ShapeStyleModel {
             if shapeStyle.strokeEnd.1 == true && item.strokeEnd.1 == false { shapeStyle.strokeEnd = item.strokeEnd }
             if shapeStyle.opacity.1 == true && item.opacity.1 == false { shapeStyle.opacity = item.opacity }
         }
-        
+        print("style for apply = \(shapeStyle)")
         return shapeStyle
     }
 }

@@ -61,6 +61,7 @@ class CodeSVG {
     
     func makePolygon(_ element:SVGDataModel)->String {
         if let points = element.element.attributes["points"]{
+            /*
             let arrPointStr = points.split(separator: " ")
             if arrPointStr.count > 0 {
                 var ps:[CGPoint] = []
@@ -72,6 +73,11 @@ class CodeSVG {
                     }
                 }
                 return langName.type().makePolygon(element, ps)
+             */
+            print("points = \(points)")
+            let arrPoint = points.makePoints()
+            if arrPoint.count > 0 {
+                return langName.type().makePolygon(element, arrPoint)
             }
         }
         return ""
@@ -135,6 +141,7 @@ class CodeSVG {
                 return langName.type().makePolyline(element, ps)
             }
              */
+            print("points = \(points)")
             let arrPoint = points.makePoints()
             if arrPoint.count > 0 {
                 return langName.type().makePolyline(element, arrPoint)

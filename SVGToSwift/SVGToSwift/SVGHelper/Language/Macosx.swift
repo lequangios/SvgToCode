@@ -223,6 +223,7 @@ final class MacosxCode {
             break
         case .polyline:
             if let points = model.element.attributes["points"]{
+                /*
                 let arrPointStr = points.split(separator: " ")
                 if arrPointStr.count > 0 {
                     var ps:[CGPoint] = []
@@ -235,10 +236,16 @@ final class MacosxCode {
                     }
                     path = makePolyline(ps).cgPath
                 }
+                 */
+                let arrPoint = points.makePoints()
+                if arrPoint.count > 0 {
+                    path = makePolyline(arrPoint).cgPath
+                }
             }
             break
         case .polygon:
             if let points = model.element.attributes["points"]{
+                /*
                 let arrPointStr = points.split(separator: " ")
                 if arrPointStr.count > 0 {
                     var ps:[CGPoint] = []
@@ -250,6 +257,11 @@ final class MacosxCode {
                         }
                     }
                     path = makePolygon(model, ps).cgPath
+                }
+                 */
+                let arrPoint = points.makePoints()
+                if arrPoint.count > 0 {
+                    path = makePolygon(model, arrPoint).cgPath
                 }
             }
             break
