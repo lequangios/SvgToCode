@@ -35,6 +35,7 @@
 		5ADF759824483439004DA5EF /* SVGStyleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF759724483439004DA5EF /* SVGStyleElement.swift */; };
 		5ADF759A24486CBE004DA5EF /* StyleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADF759924486CBE004DA5EF /* StyleExtension.swift */; };
 		5AE28E7624557F2100BC09C4 /* ShapeStyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE28E7524557F2100BC09C4 /* ShapeStyleModel.swift */; };
+		5AE3692F296D21660046C93E /* NSString+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE3692E296D21660046C93E /* NSString+SVG.swift */; };
 		5AFB528D24480A630033E2A6 /* katana.lex.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528724480A630033E2A6 /* katana.lex.c */; };
 		5AFB528E24480A630033E2A6 /* selector.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528824480A630033E2A6 /* selector.c */; };
 		5AFB528F24480A630033E2A6 /* katana.tab.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB528924480A630033E2A6 /* katana.tab.c */; };
@@ -81,6 +82,7 @@
 		5ADF759724483439004DA5EF /* SVGStyleElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGStyleElement.swift; sourceTree = "<group>"; };
 		5ADF759924486CBE004DA5EF /* StyleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleExtension.swift; sourceTree = "<group>"; };
 		5AE28E7524557F2100BC09C4 /* ShapeStyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeStyleModel.swift; sourceTree = "<group>"; };
+		5AE3692E296D21660046C93E /* NSString+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+SVG.swift"; sourceTree = "<group>"; };
 		5AFB528024480A630033E2A6 /* katana.lex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.lex.h; sourceTree = "<group>"; };
 		5AFB528124480A630033E2A6 /* selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selector.h; sourceTree = "<group>"; };
 		5AFB528224480A630033E2A6 /* katana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = katana.h; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				5AA11484245D439C007E4AE6 /* Value+SVG.swift */,
 				5AA11486245D5F4F007E4AE6 /* CAShapeLayer+SVG.swift */,
 				5A5D09B7245F1DA600044C51 /* DataStructure.swift */,
+				5AE3692E296D21660046C93E /* NSString+SVG.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				5AFB528E24480A630033E2A6 /* selector.c in Sources */,
 				5AFB528F24480A630033E2A6 /* katana.tab.c in Sources */,
 				5AFB529124480A630033E2A6 /* parser.c in Sources */,
+				5AE3692F296D21660046C93E /* NSString+SVG.swift in Sources */,
 				65418D17214E3AC800733EBE /* AppDelegate.swift in Sources */,
 				5ADF7596244825D8004DA5EF /* StyleElementEx.swift in Sources */,
 			);

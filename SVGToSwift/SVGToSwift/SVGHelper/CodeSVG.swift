@@ -121,6 +121,7 @@ class CodeSVG {
     
     func makePolyline(_ element:SVGDataModel)->String {
         if let points = element.element.attributes["points"]{
+            /*
             let arrPointStr = points.split(separator: " ")
             if arrPointStr.count > 0 {
                 var ps:[CGPoint] = []
@@ -132,6 +133,11 @@ class CodeSVG {
                     }
                 }
                 return langName.type().makePolyline(element, ps)
+            }
+             */
+            let arrPoint = points.makePoints()
+            if arrPoint.count > 0 {
+                return langName.type().makePolyline(element, arrPoint)
             }
         }
         return ""

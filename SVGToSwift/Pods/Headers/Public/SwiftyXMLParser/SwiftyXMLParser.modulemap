@@ -1,6 +1,1 @@
-module SwiftyXMLParser {
-  umbrella header "SwiftyXMLParser-umbrella.h"
-
-  export *
-  module * { export * }
-}
+../../../Target Support Files/SwiftyXMLParser/SwiftyXMLParser.modulemap
